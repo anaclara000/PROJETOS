@@ -1,3 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300&display=swap');
+
+body{
+    font-family: "Roboto Slab";
+    
+}
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    
+}
+
 .model {
     display: none;
     visibility: hidden;
@@ -5,12 +19,10 @@
 
 .container{
     display: flex;
-    /* background-color: #ccc; */
+    justify-content: space-around;
+    font-family: "Noto Sans";
 }
 
-.lancamentos{
-    background-color: pink;
-}
 span{
     display: flex;
 }
@@ -19,3 +31,168 @@ span > p {
     padding-left: 10px;
 }
 
+
+.scrow{
+    overflow-y: scroll;
+    height: 600px;
+}
+.logo{
+    padding-left: 35%;
+    display: flex;
+    align-items: center;
+    background-color: white;
+}
+
+.logo > img{
+    padding-right: 5%;
+    width: 180px;
+}
+.logo > h1{
+    font-family: "Coffee";
+    font-size: 50px;
+    color: #B7C16D;
+}
+
+@font-face{
+    font-family: "Coffee";
+    src: url("font/milky_coffee/Milky Coffee.ttf") format("truetype"),
+    url("font/milky_coffee/Milk Coffee.otf") format("opentype");
+    font-style: normal;
+    font-weight: normal;
+}
+
+.btCad{
+    background-color: #AC6242;
+    padding: 10px;
+    border: none;
+    color: white;
+    border-radius: 5px;
+}
+.btCad:hover{
+    background-color: #361a0d;
+    padding: 10px;
+    border: none;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.cont-cab{
+    margin-left: 41%;
+}
+
+.btfiltrar{
+    background-color: #AC6242;
+    padding: 10px;
+    border: none;
+    color: white;
+    border-radius: 5px;
+}
+.btfiltrar:hover{
+    background-color: #361a0d;
+    padding: 10px;
+    border: none;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#input-busca{
+    margin-bottom: 10px;
+    padding: 10px;
+    border:2px solid #361a0d;
+}
+.filtroText{
+    font-size: 12px;
+}
+
+.saldoCont{
+    margin-left: 40%;
+    font-size: 20px;
+}
+th{
+    padding: 10px;
+ 
+}
+
+td{
+    padding-left: 10px;
+    padding-right: 10px;
+    border-bottom: 1px solid #B7C16D;
+}
+
+.tabelaDebito, .tabelaCredito{
+    border: 3px solid #B7C16D;
+    padding: 20px;
+    border-radius: 5%;
+}
+
+.saldo{
+    display: flex;
+    background-color: #361a0d;
+    width: 35%;
+    margin-top: 20px;
+    padding: 10px;
+    padding-left: 5%;
+    color: white;
+    border-radius: 10px;
+}
+
+.saldo > p{
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+.modal {
+    position: absolute;
+    top: 0%;
+    width:  100%;  
+    height: 100%;  
+    background-color: rgba(0,0,0,0.1)
+   
+}
+
+.form-modal{
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    width: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color:#AC6242;
+    padding: 50px;
+    border-radius: 20px;
+}
+.form-modal > input{
+    padding: 5px 7px;
+    font-size: 15px;
+    margin-left: 4px;
+}
+
+.form-modal > button{
+    margin-top: 10px;
+    margin-left: 10px;
+    padding: 10px 18px;
+    font-size: 15px;
+    position: relative;
+    left: 40%;
+    background-color: #fff;
+    border: 2px solid #361a0d;
+    border-radius: 10px;
+}
+.form-modal > button:hover{
+    background-color: #361a0d;
+    color: #fff;
+    cursor: pointer;
+}
+
+.form-modal > p{
+    position: relative;
+    right: 25%;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: "Noto Sans";
+    color: #fff;
+}

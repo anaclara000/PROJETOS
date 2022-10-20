@@ -5,53 +5,86 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Document</title>
+    <link rel="icon" type="image/x-icon" href="./img/logo.png">
+    <title>Painel | Loja cafézinho</title>
 </head>
 <body>
-    <button onClick="showModal()">Novo Lançamento</button>
-    <div>
-        <p>FILTRAR (SEM ESPAÇOS) </p>
+    <div class="logo">
+        <img src="./img/logo.png" alt="">
+        <h1>Loja - Cafezinho</h1>
+        
+    </div>
+    
+    
+    <div class="cont-cab">
+        <p class="filtroText">FILTRAR (SEM ESPAÇOS) </p>
         <div class="select">
             <input id="input-busca" placeholder="Insira a Data :" type="datetime">
-            <button class="button bfiltrar">Filtrar</button>
+            <button class="button btfiltrar">Filtrar</button>
+            <button class="btCad" onClick="showModal()">Novo Lançamento</button>
         </div>
     </div>
+    
     <div class="container">
-        <div class="lancamentos">
-            <div class="lancamento model">
-                <span>
-                    <p id="num">Numero de Lançamentos</p>
-                    <p id="data">Data dos Lançamentos</p>
-                    <p id="descricao">Descrição dos Lançamentos</p>
-                    <p id="valor">Valor dos Lançamentos</p>
-                    <p id="tipo">Tipo dos Lançamentos</p>
-                </span>
+        <div class="tabelaDebito">
+            <div class="scrow">
+                <table>
+                    <thead>
+                        <th>Nº Lançamento</th>
+                        <th>Data</th>
+                        <th>Descrição</th>
+                        <th>Valor</th>
+                        <th>Tipo</th>
+                    </thead>
+                        <tbody class="lancamentos">
+                        <tr class="lancamento model">
+                            <td id="num">Numero de Lançamentos</td>
+                            <td id="data">Data dos Lançamentos</td>
+                            <td id="descricao">Descrição dos Lançamentos</td>
+                            <td id="valor">Valor dos Lançamentos</td>
+                            <td id="tipo">Tipo dos Lançamentos</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
-        <div class="lancamentoS">
-            <div class="lancamentO model">
-                <span>
-                    <p id="num">Numero de Lançamentos</p>
-                    <p id="data">Data dos Lançamentos</p>
-                    <p id="descricao">Descrição dos Lançamentos</p>
-                    <p id="valor">Valor dos Lançamentos</p>
-                    <p id="tipo">Tipo dos Lançamentos</p>
-                </span>
+        <div class="tabelaCredito ">
+            <div class="scrow">
+                <table>
+                    <thead>
+                        <th>Nº Lançamento</th>
+                        <th>Data</th>
+                        <th>Descrição</th>
+                        <th>Valor</th>
+                        <th>Tipo</th>
+                    </thead>
+                        <tbody class="lancamentoS">
+                        <tr class="lancamentO model">
+                            <td id="num">Numero de Lançamentos</td>
+                            <td id="data">Data dos Lançamentos</td>
+                            <td id="descricao">Descrição dos Lançamentos</td>
+                            <td id="valor">Valor dos Lançamentos</td>
+                            <td id="tipo">Tipo dos Lançamentos</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
+    </div>
         <div class="saldoCont">
             <div class="saldo">
-                <p class="saldo-title">Saldo Acumulado - R$:<span class="saldo-tot">Preço</span></p>
+                <p class="saldo-title">Saldo Acumulado R$: <span class="saldo-tot"></span></p>
             </div>
         </div>
         <div class="modal model">
             <div class="form-modal">
-                <!-- <input id="dataLan" type="date" placeholder="Data do lançamento"> -->
+                <input id="dataLan" type="text">
                 <input id="descricaoLan" type="text" placeholder="Descrição do Lançamento">
                 <input id="valorLan" type="number" placeholder="Valor do Lançamento">
-                <input id="tipoLan" type="text" placeholder="Tipo do Lançamento">
+                <input id="tipoLan" type="text" placeholder="Tipo 'C' ou 'D'">
                 <button onClick="cadastrar()">Cadastrar</button>
                 <button id="cancel" onClick="showModal()">Cancelar</button>
+                <p>Atenção! Digitar C ou D: </br> Tipo C = Crédito Tipo D = Débito</p>
             </div>
         </div>
     </div>
