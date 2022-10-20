@@ -1,0 +1,21 @@
+.model {
+    display: none;
+    visibility: hidden;
+}
+
+.container{
+    display: flex;
+    /* background-color: #ccc; */
+}
+
+.lancamentos{
+    background-color: pink;
+}
+span{
+    display: flex;
+}
+
+span > p {
+    padding-left: 10px;
+}
+
