@@ -1,0 +1,159 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+*{
+    margin: 0;
+    box-sizing: border-box;
+    padding: 0;
+}
+body{
+    font-family: 'Poppins';
+    display: flex;
+    justify-content: space-around;
+}
+
+.legenda{
+    display: flex;
+    align-items: center;
+}
+
+.legenda > p{
+    margin-right: 2%;
+}
+
+.cards{
+    display: flex;
+}
+.card{
+    border: 2px solid green;
+    padding: 10px 25px;
+    margin: 15px;
+    border-radius: 10px;
+}
+
+.imgPokemon{
+    width: 10vw;
+    height: 10vw;
+}
+
+.tipo > img{
+    width: 1.5vw;
+    height: 1.5vw;
+}
+
+.titulo{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.nomeID{
+    display: flex;
+    flex-direction: column;
+}
+
+.nome{
+    font-size: 20px;
+    margin-bottom: -10%;
+}
+
+.id{
+    font-size: 30px;
+    color: #ccc;
+}
+
+.filtro{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: #e60000;
+    width: 80%;
+    height: 6%;
+    border-radius: 10px;
+    margin-top: 2%;
+}
+
+.filtro > input{
+    width: 50%;
+    height: 80%;
+    outline: none;
+    border: none;
+    background-color: transparent;
+    color: #fff;
+    font-size: 16px;
+}
+::placeholder{
+    color: #fff;
+}
+.filtro > i{
+    margin-left: -5%;
+    border-radius: 10px;
+    padding: 10px;
+    border: none;
+    background: #fff;
+    cursor: pointer;
+    color: #e60000;
+}
+
+.filtro > i:hover{
+    color: black;
+}
+
+.legenda > span{
+    color: rgb(145, 137, 137);
+}
+.cabecalho{
+    display: flex;
+    flex-direction: column;
+}
+.logo{
+    display: flex;
+    align-items: center;
+    margin-bottom: 100%;
+
+}
+
+.cabecalho > #titulo {
+    font-weight: 700;
+
+}
+.logo > img{
+    width: 4vw;
+    height: 3vw;
+}
+
+nav{
+    height: 100vh;
+    width: 15%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #ffffff;
+    margin-right: 2%;
+}
+
+.voltar > i{
+    background-color: #e60000;
+    padding: 10px;
+    border-radius: 10px;
+    color: #fff;
+}
+.voltar{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+main{
+    width: 55%;
+    background-color: #fafafa;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+footer{
+    width: 25%;
+    margin-left: 2%;
+    background-color: #ffffff;
+}

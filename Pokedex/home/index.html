@@ -1,21 +1,90 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <title>POKEDEX</title>
 </head>
 <body>
-    <main>
-        <div class="corpo">
-            <div class="card model">
-                <p class="nome"></p>
+    <nav>
+        <div class="logo">
+            <img src="../assets/logo.png" alt="">
+            <div class="cabecalho">
+                <span id="titulo">Pokedex</span>
+                <span>Sua lista de pokemon</span>
             </div>
         </div>
-        
-        
+        <div class="voltar">
+            <i class='bx bxs-chevron-left'></i>
+            <p>Voltar</p>
+        </div>
+    </nav>
+    
+    
+    <main>
+        <div class="filtro">
+            <input type="text" placeholder="Digite o nome do pokemon">
+            <i class='bx bx-search'></i>
+        </div>
+        <div class="legenda">
+            <p>Legenda</p>
+            <i></i><span>Fogo</span>
+        </div>
+        <div class="corpo">
+            <div class="cards model">
+
+                <div class="card">
+                    <div class="titulo">
+                        <div class="nomeID">
+                            <span class="nome">Bulbasaur</span>
+                            <span class="id">N°001</span>
+                        </div>
+                        <div class="tipo">
+                            <img src="../assets/grass.png" alt="">
+                            <img src="../assets/poison.png" alt="">
+                        </div> 
+                    </div>
+                    <img class="imgPokemon" src="../assets/1.png" alt="">
+                </div>
+
+                <div class="card">
+                    <div class="titulo">
+                        <div class="nomeID">
+                            <span class="nome">Bulbasaur</span>
+                            <span class="id">N°001</span>
+                        </div>
+                        <div class="tipo">
+                            <img src="../assets/grass.png" alt="">
+                            <img src="../assets/poison.png" alt="">
+                        </div> 
+                    </div>
+                    <img class="imgPokemon" src="../assets/1.png" alt="">
+                </div>
+
+                <div class="card">
+                    <div class="titulo">
+                        <div class="nomeID">
+                            <span class="nome">Bulbasaur</span>
+                            <span class="id">N°001</span>
+                        </div>
+                        <div class="tipo">
+                            <img src="../assets/grass.png" alt="">
+                            <img src="../assets/poison.png" alt="">
+                        </div> 
+                    </div>
+                    <img class="imgPokemon" src="../assets/1.png" alt="">
+                </div>
+
+            </div>
+        </div>
     </main>
+    <footer>
+        <h1>POKEMON</h1>
+    </footer>
 </body>
+<script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
 <script src="script.js"></script>
 </html>
