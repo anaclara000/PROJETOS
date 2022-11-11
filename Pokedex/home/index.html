@@ -8,8 +8,8 @@
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <title>POKEDEX</title>
 </head>
-<body>
-    <nav>
+<body onLoad="carregar()">
+    <!-- <nav>
         <div class="logo">
             <img src="../assets/logo.png" alt="">
             <div class="cabecalho">
@@ -21,8 +21,73 @@
             <i class='bx bxs-chevron-left'></i>
             <p>Voltar</p>
         </div>
-    </nav>
-    
+    </nav> -->
+    <footer>
+        
+        <div class="infos">
+            <p>Bulbasaur</p>
+            <span>There is a plant seed on its back right from the day this Pokémon is born. The seed slowly grows larger.</span>
+                 
+        </div>
+       
+        <div class="habilidades">
+
+                <div class="resumo">
+                    <p>Altura</p>
+                    <span>1.7m</span>
+                    <p>Peso</p>
+                    <span>76kg</span>
+                    <p>Genero</p>
+                    <span>N°001</span>
+                    <p>Habilidades</p>
+                    <span>Blaze</span>
+                    <p>Categoria</p>
+                    <span>Fogo</span>
+                </div>
+
+
+                    <div class="container1">
+                        <div class="foto">
+                            <img src="../assets/1.png" alt="">
+                            <p></p>
+                        </div>
+                        <div class="container2">
+                            <div class="tipos">
+                                <p>Tipo</p>
+                                <span>Fogo</span>
+                                <span>Voador</span>
+                            </div>
+                            <div class="fraqueza">
+                                <p>Fraqueza</p>
+                                <span>Água</span>
+                                <span>Eletricidade</span>
+                                <span>Pedra</span>
+                            </div>
+                        </div>
+                    </div>
+                
+        </div>
+        <p class="evoluir">Evoluções</p>
+        <div class="evolucoes">
+            <div class="fotos">
+                <img src="../assets/1.png" alt="">
+                <span>Bulbasaur</span>
+            </div>
+            <i class='bx bx-chevron-right'></i>
+           
+            <div class="fotos">
+                <img src="../assets/1.png" alt="">
+                <span>Bulbasaur</span>
+            </div>
+            <i class='bx bx-chevron-right'></i>
+           
+            <div class="fotos">
+                <img src="../assets/1.png" alt="">
+                <span>Bulbasaur</span>
+            </div>
+        </div>
+        
+    </footer>
     
     <main>
         <div class="filtro">
@@ -30,8 +95,17 @@
             <i class='bx bx-search'></i>
         </div>
         <div class="legenda">
-            <p>Legenda</p>
-            <i></i><span>Fogo</span>
+            <p>Tipos</p>
+            <img src="" alt=""><span>Fogo</span>
+            <img src="" alt=""><span>Fogo</span>
+            <img src="" alt=""><span>Fogo</span>
+            <img src="" alt=""><span>Fogo</span>
+            <img src="" alt=""><span>Fogo</span>
+            <img src="" alt=""><span>Fogo</span>
+            <img src="" alt=""><span>Fogo</span>
+            <img src="" alt=""><span>Fogo</span>
+            <img src="" alt=""><span>Fogo</span>
+            <img src="" alt=""><span>Fogo</span>
         </div>
         <div class="corpo">
             <div class="cards model">
@@ -50,40 +124,11 @@
                     <img class="imgPokemon" src="../assets/1.png" alt="">
                 </div>
 
-                <div class="card">
-                    <div class="titulo">
-                        <div class="nomeID">
-                            <span class="nome">Bulbasaur</span>
-                            <span class="id">N°001</span>
-                        </div>
-                        <div class="tipo">
-                            <img src="../assets/grass.png" alt="">
-                            <img src="../assets/poison.png" alt="">
-                        </div> 
-                    </div>
-                    <img class="imgPokemon" src="../assets/1.png" alt="">
-                </div>
-
-                <div class="card">
-                    <div class="titulo">
-                        <div class="nomeID">
-                            <span class="nome">Bulbasaur</span>
-                            <span class="id">N°001</span>
-                        </div>
-                        <div class="tipo">
-                            <img src="../assets/grass.png" alt="">
-                            <img src="../assets/poison.png" alt="">
-                        </div> 
-                    </div>
-                    <img class="imgPokemon" src="../assets/1.png" alt="">
-                </div>
-
             </div>
         </div>
     </main>
-    <footer>
-        <h1>POKEMON</h1>
-    </footer>
+
+    
 </body>
 <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
 <script src="script.js"></script>

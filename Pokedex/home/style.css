@@ -9,6 +9,8 @@ body{
     font-family: 'Poppins';
     display: flex;
     justify-content: space-around;
+    background: rgb(0,128,0);
+    background: linear-gradient(180deg, rgba(151,203,174,1) 0%, rgba(56,121,113,1) 100%);
 }
 
 .legenda{
@@ -21,23 +23,35 @@ body{
 }
 
 .cards{
+    align-items: center;
+    text-align: center;
+    justify-content: center;
     display: flex;
+    flex-wrap: wrap;
 }
 .card{
     border: 2px solid green;
     padding: 10px 25px;
     margin: 15px;
     border-radius: 10px;
+    background: rgb(0,128,0);
+    background: linear-gradient(180deg, rgba(151,203,174,1) 0%, rgba(56,121,113,1) 100%);
 }
+
 
 .imgPokemon{
     width: 10vw;
     height: 10vw;
 }
 
+.tipo{
+    margin-top: -10%;
+    margin-left: 15%;
+}
 .tipo > img{
-    width: 1.5vw;
-    height: 1.5vw;
+    margin: -3%;
+    width: 1.3vw;
+    height: 1.3vw;
 }
 
 .titulo{
@@ -49,16 +63,18 @@ body{
 .nomeID{
     display: flex;
     flex-direction: column;
+    text-align: justify;
 }
 
 .nome{
-    font-size: 20px;
+    font-size: 18px;
     margin-bottom: -10%;
 }
 
 .id{
+    margin-top: -7%;
     font-size: 30px;
-    color: #ccc;
+    color: rgb(255, 255, 255);
 }
 
 .filtro{
@@ -100,6 +116,12 @@ body{
 
 .legenda > span{
     color: rgb(145, 137, 137);
+    margin: 10px 10px 0px 10px;
+}
+
+.legenda > p{
+    margin: 10px 10px 0px 10px;
+    font-size: 18px;
 }
 .cabecalho{
     display: flex;
@@ -123,7 +145,7 @@ body{
 
 nav{
     height: 100vh;
-    width: 15%;
+    width: 20%;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -145,7 +167,8 @@ nav{
 }
 
 main{
-    width: 55%;
+    margin-left: 40%;
+    width: 50%;
     background-color: #fafafa;
     display: flex;
     flex-direction: column;
@@ -153,7 +176,132 @@ main{
 }
 
 footer{
-    width: 25%;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30%;
+    margin-left: 5%;
+    position: fixed;
+    left: 0%;
+    padding-right: 2%;
+}
+
+.foto > img{
+    margin-top: -25%;
+    width: 12vw;
+}
+
+.foto > p{
     margin-left: 2%;
-    background-color: #ffffff;
+    background-color: rgba(207, 207, 207, 0.87);
+    border-radius: 100%;
+    height:5vh;
+    margin-top: -15%;
+    box-shadow: 0 0 10px rgba(99, 97, 97, 0.26) ;
+    
+}
+
+.infos{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: justify;
+    margin-top: 10%;
+}
+.infos > p{
+    margin-top: 2%;
+    text-align: center;
+    font-size: 30px;
+    border: 2px solid #fff;
+    width: 50%;
+    border-radius: 10px;
+    font-weight: 700;
+    color: #fff;
+}
+
+.infos > span{
+    margin-top: 10px;
+    color: rgb(73, 73, 73);
+}
+
+.habilidades{
+    border: 2px solid #fff;
+    display: flex;
+    flex-direction: row;
+    border-radius: 10px;
+    padding: 10px;
+    align-items: center;
+    background-color: #fff;
+    margin-top: 20%;
+}
+
+.container1{
+    text-align: center;
+}
+.container2{
+    display: flex;
+    text-align: justify;
+    border-top: 2px solid #ccc;
+    margin: 10px;
+    padding-top: 10px;
+    
+}
+
+.resumo{
+    border-right: 2px solid #ccc;
+    padding-right: 10px;
+}
+
+.resumo > p, .tipos > p , .fraqueza > p{
+    font-size: 16px;
+}
+.resumo > span , .tipos > span, .fraqueza > span{
+    font-size: 14px;
+    color: rgb(94, 93, 93);
+}
+
+.tipos{
+    border-right: 2px solid #ccc;
+}
+
+
+
+.fraqueza{
+    margin-left: 10px;
+}
+.evolucoes{
+    display: flex;
+    text-align: center;
+    margin-left: -5%;
+    margin-bottom: 10%;
+    align-items: center;
+    margin-top: 5%;
+}
+
+.evolucoes > i{
+    margin-right: 2%;
+    color: #fff;
+}
+.fotos > img{
+    background-color: #fff;
+    border-radius: 100%;
+    width: 8vw;
+    padding: 10px;
+}
+
+.fotos > span{
+    color: #fff;
+}
+
+
+
+.evoluir{
+    margin-top: 10%;
+    font-size: 25px;
+    border-radius: 10px 5px;
+    padding: 2px 10px;
+    border: 2px solid rgb(255, 255, 255);
+    color: #fff;
+   
 }
