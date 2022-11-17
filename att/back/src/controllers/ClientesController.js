@@ -41,9 +41,21 @@ function editarCliente(req, res){
     });
 };
 
+function listaCliente(req, res) {
+    conDB.query(Clientes.toRead(req.params), (err, result) => {
+        if(err == null) {
+            res.json(result).status(200).end();
+        }else {
+            res.status(500).end();
+        }
+    })
+};
+
+
 module.exports = {
     listarClientes,
     cadastrarCliente,
     editarCliente,
-    excluirCliente
+    excluirCliente,
+    listaCliente
 }

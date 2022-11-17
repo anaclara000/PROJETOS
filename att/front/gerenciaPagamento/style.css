@@ -47,11 +47,11 @@ th{
 .botoes2 > td > button:hover{
     background-color: #b459c2;
 }
-.model{
+.model, .tela2{
     visibility: hidden;
 }
 
-.modal{
+.modal, .tela{
     align-items: center;
     justify-content: center;
     display: flex;
@@ -67,6 +67,7 @@ th{
 .cadastroCarro{
     padding: 20px;
     display: flex;
+    flex-wrap: wrap;
     flex-direction: column;
     background-color: #fff;
     height: 45%;

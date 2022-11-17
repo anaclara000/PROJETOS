@@ -13,9 +13,11 @@ const Registros = require("./controllers/RegistrosController");
 //falta controller funcionario
 
 router.get("/clientes", ClientesController.listarClientes);
+router.get("/clientes/:id_cliente", ClientesController.listaCliente);
 router.post("/clientes", ClientesController.cadastrarCliente);
 router.delete("/clientes", ClientesController.excluirCliente);
 router.put("/clientes", ClientesController.editarCliente);
+
 
 router.get("/telefonesCli", TelefonesCliController.listarTelefones);
 router.delete("/telefonesCli", TelefonesCliController.excluirTelefones);
@@ -33,6 +35,7 @@ router.post("/carros", CarrosController.cadastrarCarros);
 router.put("/carros", CarrosController.editarCarros);
 
 router.get("/funcionarios", FuncController.listarFuncionarios);
+router.get("/funcionarios/:id_func", FuncController.listaFuncionario);
 router.delete("/funcionarios", FuncController.excluirFuncionarios);
 router.post("/funcionarios", FuncController.cadastrarFuncionarios);
 router.put("/funcionarios", FuncController.editarFuncionarios);

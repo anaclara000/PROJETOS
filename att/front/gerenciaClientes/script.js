@@ -101,12 +101,41 @@ function deletarUser(e) {
 
    var tela = document.querySelector(".tela");
 
+   var idGeral 
 function abrirModal2 (e){
     tela.classList.toggle("tela2");
 
     var idCli2 = e.parentNode.parentNode.querySelector("#idCli").innerHTML
+    idGeral = idCli2
+    const options = {method: 'GET'}
 
-    console.log(idCli2);
+    fetch('http://localhost:3000/clientes/' + idCli2, options)
+    .then(resp => resp.json())
+    .then(resp => {
+        resp.forEach(c => {
+            let nome = document.querySelector("#nome");
+            let email = document.querySelector("#email");
+            let data = document.querySelector("#data");
+            let cpf = document.querySelector("#CPF");
+            let bairro = document.querySelector("#bairro");
+            let rua = document.querySelector("#rua");
+            let cep = document.querySelector("#CEP");
+            let complemento = document.querySelector("#com");
+            let municipio = document.querySelector("#muni");
+
+            nome.value = c.nome_cli;
+            email.value = c.email;
+            data.value = c.data_nasc
+            cpf.value = c.cpf;
+            bairro.value = c.bairro;
+            rua.value = c.rua;
+            cep.value = c.cep;
+            complemento.value = c.complemento;
+            municipio.value = c.municipio;
+        })
+    })
+
+
 }
 
 function fecharModal(){
@@ -123,28 +152,33 @@ function usual(e){
 }
 
 
+
+
    function atualizar(){
 
-    let nome = document.querySelector("#nome").innerHTML;
-    let email = document.querySelector("#email").innerHTML;
-    let data = document.querySelector("#data").innerHTML;
-    let cpf = document.querySelector("#CPF").innerHTML;
-    let bairro = document.querySelector("#bairro").valinnerHTMLue;
-    let rua = document.querySelector("#rua").innerHTML;
-    let cep = document.querySelector("#CEP").innerHTML;
-    let complemento = document.querySelector("#com").innerHTML;
-    let municipio = document.querySelector("#muni").innerHTML;
+    console.log(idGeral)
+
+    let nome = document.querySelector("#nome").value;
+    let email = document.querySelector("#email").value;
+    let data = document.querySelector("#data").value;
+    let cpf = document.querySelector("#CPF").value;
+    let bairro = document.querySelector("#bairro").value;
+    let rua = document.querySelector("#rua").value;
+    let cep = document.querySelector("#CEP").value;
+    let complemento = document.querySelector("#com").value;
+    let municipio = document.querySelector("#muni").value;
 
     let options = JSON.stringify({
         "nome_cli": nome,
 		"email": email,
-		"data_nasci": data,
+		"data_nasc": data,
 		"cpf": cpf,
 		"bairro": bairro,
         "rua": rua,
 		"cep": cep,
 		"complemento": complemento,
-		"municipio": municipio
+		"municipio": municipio,
+        "id_cliente": idGeral
     });
 
     fetch("http://localhost:3000/clientes", {

@@ -6,17 +6,22 @@ const toReadAll = () => {
 return "SELECT * FROM clientes ORDER BY id_cliente asc";
 }
 
+const toRead = (model) => {
+    return `SELECT * FROM clientes WHERE id_cliente = ${model.id_cliente}`;
+    }
+    
 const toDel = (model)=>{
 return `DELETE FROM clientes WHERE id_cliente = ${model.id_cliente}`;
 }
 
 const toUpdate = (model)=>{
-return `UPDATE clientes SET id_cliente = ${model.id_cliente}, id_cliente = ${model.id_cliente}, nome_cli = '${model.nome_cli}', email = '${model.email}', data_nasc ='${model.data_nasc}', cpf = '${model.cpf}',  bairro = '${model.bairro}', rua = '${model.rua}', cep = '${model.cep}', complemento = '${model.complemento}', municipio = '${model.municipio}' where id_cliente = '${model.id_cliente}'`;
+return `UPDATE clientes SET nome_cli = '${model.nome_cli}', email = '${model.email}', data_nasc ='${model.data_nasc}', cpf = '${model.cpf}',  bairro = '${model.bairro}', rua = '${model.rua}', cep = '${model.cep}', complemento = '${model.complemento}', municipio = '${model.municipio}' where id_cliente = ${model.id_cliente}`;
 }
 
 module.exports = {
 toReadAll,
 toCreate,
 toDel,
-toUpdate
+toUpdate,
+toRead
 }

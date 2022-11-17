@@ -17,11 +17,9 @@
                 <nav>
                     <h1 class="logo">Penguion</h1>
                     <ul>
-                        <!-- <li><a href="../"><i class="fa-solid fa-house"></i>Home</a></li> -->
+                        <li><a href="../gerenciamentoCarros/index.html"><i class="fa-solid fa-house"></i>Carros</a></li>
                         <li><a href="../gerenciaClientes/index.html"><i class="fa-solid fa-users"></i>Clientes</a></li>
-                        <!-- <li><a href="../"><i class="fa-solid fa-tags"></i>Tickets</a></li> -->
                         <li><a href="../gerenciaPagamento/index.html"><i class="fa-solid fa-money-bill-1-wave"></i>Vagas</a></li>
-                        <!-- <li><a href="../"><i class="fa-solid fa-hand-holding-dollar"></i>Precificações</a></li> -->
                         <li><a href="../gerenciaFuncionarios/index.html"><i class="fa-solid fa-user-gear"></i>Funcionários</a></li>
                         <li><a href="../"><i class='bx bx-cog'></i>Configurações</a></li>
                     </ul>
@@ -72,7 +70,7 @@
                         <td id="cepfunc"></td>
                         <td id="complefunc"></td>
                         <td id="munifunc"></td>
-                        <td id="acoes"><i onclick="deletar()"class='bx bx-trash'></i><i onclick="aualizar()" class='bx bxs-edit'></i></td>
+                        <td id="acoes"><i onclick="deletarUser(this)"class='bx bx-trash'></i><i onclick="usual(this)" class='bx bxs-edit'></i></td>
 
                     </tr>
                 </tbody>
@@ -132,6 +130,58 @@
                 <div class="botoes">
                     <button onclick="cadastrar()">Cadastrar</button>
                     <button onclick="abrirModal()">Voltar</button>
+                </div>
+            </div>
+        </div>
+        <div class="tela tela2">
+            <div class="atualizar">
+                Preencher campos abaixo para atualizar os dados:
+                <h1 class="tituloCad">Dados Pessoais</h1>
+                <div class="dados-pessoais">
+                    <div class="itens">
+                        <p>Nome*</p>
+                        <input id="nome" type="text" placeholder="Joaquim Pereira">
+                    </div>
+                    <div class="itens">
+                        <p>Email*</p>
+                        <input id="email" type="text" placeholder="exemplo@exemplo.com">
+                    </div>
+                    <div class="itens">
+                        <p>Data de Nascimento*</p>
+                        <input id="data" type="text" placeholder="XX/XX/XXXX">
+                    </div>
+                    <div class="itens">
+                        <p>CPF*</p>
+                        <input id="CPF" type="text" placeholder="XXX.XXX.XXX-XX">
+                    </div>
+                </div>
+                <h1 class="tituloCad">Dados Residenciais</h1>
+                <div class="dados-residenciais">
+                    <div class="itens">
+                        <p>Bairro</p>
+                        <input id="bairro" type="text" placeholder="bairro">
+                    </div>
+                    <div class="itens">
+                        <p>Rua</p>
+                        <input id="rua" type="text" placeholder="rua">
+                    </div>
+                    <div class="itens">
+                        <p>CEP*</p>
+                        <input id="CEP" type="text" placeholder="XXXXX-XX">
+                    </div>
+                   <div class="itens">
+                    <p>Complemento</p>
+                    <input id="com" type="text" placeholder="complemento">
+                   </div>
+                    <div class="itens">
+                        <p>Municipio</p>
+                        <input id="muni" type="text" placeholder="municipio">
+                    </div>
+                </div>
+               
+                <div class="botoes">
+                    <button onclick="atualizar()">Salvar</button>
+                    <button onclick="fecharModal()">Voltar</button>
                 </div>
             </div>
         </div>

@@ -11,6 +11,18 @@ function listarFuncionarios(req, res) {
     })
 };
 
+function listaFuncionario(req, res) {
+    conDB.query(Funcionarios.toRead(req.params), (err, result) => {
+        if (err == null) {
+            res.json(result).status(200).end();
+        } else {
+            res.json(err).status(400).end();
+        }
+    })
+};
+
+
+
 function cadastrarFuncionarios(req, res) {
     conDB.query(Funcionarios.toCreate(req.body), (err, result) => {
         if (err == null) {
@@ -46,5 +58,6 @@ module.exports = {
     listarFuncionarios,
     cadastrarFuncionarios,
     editarFuncionarios,
-    excluirFuncionarios
+    excluirFuncionarios,
+    listaFuncionario
 }
