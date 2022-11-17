@@ -7,8 +7,31 @@ body {
 .painel{
     text-align: center;
 }
-.painel> h1{
+#titulo > h1{
+
     color: #6c117b;
+    font-family: 'Poppins';
+}
+
+.addCli{
+    border: 2px solid #6c117b; 
+    background-color: #fff;
+    padding: 8px 15px;
+    font-size: 15px;
+    font-weight: bold;
+    color: #6c117b;
+    border-radius: 30px;
+}
+
+.addCli:hover{
+    background-color: #6c117b; 
+    cursor: pointer;
+    color: #fff;
+}
+#titulo{
+    margin-top: 2%;
+    justify-content: space-around;
+    display: flex;
 }
 table{
     border: 3px solid #ccc;
@@ -49,6 +72,12 @@ th{
 }
 .model, .tela2{
     visibility: hidden;
+    display: none;
+}
+
+.modelo{
+    visibility: hidden;
+    display: none;
 }
 
 .modal, .tela{
@@ -64,52 +93,29 @@ th{
     
 }
 
-.cadastroCarro{
+.tela3{
+    justify-content:center;
     padding: 20px;
     display: flex;
     flex-wrap: wrap;
-    flex-direction: column;
     background-color: #fff;
     height: 45%;
-    width: 80%;
+    width: 60%;
     border-radius: 30px;
 }
 
 .itens > input, .itens > p{
     width: 15vw;
     padding: 5px 5px;
+    margin: 10px;
 }
 
-.dados-pessoais > .itens > input{
-    width: 18vw;
-}
+
 .itens{
     /* CIMA /  DIREITA / EMBAIXO / ESQUERDA */
     margin: 0px 0px 10px 0px;
 }
 
-.dados-pessoais, .dados-residenciais{
-    display: flex;
-    justify-content: space-around;
-
-}
-
-.tituloCad{
-    margin: 10px;
-    font-weight: 400;
-    background-color: #6C117B;
-    border-radius: 30px;
-    color: #fff;
-    padding: 4px 15px;
-    width: 20%;
-    font-size: 15px;
-}
-
-.botoes {
-    display: flex;
-    justify-content: flex-end;
-
-}
 
 .botoes > button{
     background-color:rgb(128, 45, 141);
@@ -130,23 +136,72 @@ th{
 }
 
 .btnCadVaga{
-    background-color: rgb(88, 26, 26);
-    width: 100px;
-    height: 100px;
+    margin-top: 20%;
+    background-color: #fff;
+    color: rgb(128, 45, 141);
+    cursor: pointer;
+    border: 2px solid rgb(128, 45, 141);
+    width: 10vw;
+    height: 3vh;
 
 }
 
-
-.btnAttVaga{
-    background-color: rgb(214, 151, 33);
-    width: 100px;
-    height: 100px;
-
+.btnCadVaga:hover{
+    background-color: rgb(128, 45, 141);
+    border: none;
+    color: #fff;
 }
+
 .btnCadVaga:after{
     content:'Finalizar';
 }
-.btnAttVaga:after{
-    content: 'Alterar';
+
+
+.painel{
+    display: flex;
+    flex-direction: column;
+    margin-left: 18%;
+
+}
+
+
+.cards{
+    display: flex;
+    flex-wrap: wrap;
+    width: 80vw;
+}
+
+.vaga{
+    margin-right: 3%;
+    margin-top: 2%;
+    width: 22%;
+    height: 35vh;
+    border: 2px solid rgb(128, 45, 141);
+}
+
+.vaga > p{
+    background-color: rgb(128, 45, 141);
+    color: #fff;
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+}
+
+header{
+    position: fixed;
+}
+
+.primeira{
+    margin-top: 2%;
+    display: flex;
+    justify-content: space-around;
+    
+}
+
+.car{
+    border-top: 2px solid #ccc;
+    margin-top: 2%;
+    display: flex;
+    flex-direction: column;
 }
 

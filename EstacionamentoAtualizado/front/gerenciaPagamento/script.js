@@ -9,8 +9,11 @@ function carregarVagas() {
         .then(resp => {
             resp.forEach(v => {
                 var vaga = document.querySelector(".vaga").cloneNode(true);
+                vaga.classList.remove("modelo")
                 vaga.querySelector(".id").innerHTML = v.id_vaga;
-
+                if(v.id_vaga < 10){
+                    vaga.querySelector(".id").innerHTML = "0" + v.id_vaga;
+                }
 
                 const options2 = { method: 'GET' };
                 fetch('http://localhost:3000/registros', options2)
@@ -41,7 +44,7 @@ function carregarVagas() {
                                         .then(response => response.json())
                                         .then(resp => {
                                             resp.forEach(t => {
-                                                vaga.querySelector(".telefone").innerHTML = t.telefone;
+                                                vaga.querySelector(".telefone").innerHTML += t.telefone;
                                             })
 
                                         })
@@ -53,12 +56,13 @@ function carregarVagas() {
                                         .then(response => response.json())
                                         .then(resp => {
                                             resp.forEach(car => {
-                                                vaga.querySelector(".placa").innerHTML = car.placa;
-                                                vaga.querySelector(".modeloCar").innerHTML = car.modelo;
+                                                vaga.querySelector(".tipoCar").innerHTML = car.tipo + ": ";
+                                                vaga.querySelector(".placa").innerHTML += car.placa;
+                                                vaga.querySelector(".modeloCar").innerHTML += car.modelo;
                                                 // if(car.descricao == null){
                                                 //     vaga.querySelector(".descricao") = "sem desrição";
                                                 // }else{
-                                                    vaga.querySelector(".descricao").innerHTML = car.descricao;
+                                                    vaga.querySelector(".descricao").innerHTML += car.descricao;
                                                 // }
                                                 
                                             })
@@ -66,12 +70,9 @@ function carregarVagas() {
                                         var botaofina= document.createElement("button")
                                         botaofina.classList.add("btnCadVaga");
 
-                                        var botaoatt= document.createElement("button")
-                                        botaoatt.classList.add("btnAttVaga");
 
                                         vaga.appendChild(botaofina);
-                                        vaga.appendChild(botaoatt);
-                                        
+                        
                                 }
                             }
                         })

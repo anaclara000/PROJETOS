@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,6 +9,7 @@
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <title>Gerenciamento de preços</title>
 </head>
+
 <body onLoad="carregarVagas()">
     <div class="container">
         <header>
@@ -15,92 +17,86 @@
                 <nav>
                     <h1 class="logo">Penguion</h1>
                     <ul>
-                        <li><a href="../gerenciamentoCarros/index.html"><i class="fa-solid fa-house"></i>Carros</a></li>
+                        <li><a href="../gerenciaPagamento/index.html"><i class="fa-solid fa-house"></i>Central</a></li>
                         <li><a href="../gerenciaClientes/index.html"><i class="fa-solid fa-users"></i>Clientes</a></li>
-                        <li><a href="../gerenciaPagamento/index.html"><i class="fa-solid fa-money-bill-1-wave"></i>Central</a></li>
-                        <li><a href="../gerenciaFuncionarios/index.html"><i class="fa-solid fa-user-gear"></i>Funcionários</a></li>
+                        <li><a href="../gerenciamentoCarros/index.html"><i class='bx bxs-car'></i>Carros</a></li>
+                        <li><a href="../gerenciaFuncionarios/index.html"><i
+                                    class="fa-solid fa-user-gear"></i>Funcionários</a></li>
                         <li><a href="../"><i class='bx bx-cog'></i>Configurações</a></li>
                     </ul>
                 </nav>
             </aside>
         </header>
-       
+
         <div class="painel">
-            <h1>Cadastro de vagas</h1>
-                <div class="cards">
-                    <div class="vaga">
-                        <span class="id"></span>
-                        <span class="id_vaga_cli"></span>
-                        <span class="nome"></span>
-                        <span class="telefone"></span>
-                        <!-- <span class="email"></span> -->
-                        <span class="modeloCar"></span>
-                        <span class="placa"></span>
-                        <span class="descricao"></span>
-    
+            <div id="titulo">
+                <h1>Central do Estacionamento</h1>
+                <button onclick="abrirModal2()" class="addCli">VAGA +</button>
+            </div>
+            <div class="cards">
+                <div class="vaga modelo">
+                    <p class="id"></p>
+                    <div class="primeira">
+                        <div class="cli">
+                            <p>Cliente</p>
+                            <span class="id_vaga_cli"></span>
+                            <span class="nome"></span>
+                        </div>
+                        <div class="contato">
+                            <p>Contato</p>
+                            <span class="telefone">Tel:</span>
+                        </div>
                     </div>
-                    <div>
-                        <button onclick="abrirModal2()">ADD CLIENTE</button>
-                    </div>
+                       <div class="car">
+                        <p>Automóvel</p>
+                        <div>
+                            <span class="tipoCar"></span>
+                            <span class="modeloCar"></span>
+                        </div>
+                        <span class="placa">Placa: </span>
+                        <span class="descricao">Descrição: </span>
+                       </div>
+                        
+
                 </div>
-                <div class="tela tela2">
-                    <div class="itens">
-                        <p>Id Cliente*</p>
-                        <input class="idCliente" type="text" placeholder="">
-                    </div>
-                    <div class="itens">
-                        <p>Nome Cliente*</p>
-                        <input class="nomeCliente" type="text" placeholder="">
-                    </div>
-                    <div class="itens">
-                        <p>Id Carro*</p>
-                        <input class="idCarro" type="text" placeholder="">
-                    </div>
-                    <div class="itens">
-                        <p>Id Vaga*</p>
-                        <input class="idVaga" type="text" placeholder="">
-                    </div>
-                    <div class="itens">
-                        <p>Hora Entrada*</p>
-                        <input class="horaEn" type="text" placeholder="">
-                    </div>
-                    <div class="itens">
-                        <p>Hora Saida*</p>
-                        <input class="horaSai" type="text" placeholder="">
-                    </div>
-                    <div class="itens">
-                        <p>Data*</p>
-                        <input class="data" type="text" placeholder="">
-                    </div>
+            </div>
+        </div>
+        <div class="tela tela2">
+            <div class="tela3">
+                <div class="itens">
+                    <p>Id Cliente*</p>
+                    <input class="idCliente" type="text" placeholder="">
+                </div>
+    
+                <div class="itens">
+                    <p>Id Carro*</p>
+                    <input class="idCarro" type="text" placeholder="">
+                </div>
+                <div class="itens">
+                    <p>Id Vaga*</p>
+                    <input class="idVaga" type="text" placeholder="">
+                </div>
+                <div class="itens">
+                    <p>Hora Entrada*</p>
+                    <input class="horaEn" type="text" placeholder="">
+                </div>
+                <div class="itens">
+                    <p>Hora Saida*</p>
+                    <input class="horaSai" type="text" placeholder="">
+                </div>
+                <div class="itens">
+                    <p>Data*</p>
+                    <input class="data" type="text" placeholder="">
+                </div>
+                <div class="botoes">
                     <button onclick="cadRegistro()">Cadastrar</button>
                     <button onclick="abrirModal2()">Voltar</button>
                 </div>
-                <div class="cad">
-                    <button onClick="abrirModal()">Cadastrar</button>
-                </div>
-            <div class="modal model">
-                <div class="cadastroCarro">
-                    Preencher campos abaixo para efetuar o registro:
-                    <h1 class="tituloCad">Dados cadastrais</h1>
-                    <div class="dados-pessoais">
-                        <div class="itens">
-                            <p>Id Vaga*</p>
-                            <input class="idVaga" type="text" placeholder="">
-                        </div>
-                        <div class="itens">
-                            <p>Ocupado*</p>
-                            <input class="ocupada" type="text" placeholder="0 ou 1">
-                        </div>
-                    </div>
-                   
-                    <div class="botoes">
-                        <button onclick="cadastrar()">Cadastrar</button>
-                        <button onclick="abrirModal()">Voltar</button>
-                    </div>
-                </div>
+                
             </div>
-            </div>
+            
         </div>
+    </div>
     </div>
 </body>
 <script src="https://kit.fontawesome.com/4c95932411.js" crossorigin="anonymous"></script>

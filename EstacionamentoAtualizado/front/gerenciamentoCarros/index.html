@@ -15,10 +15,11 @@
                 <nav>
                     <h1 class="logo">Penguion</h1>
                     <ul>
-                        <li><a href="../gerenciamentoCarros/index.html"><i class="fa-solid fa-house"></i>Carros</a></li>
+                        <li><a href="../gerenciaPagamento/index.html"><i class="fa-solid fa-house"></i>Central</a></li>
                         <li><a href="../gerenciaClientes/index.html"><i class="fa-solid fa-users"></i>Clientes</a></li>
-                        <li><a href="../gerenciaPagamento/index.html"><i class="fa-solid fa-money-bill-1-wave"></i>Vagas</a></li>
-                        <li><a href="../gerenciaFuncionarios/index.html"><i class="fa-solid fa-user-gear"></i>Funcionários</a></li>
+                        <li><a href="../gerenciamentoCarros/index.html"><i class='bx bxs-car'></i>Carros</a></li>
+                        <li><a href="../gerenciaFuncionarios/index.html"><i
+                                    class="fa-solid fa-user-gear"></i>Funcionários</a></li>
                         <li><a href="../"><i class='bx bx-cog'></i>Configurações</a></li>
                     </ul>
                 </nav>
@@ -34,7 +35,7 @@
                         <button class="btnPesquisar"><i class='bx bx-search-alt-2' ></i></button>
                     </div>
                     <div class="total">
-                        <p>Total de carros:<b> 12</b> </p>
+                        <p>Total de carros: <b> -</b> </p>
                         <label for=""></label>
                     </div>     
                 </div>
@@ -71,83 +72,82 @@
         </main>
         <div class="modal model">
             <div class="cadastro">
-                Preencher campos abaixo para efetuar o cadastro do carro:
-                <div class="dados-pessoais">
+                <div class="dados">
                     <div class="itens">
                         <p>Id Cliente*</p>
-                        <input class="idCli" type="text" placeholder="Joaquim Pereira">
+                        <input class="idCli" type="text" placeholder="00">
                     </div>
                     <div class="itens">
                         <p>Placa*</p>
-                        <input class="placaCar" type="text" placeholder="exemplo@exemplo.com">
+                        <input class="placaCar" type="text" placeholder="">
                     </div>
                     <div class="itens">
                         <p>Tipo*</p>
-                        <input class="tipoCar" type="text" placeholder="XX/XX/XXXX">
+                        <input class="tipoCar" type="text" placeholder="">
                     </div>
                     <div class="itens">
                         <p>Marca*</p>
-                        <input class="marcaCar" type="text" placeholder="XX/XX/XXXX">
+                        <input class="marcaCar" type="text" placeholder="">
                     </div>
                     <div class="itens">
                         <p>Modelo*</p>
-                        <input class="modeloCar" type="text" placeholder="XXX.XXX.XXX-XX">
+                        <input class="modeloCar" type="text" placeholder="">
                     </div>
                     <div class="itens">
                         <p>Cor*</p>
-                        <input class="corCar" type="text" placeholder="Segurança">
+                        <input class="corCar" type="text" placeholder="Prata">
                     </div>
                     <div class="itens">
                         <p>Descrição</p>
-                        <input class="desc" type="text" placeholder="Segurança">
+                        <input class="desc" type="text" placeholder="Amassado do lado direito">
+                    </div>
+                    <div class="botoes">
+                        <button onclick="cadastrar()">Cadastrar</button>
+                        <button onclick="abrirModal()">Voltar</button>
                     </div>
                 </div>
-                <div class="botoes">
-                    <button onclick="cadastrar()">Cadastrar</button>
-                    <button onclick="abrirModal()">Voltar</button>
-                </div>
+                
             </div>
         </div>
 
         <div class="tela tela2">
             <div class="atualizar">
-                Preencher campos abaixo para atualizar os dados:
-                <h1 class="tituloCad">Dados Pessoais</h1>
-                <div class="dados-pessoais">
+                <div class="dados">
                     <div class="itens">
                         <p>Id Cliente*</p>
-                        <input id="idCli" type="text" placeholder="Joaquim Pereira">
+                        <input id="idCli" type="text" placeholder="00">
                     </div>
                     <div class="itens">
                         <p>Placa*</p>
-                        <input id="placaCar" type="text" placeholder="exemplo@exemplo.com">
+                        <input id="placaCar" type="text" placeholder="">
                     </div>
                     <div class="itens">
                         <p>Tipo*</p>
-                        <input id="tipoCar" type="text" placeholder="XX/XX/XXXX">
+                        <input id="tipoCar" type="text" placeholder="">
                     </div>
                     <div class="itens">
                         <p>Marca*</p>
-                        <input id="marcaCar" type="text" placeholder="XX/XX/XXXX">
+                        <input id="marcaCar" type="text" placeholder="">
                     </div>
                     <div class="itens">
                         <p>Modelo*</p>
-                        <input id="modeloCar" type="text" placeholder="XXX.XXX.XXX-XX">
+                        <input id="modeloCar" type="text" placeholder="">
                     </div>
                     <div class="itens">
                         <p>Cor*</p>
-                        <input id="corCar" type="text" placeholder="Segurança">
+                        <input id="corCar" type="text" placeholder="">
                     </div>
                     <div class="itens">
                         <p>Descrição</p>
-                        <input id="desc" type="text" placeholder="Segurança">
+                        <input id="desc" type="text" placeholder="">
+                    </div>
+                    <div class="botoes">
+                        <button onclick="atualizar()">Salvar</button>
+                        <button onclick="fecharModal()">Voltar</button>
                     </div>
                 </div>
                
-                <div class="botoes">
-                    <button onclick="atualizar()">Salvar</button>
-                    <button onclick="fecharModal()">Voltar</button>
-                </div>
+                
             </div>
         </div>
     
