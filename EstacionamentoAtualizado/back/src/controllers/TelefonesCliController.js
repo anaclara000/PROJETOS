@@ -11,6 +11,16 @@ function listarTelefones(req, res) {
     })
 };
 
+function listaTelefone(req, res) {
+    conDB.query(Telefones.toRead(req.params), (err, result) => {
+        if(err == null) {
+            res.json(result).status(200).end();
+        }else {
+            res.json(err).status(400).end();
+        }
+    })
+};
+
 function cadastrarTelefones(req, res) {
     conDB.query(Telefones.toCreate(req.body), (err, result) => {
         if(err == null) {
@@ -45,5 +55,6 @@ module.exports = {
     listarTelefones,
     excluirTelefones,
     editarTelefones,
-    cadastrarTelefones
+    cadastrarTelefones,
+    listaTelefone
 }

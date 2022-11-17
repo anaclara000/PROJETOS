@@ -6,6 +6,11 @@ const toReadAll = () => {
     return "SELECT * FROM telefonesCli ORDER BY id_cliente asc";
 }
 
+const toRead = (model) => {
+    return `SELECT * FROM telefonesCli WHERE id_cliente = ${model.id_cliente}`;
+}
+
+
 const toDel = (model) => {
     return `DELETE FROM telefonesCli WHERE telefone = ${model.telefone}`;
 }
@@ -18,5 +23,6 @@ module.exports = {
     toReadAll,
     toCreate,
     toDel,
-    toUpdate
+    toUpdate,
+    toRead
 }

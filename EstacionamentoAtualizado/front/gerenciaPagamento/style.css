@@ -129,4 +129,24 @@ th{
     cursor: pointer;
 }
 
+.btnCadVaga{
+    background-color: rgb(88, 26, 26);
+    width: 100px;
+    height: 100px;
+
+}
+
+
+.btnAttVaga{
+    background-color: rgb(214, 151, 33);
+    width: 100px;
+    height: 100px;
+
+}
+.btnCadVaga:after{
+    content:'Finalizar';
+}
+.btnAttVaga:after{
+    content: 'Alterar';
+}
 

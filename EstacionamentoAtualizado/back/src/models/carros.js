@@ -6,6 +6,10 @@ const toReadAll = () => {
     return "SELECT * FROM carros ORDER BY id_cliente asc";
 }
 
+const toRead = (model) => {
+    return `SELECT * FROM carros WHERE id_carro = ${model.id_carro}`;
+}
+
 const toDel = (model)=>{
     return `DELETE FROM carros WHERE id_carro = '${model.id_carro}'`;
 }
@@ -18,5 +22,6 @@ module.exports = {
     toReadAll,
     toCreate,
     toDel,
-    toUpdate
+    toUpdate,
+    toRead
 }

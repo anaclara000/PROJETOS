@@ -20,6 +20,7 @@ router.put("/clientes", ClientesController.editarCliente);
 
 
 router.get("/telefonesCli", TelefonesCliController.listarTelefones);
+router.get("/telefonesCli/:id_cliente", TelefonesCliController.listaTelefone);
 router.delete("/telefonesCli", TelefonesCliController.excluirTelefones);
 router.put("/telefonesCli", TelefonesCliController.editarTelefones);
 router.post("/telefonesCli", TelefonesCliController.cadastrarTelefones);
@@ -33,6 +34,7 @@ router.get("/carros", CarrosController.listarCarros);
 router.delete("/carros", CarrosController.excluirCarros);
 router.post("/carros", CarrosController.cadastrarCarros);
 router.put("/carros", CarrosController.editarCarros);
+router.get("/carros/:id_carro", CarrosController.listaCarro);
 
 router.get("/funcionarios", FuncController.listarFuncionarios);
 router.get("/funcionarios/:id_func", FuncController.listaFuncionario);

@@ -57,35 +57,35 @@ create table carros(
 );
 
 
-LOAD DATA INFILE 'C:/Users/Desenvolvimento/Desktop/Ana - Senai/PROJETOS/att/docs/bd/clientes.csv'
+LOAD DATA INFILE 'C:/Users/Usuario/Desktop/PROJETOS/att/docs/bd/clientes.csv'
 INTO TABLE clientes
 FIELDS TERMINATED BY ';'
 ENCLOSED BY '"'
 LINES TERMINATED BY '\r\n'
 IGNORE 1 ROWS;
 
-LOAD DATA INFILE 'C:/Users/Desenvolvimento/Desktop/Ana - Senai/PROJETOS/att/docs/bd/telefonesCli.csv'
+LOAD DATA INFILE 'C:/Users/Usuario/Desktop/PROJETOS/att/docs/bd/telefonesCli.csv'
 INTO TABLE telefonesCli
 FIELDS TERMINATED BY ';'
 ENCLOSED BY '"'
 LINES TERMINATED BY '\r\n'
 IGNORE 1 ROWS;
 
-LOAD DATA INFILE 'C:/Users/Desenvolvimento/Desktop/Ana - Senai/PROJETOS/att/docs/bd/carros.csv'
+LOAD DATA INFILE 'C:/Users/Usuario/Desktop/PROJETOS/att/docs/bd/carros.csv'
 INTO TABLE carros
 FIELDS TERMINATED BY ';'
 ENCLOSED BY '"'
 LINES TERMINATED BY '\r\n'
 IGNORE 1 ROWS;
 
-LOAD DATA INFILE 'C:/Users/Desenvolvimento/Desktop/Ana - Senai/PROJETOS/att/docs/bd/funcionarios.csv'
+LOAD DATA INFILE 'C:/Users/Usuario/Desktop/PROJETOS/att/docs/bd/funcionarios.csv'
 INTO TABLE funcionarios
 FIELDS TERMINATED BY ';'
 ENCLOSED BY '"'
 LINES TERMINATED BY '\r\n'
 IGNORE 1 ROWS;
 
-LOAD DATA INFILE 'C:/Users/Desenvolvimento/Desktop/Ana - Senai/PROJETOS/att/docs/bd/telefonesFunc.csv'
+LOAD DATA INFILE 'C:/Users/Usuario/Desktop/PROJETOS/att/docs/bd/telefonesFunc.csv'
 INTO TABLE telefonesFunc
 FIELDS TERMINATED BY ';'
 ENCLOSED BY '"'
@@ -108,6 +108,32 @@ INSERT INTO vagas values(2,false);
 INSERT INTO vagas values(3,false);
 INSERT INTO vagas values(4,false);
 INSERT INTO vagas values(5,false);
+INSERT INTO vagas values(6,false);
+INSERT INTO vagas values(7,false);
+INSERT INTO vagas values(8,false);
+INSERT INTO vagas values(9,false);
+INSERT INTO vagas values(10,false);
+INSERT INTO vagas values(11,false);
+INSERT INTO vagas values(12,false);
+INSERT INTO vagas values(13,false);
+INSERT INTO vagas values(14,false);
+INSERT INTO vagas values(15,false);
+INSERT INTO vagas values(16,false);
+INSERT INTO vagas values(17,false);
+INSERT INTO vagas values(18,false);
+INSERT INTO vagas values(19,false);
+INSERT INTO vagas values(20,false);
+INSERT INTO vagas values(21,false);
+INSERT INTO vagas values(22,false);
+INSERT INTO vagas values(23,false);
+INSERT INTO vagas values(24,false);
+INSERT INTO vagas values(25,false);
+INSERT INTO vagas values(26,false);
+INSERT INTO vagas values(27,false);
+INSERT INTO vagas values(28,false);
+INSERT INTO vagas values(29,false);
+INSERT INTO vagas values(30,false);
+
 
 
 create table registro(

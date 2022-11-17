@@ -11,6 +11,16 @@ const listarCarros = (req, res) => {
     })
 };
 
+const listaCarro = (req, res) => {
+    conDB.query(Carros.toRead(req.params), (err, result) => {
+        if(err == null) {
+            res.json(result).status(200).end();
+        }else {
+            res.status(500).end();
+        }
+    })
+};
+
 const cadastrarCarros = (req, res) => {
     conDB.query(Carros.toCreate(req.body), (err, result) => {
         if(err == null) {
@@ -45,5 +55,6 @@ module.exports = {
     listarCarros,
     excluirCarros,
     cadastrarCarros,
-    editarCarros
+    editarCarros,
+    listaCarro
 }

@@ -17,7 +17,7 @@
                     <ul>
                         <li><a href="../gerenciamentoCarros/index.html"><i class="fa-solid fa-house"></i>Carros</a></li>
                         <li><a href="../gerenciaClientes/index.html"><i class="fa-solid fa-users"></i>Clientes</a></li>
-                        <li><a href="../gerenciaPagamento/index.html"><i class="fa-solid fa-money-bill-1-wave"></i>Vagas</a></li>
+                        <li><a href="../gerenciaPagamento/index.html"><i class="fa-solid fa-money-bill-1-wave"></i>Central</a></li>
                         <li><a href="../gerenciaFuncionarios/index.html"><i class="fa-solid fa-user-gear"></i>Funcionários</a></li>
                         <li><a href="../"><i class='bx bx-cog'></i>Configurações</a></li>
                     </ul>
@@ -29,20 +29,28 @@
             <h1>Cadastro de vagas</h1>
                 <div class="cards">
                     <div class="vaga">
-                        <span class="id">
-                            
-                        </span>
-                        <span class="nome">
-                            <div>
-                                <button onclick="abrirModal2()">ADD CLIENTE</button>
-                            </div>
-                        </span>
+                        <span class="id"></span>
+                        <span class="id_vaga_cli"></span>
+                        <span class="nome"></span>
+                        <span class="telefone"></span>
+                        <!-- <span class="email"></span> -->
+                        <span class="modeloCar"></span>
+                        <span class="placa"></span>
+                        <span class="descricao"></span>
+    
+                    </div>
+                    <div>
+                        <button onclick="abrirModal2()">ADD CLIENTE</button>
                     </div>
                 </div>
                 <div class="tela tela2">
                     <div class="itens">
                         <p>Id Cliente*</p>
                         <input class="idCliente" type="text" placeholder="">
+                    </div>
+                    <div class="itens">
+                        <p>Nome Cliente*</p>
+                        <input class="nomeCliente" type="text" placeholder="">
                     </div>
                     <div class="itens">
                         <p>Id Carro*</p>
@@ -68,7 +76,7 @@
                     <button onclick="abrirModal2()">Voltar</button>
                 </div>
                 <div class="cad">
-                    <button onClick="abrirModal()" class="btnCad">Cadastrar</button>
+                    <button onClick="abrirModal()">Cadastrar</button>
                 </div>
             <div class="modal model">
                 <div class="cadastroCarro">
