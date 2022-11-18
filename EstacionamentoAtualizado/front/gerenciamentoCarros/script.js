@@ -85,10 +85,10 @@ function deletarUser(e) {
     })
         .then(res => { return res.json() })
         .then(resp => {
-            if (resp.id_carro !== undefined) {
+            console.log(resp)
               window.location.reload();
               alert("Carro deletado com sucesso!");
-          }
+          
         })
      }
 
@@ -190,3 +190,14 @@ function usual(e){
           fecharModal();
   })
 }
+
+setTimeout(() => (
+    contarCli()
+), 1000)
+function contarCli(){
+    var tr = document.querySelectorAll("tr");
+    var total = tr.length - 2;
+    console.log(total)
+    document.querySelector(".tot").innerHTML = "Total de carros: " + total;
+}
+

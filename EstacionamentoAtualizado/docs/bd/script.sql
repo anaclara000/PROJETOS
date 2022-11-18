@@ -2,6 +2,7 @@ drop database if exists estacionamento;
 create database estacionamento charset=UTF8 collate UTF8_general_ci;
 use estacionamento;
 
+-- CRIANDO TABELA CLIENTS
 create table clientes(
     id_cliente integer not null primary key auto_increment,
     nome_cli varchar(30) not null,
@@ -15,7 +16,7 @@ create table clientes(
     municipio varchar(30) not null
 );
 
--- OK
+-- CRIANDO TABELA FUNCIONARIOS
 create table funcionarios(
     id_func integer not null primary key auto_increment,
     nome_func varchar(30) not null,
@@ -37,13 +38,14 @@ create table telefonesCli(
     foreign key (id_cliente) references clientes(id_cliente) on delete cascade
 );
 
--- OK
+-- CRIANDO TABELA TELEFONES DOS CLIENTES
 create table telefonesFunc(
     id_func integer null, 
     telefone varchar(15), 
     foreign key (id_func) references funcionarios(id_func) on delete cascade
 );
 
+-- CRIANDO TABELA DE CARROS
 create table carros(
     id_cliente integer not null,
     id_carro integer not null primary key auto_increment,
@@ -56,52 +58,58 @@ create table carros(
     foreign key (id_cliente) references clientes(id_cliente) on delete cascade
 );
 
+-- CRIANDO TABELA VAGAS
+create table vagas(
+    id_vaga integer not null primary key,
+    ocupada boolean
+);
 
-LOAD DATA INFILE 'C:/Users/Usuario/Desktop/PROJETOS/att/docs/bd/clientes.csv'
+
+-- IMPORTANDO INFORMAÇÕES DO CSV
+LOAD DATA INFILE 'C:/Users/Desenvolvimento/Desktop/PROJETOS/EstacionamentoAtualizado/docs/bd/clientes.csv'
 INTO TABLE clientes
 FIELDS TERMINATED BY ';'
 ENCLOSED BY '"'
 LINES TERMINATED BY '\r\n'
 IGNORE 1 ROWS;
 
-LOAD DATA INFILE 'C:/Users/Usuario/Desktop/PROJETOS/att/docs/bd/telefonesCli.csv'
+LOAD DATA INFILE 'C:/Users/Desenvolvimento/Desktop/PROJETOS/EstacionamentoAtualizado/docs/bd/telefonesCli.csv'
 INTO TABLE telefonesCli
 FIELDS TERMINATED BY ';'
 ENCLOSED BY '"'
 LINES TERMINATED BY '\r\n'
 IGNORE 1 ROWS;
 
-LOAD DATA INFILE 'C:/Users/Usuario/Desktop/PROJETOS/att/docs/bd/carros.csv'
+LOAD DATA INFILE 'C:/Users/Desenvolvimento/Desktop/PROJETOS/EstacionamentoAtualizado/docs/bd/carros.csv'
 INTO TABLE carros
 FIELDS TERMINATED BY ';'
 ENCLOSED BY '"'
 LINES TERMINATED BY '\r\n'
 IGNORE 1 ROWS;
 
-LOAD DATA INFILE 'C:/Users/Usuario/Desktop/PROJETOS/att/docs/bd/funcionarios.csv'
+LOAD DATA INFILE 'C:/Users/Desenvolvimento/Desktop/PROJETOS/EstacionamentoAtualizado/docs/bd/funcionarios.csv'
 INTO TABLE funcionarios
 FIELDS TERMINATED BY ';'
 ENCLOSED BY '"'
 LINES TERMINATED BY '\r\n'
 IGNORE 1 ROWS;
 
-LOAD DATA INFILE 'C:/Users/Usuario/Desktop/PROJETOS/att/docs/bd/telefonesFunc.csv'
+LOAD DATA INFILE 'C:/Users/Desenvolvimento/Desktop/PROJETOS/EstacionamentoAtualizado/docs/bd/telefonesFunc.csv'
 INTO TABLE telefonesFunc
 FIELDS TERMINATED BY ';'
 ENCLOSED BY '"'
 LINES TERMINATED BY '\r\n'
 IGNORE 1 ROWS;
 
+
+-- MOSTRANDO AS TABELAS
 select * from clientes;
 select * from telefonesCli;
 select * from carros;
 select * from funcionarios;
 select * from telefonesFunc;
 
-create table vagas(
-    id_vaga integer not null primary key,
-    ocupada boolean
-);
+--ADICIONANDO A TABELA DE VAGAS AS VAGAS
 
 INSERT INTO vagas values(1,false);
 INSERT INTO vagas values(2,false);
@@ -134,7 +142,7 @@ INSERT INTO vagas values(28,false);
 INSERT INTO vagas values(29,false);
 INSERT INTO vagas values(30,false);
 
-
+-- CRIANDO TABELA REGISTRO
 
 create table registro(
     id_cliente integer not null,
@@ -148,11 +156,10 @@ create table registro(
     foreign key (id_vaga) references vagas(id_vaga)
 );
 
-INSERT INTO registro values(1,1,1,"20:00:00", "23:00:00", "2003-03-03");
-INSERT INTO registro values(5,2,2,"20:00:00", "21:55:00", "2003-03-03");
 -- subtime para subtrair a hora
-SELECT SUBTIME("21:00:00","20:00:00");
+-- SELECT SUBTIME("21:00:00","20:00:00");
 
+-- VIEW PARA CALCULAR HORAS A PAGAR
 drop view if exists vw_valorHora;
 CREATE VIEW vw_valorHora AS
 SELECT c.nome_cli, r.id_carro, SUBTIME(r.hora_saida,r.hora_entrada) as "hora", r.data, v.id_vaga, v.ocupada

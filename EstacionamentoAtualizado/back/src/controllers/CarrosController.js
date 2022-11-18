@@ -34,9 +34,9 @@ const cadastrarCarros = (req, res) => {
 const excluirCarros = (req, res) => {
     conDB.query(Carros.toDel(req.body), (err, result) => {
         if(err == null) {
-            res.status(204).end();
+            res.json(result).status(204).end();
         }else {
-            res.status(400).json(err).end();
+            res.status(400).end();
         }
     });
 };

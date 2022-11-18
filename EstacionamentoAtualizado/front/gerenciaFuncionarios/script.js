@@ -200,3 +200,14 @@ function usual(e){
             fecharModal();
     })
 }
+
+setTimeout(() => (
+    contarCli()
+), 1000)
+function contarCli(){
+    var tr = document.querySelectorAll("tr");
+    var total = tr.length - 2;
+    console.log(total)
+    document.querySelector(".tot").innerHTML = "Total de funcionários: " + total;
+}
+
