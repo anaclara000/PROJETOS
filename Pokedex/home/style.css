@@ -5,12 +5,11 @@
     box-sizing: border-box;
     padding: 0;
 }
-body{
+.back{
     font-family: 'Poppins';
     display: flex;
-    justify-content: space-around;
-    background: rgb(0,128,0);
-    background: linear-gradient(180deg, rgba(151,203,174,1) 0%, rgba(56,121,113,1) 100%);
+    justify-content: space-between;
+
 }
 
 .legenda{
@@ -29,13 +28,10 @@ body{
     display: flex;
     flex-wrap: wrap;
 }
-.card{
-    border: 2px solid green;
+.fundo{
     padding: 10px 25px;
     margin: 15px;
     border-radius: 10px;
-    background: rgb(0,128,0);
-    background: linear-gradient(180deg, rgba(151,203,174,1) 0%, rgba(56,121,113,1) 100%);
 }
 
 
@@ -67,12 +63,11 @@ body{
 }
 
 .nome{
-    font-size: 18px;
+    font-size: 25px;
     margin-bottom: -10%;
 }
 
 .id{
-    margin-top: -7%;
     font-size: 30px;
     color: rgb(255, 255, 255);
 }
@@ -81,7 +76,7 @@ body{
     display: flex;
     align-items: center;
     justify-content: space-around;
-    background-color: #e60000;
+    background-color: #000000;
     width: 80%;
     height: 6%;
     border-radius: 10px;
@@ -123,6 +118,17 @@ body{
     margin: 10px 10px 0px 10px;
     font-size: 18px;
 }
+
+.legenda{
+    height: 8vh;
+    width: 53.4vw;
+    position: fixed;
+    justify-content:center;
+    display: flex;
+    flex-wrap: wrap; 
+    background-color: rgb(255, 255, 255);
+    border-bottom: 2px solid #000;
+}
 .cabecalho{
     display: flex;
     flex-direction: column;
@@ -142,18 +148,6 @@ body{
     width: 4vw;
     height: 3vw;
 }
-
-nav{
-    height: 100vh;
-    width: 20%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    background-color: #ffffff;
-    margin-right: 2%;
-}
-
 .voltar > i{
     background-color: #e60000;
     padding: 10px;
@@ -165,10 +159,23 @@ nav{
     align-items: center;
     flex-direction: column;
 }
+nav{
+    height: 100vh;
+    width: 18%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #ffffff;
+    position: fixed;
+}
+
 
 main{
-    margin-left: 40%;
-    width: 50%;
+
+    margin-left: 18%;
+    margin-right: 10%;
+    width: 54%;
     background-color: #fafafa;
     display: flex;
     flex-direction: column;
@@ -176,20 +183,24 @@ main{
 }
 
 footer{
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 30%;
-    margin-left: 5%;
+    height: 100%;
+    width: 26%;
     position: fixed;
-    left: 0%;
+    left: 74%;
     padding-right: 2%;
 }
 
+.fot{
+    flex-direction: column;
+    height: 100%;
+    align-items: center;
+    display: flex;
+    justify-content: space-around;
+}
+
 .foto > img{
-    margin-top: -25%;
-    width: 12vw;
+    margin-top: -14%;
+    width: 13vw;
 }
 
 .foto > p{
@@ -212,17 +223,16 @@ footer{
 .infos > p{
     margin-top: 2%;
     text-align: center;
-    font-size: 30px;
-    border: 2px solid #fff;
-    width: 50%;
+    font-size: 50px;
+    border: 10px solid #fff;
+    width: 150%;
     border-radius: 10px;
     font-weight: 700;
     color: #fff;
 }
 
-.infos > span{
-    margin-top: 10px;
-    color: rgb(73, 73, 73);
+#desc{
+    font-size: 20px;
 }
 
 .habilidades{
@@ -232,16 +242,22 @@ footer{
     border-radius: 10px;
     padding: 10px;
     align-items: center;
-    background-color: #fff;
+    background-color: rgb(235, 235, 235);
     margin-top: 20%;
+    height: 40vh;
+    width: 25vw;
 }
 
 .container1{
+    width: 100%;
+    height: 40vh;
     text-align: center;
 }
 .container2{
+    flex-direction: column;
     display: flex;
     text-align: justify;
+    width: 100%;
     border-top: 2px solid #ccc;
     margin: 10px;
     padding-top: 10px;
@@ -254,21 +270,24 @@ footer{
 }
 
 .resumo > p, .tipos > p , .fraqueza > p{
-    font-size: 16px;
+    font-size: 20px;
+    font-weight: 600;
 }
 .resumo > span , .tipos > span, .fraqueza > span{
-    font-size: 14px;
-    color: rgb(94, 93, 93);
+    font-size: 18px;
+    color: rgb(0, 0, 0);
 }
 
 .tipos{
+    margin-top: 8px;
     border-right: 2px solid #ccc;
+    padding-right: 100%;
 }
 
 
 
 .fraqueza{
-    margin-left: 10px;
+    margin-top: 5px;
 }
 .evolucoes{
     display: flex;
@@ -304,4 +323,16 @@ footer{
     border: 2px solid rgb(255, 255, 255);
     color: #fff;
    
+}
+
+.model{
+    visibility: hidden;
+    display: none;
+}
+
+.fundo{
+    border: 3px solid rgb(0, 0, 0)
+}
+.corpo{
+    margin-top: 10%;
 }
