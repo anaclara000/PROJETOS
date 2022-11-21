@@ -15,7 +15,7 @@ function logar() {
     let valSenha = item.senha
 
     if(user == valUser && senha == valSenha) {
-      window.location.href = "index.html"
+      window.location.href = "../../home/index.html"
       achou = true
        
     }

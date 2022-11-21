@@ -19,7 +19,7 @@
                 </div>
             </div>
             <div class="voltar">
-                <i class='bx bxs-chevron-left'></i>
+                <a href="../front/login/login.html"><i class='bx bxs-chevron-left'></i></a>
                 <p>Voltar</p>
             </div>
         </nav>
@@ -44,6 +44,7 @@
                             <span id="peso"></span>
                             <p>Habilidade</p>
                             <span id="habi1"></span>
+                            <span id="habi2"></span>
                             <p>Categoria</p>
                             <span id="tipo"></span>
                         </div>
@@ -59,7 +60,7 @@
                                         <span class="tipo"></span>
                                     </div>
                                     <div class="fraqueza">
-                                        <p>Habilidades</p>
+                                        <p>Status</p>
                                         <span id="hp"></span>
                                         <span id="ataque" ></span>
                                         <span id="defesa"></span>
@@ -94,31 +95,34 @@
     
     
         <main>
-            <!-- <div class="filtro">
-                <input type="text" placeholder="Digite o nome do pokemon">
-                <i class='bx bx-search'></i>
-            </div> -->
-            <div class="legenda">
-                <p>Types</p>
-                <img src="" alt=""><span>Normal</span>
-                <img src="" alt=""><span>Fighting</span>
-                <img src="" alt=""><span>flying</span>
-                <img src="" alt=""><span>poison</span>
-                <img src="" alt=""><span>ground</span>
-                <img src="" alt=""><span>rock</span>
-                <img src="" alt=""><span>bug</span>
-                <img src="" alt=""><span>ghost</span>
-                <img src="" alt=""><span>steel</span>
-                <img src="" alt=""><span>fire</span>
-                <img src="" alt=""><span>water</span>
-                <img src="" alt=""><span>grass</span>
-                <img src="" alt=""><span>electric</span>
-                <img src="" alt=""><span>psychic</span>
-                <img src="" alt=""><span>ice</span>
-                <img src="" alt=""><span>dragon</span>
-                <img src="" alt=""><span>dark</span>
-                <img src="" alt=""><span>fairy</span>
+            <div class="top">
+                <div class="filtro">
+                    <input  class="busca"type="text" placeholder="Digite o nome do pokemon">
+                    <i class='bx bx-search' onclick="procurarPokes()"></i>
+                </div>
+                <div class="legenda">
+                    <p>Types</p>
+                    <span class="normal">Normal</span><img src="../assets/640px-Pokémon_Normal_Type_Icon.svg.png" alt="">
+                   <span>Fighting</span><img src="../assets/Pokémon_Fighting_Type_Icon.svg" alt="">
+                   <span>flying</span><img src="../assets/640px-Pokémon_Flying_Type_Icon.svg.png" alt="">
+                   <span>poison</span><img src="../assets/640px-Pokémon_Poison_Type_Icon.svg.png" alt="">
+                   <span>ground</span><img src="../assets/640px-Pokémon_Ground_Type_Icon.svg.png" alt="">
+                   <span>rock</span><img src="../assets/Pokémon_Rock_Type_Icon.svg" alt="">
+                   <span>bug</span><img src="../assets/Pokémon_Bug_Type_Icon.svg" alt="">
+                   <span>ghost</span><img src="../assets/Pokémon_Ghost_Type_Icon.svg" alt="">
+                   <span>steel</span><img src="../assets/Pokémon_Steel_Type_Icon.svg" alt="">
+                   <span>fire</span><img src="../assets/Pokémon_Fire_Type_Icon.svg" alt="">
+                   <span>water</span><img src="../assets/Pokémon_Steel_Type_Icon.svg" alt="">
+                   <span>grass</span><img src="../assets/Pokémon_Grass_Type_Icon.svg" alt="">
+                   <span>electric</span><img src="../assets/Pokémon_Electric_Type_Icon.svg" alt="">
+                   <span>psychic</span><img src="../assets/Pokémon_Psychic_Type_Icon.svg" alt="">
+                   <span>ice</span><img src="../assets/Pokémon_Ice_Type_Icon.svg" alt="">
+                   <span>dragon</span><img src="../assets/Pokémon_Dragon_Type_Icon.svg" alt="">
+                   <span>dark</span><img src="../assets/Pokémon_Dark_Type_Icon.svg" alt="">
+                   <span>fairy</span><img src="../assets/Pokémon_Fairy_Type_Icon.svg" alt="">
+                </div>
             </div>
+            
             <div class="corpo">
                 <div class="cards">
     
