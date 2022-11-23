@@ -1,8 +1,8 @@
 const conDB = require('../dao/dbForum.js');
-const Usuarios = require('../models/usuarios')
+const Respostas = require('../models/respostas')
 
-const listarUsuarios = (req, res) => {
-    conDB.query(Usuarios.toReadAll(), (err, result) => {
+const listarRespostas = (req, res) => {
+    conDB.query(Respostas.toReadAll(), (err, result) => {
         if(err == null) {
             res.json(result).status(200).end();
         }else {
@@ -11,8 +11,8 @@ const listarUsuarios = (req, res) => {
     })
 };
 
-const listarUsuario = (req, res) => {
-    conDB.query(Usuarios.toRead(req.params), (err, result) => {
+const listarResposta = (req, res) => {
+    conDB.query(Respostas.toRead(req.params), (err, result) => {
         if(err == null) {
             res.json(result).status(200).end();
         }else {
@@ -21,8 +21,8 @@ const listarUsuario = (req, res) => {
     })
 };
 
-const cadastrarUsuarios = (req, res) => {
-    conDB.query(Usuarios.toCreate(req.body), (err, result) => {
+const cadastrarRespostas = (req, res) => {
+    conDB.query(Respostas.toCreate(req.body), (err, result) => {
         if(err == null) {
             res.status(201).end();
         }else {
@@ -31,8 +31,8 @@ const cadastrarUsuarios = (req, res) => {
     });
 };
 
-const excluirUsuarios = (req, res) => {
-    conDB.query(Usuarios.toDel(req.body), (err, result) => {
+const excluirRespostas = (req, res) => {
+    conDB.query(Respostas.toDel(req.body), (err, result) => {
         if(err == null) {
             res.json(result).status(204).end();
         }else {
@@ -41,8 +41,8 @@ const excluirUsuarios = (req, res) => {
     });
 };
 
-const editarUsuarios = (req, res) => {
-    conDB.query(Usuarios.toUpdate(req.body), (err, result) => {
+const editarRespostas = (req, res) => {
+    conDB.query(Respostas.toUpdate(req.body), (err, result) => {
         if(err == null) {
             res.status(200).json(req.body).end();
         }else {
@@ -52,9 +52,9 @@ const editarUsuarios = (req, res) => {
 };
 
 module.exports = {
-    listarUsuarios,
-    excluirUsuarios,
-    cadastrarUsuarios,
-    editarUsuarios,
-    listarUsuario
+    listarRespostas,
+    excluirRespostas,
+    cadastrarRespostas,
+    editarRespostas,
+    listarResposta
 }

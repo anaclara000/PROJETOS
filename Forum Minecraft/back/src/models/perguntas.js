@@ -1,21 +1,25 @@
 const toCreate  = (model) =>{
-    return `INSERT INTO usuarios VALUES (DEFAULT, '${model.nome_user}', '${model.nickname}', '${model.email}', '${model.senha}', '${model.status_user}')`;
+    return `INSERT INTO perguntas VALUES ('${model.id_user}', '${model.id_pergunta}', '${model.pergunta}', '${model.tema}', '${model.data}')`;
 }
 
 const toReadAll = () => {
-return "SELECT * FROM usuarios ORDER BY id_user asc";
+return "SELECT * FROM perguntas ORDER BY id_pergunta asc";
 }
 
-const toRead = (model) => {
-return `SELECT * FROM usuarios WHERE id_user = ${model.id_user}`;
+const toReadUser = (model) => {
+return `SELECT * FROM perguntas WHERE id_user = ${model.id_user}`;
+}
+
+const toReadPerg = (model) => {
+    return `SELECT * FROM perguntas WHERE id_pergunta = ${model.id_pergunta}`;
 }
 
 const toDel = (model)=>{
-return `DELETE FROM usuarios WHERE id_user = '${model.id_user}'`;
+return `DELETE FROM perguntas WHERE id_pergunta = '${model.id_pergunta}'`;
 }
 
 const toUpdate = (model)=>{
-return `UPDATE usuarios SET id_user = '${model.id_user}' nome_user = '${model.nome_user}', nickname = ${model.nickname}, email = '${model.email}', senha = '${model.senha}' status_user'${model.status_user}' `;
+return `UPDATE perguntas SET id_user = ${model.id_user} id_pergunta = ${model.id_pergunta}, pergunta = '${model.pergunta}', tema = '${model.tema}', data = '${model.data}' `;
 }
 
 module.exports = {
@@ -23,5 +27,6 @@ toReadAll,
 toCreate,
 toDel,
 toUpdate,
-toRead
+toReadUser,
+toReadPerg
 }

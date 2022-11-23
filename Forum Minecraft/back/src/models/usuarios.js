@@ -15,7 +15,7 @@ return `DELETE FROM usuarios WHERE id_user = '${model.id_user}'`;
 }
 
 const toUpdate = (model)=>{
-return `UPDATE usuarios SET id_user = '${model.id_user}' nome_user = '${model.nome_user}', nickname = ${model.nickname}, email = '${model.email}', senha = '${model.senha}' status_user'${model.status_user}' `;
+return `UPDATE usuarios SET id_user = '${model.id_user}', nome_user = '${model.nome_user}', nickname = '${model.nickname}', email = '${model.email}', senha = '${model.senha}', status_user = '${model.status_user}' `;
 }
 
 module.exports = {
