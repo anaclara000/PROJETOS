@@ -51,6 +51,7 @@ const editarUsuarios = (req, res) => {
     });
 };
 
+
 module.exports = {
     listarUsuarios,
     excluirUsuarios,
