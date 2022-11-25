@@ -11,17 +11,6 @@ create table usuarios(
     senha varchar(30) not null,
     status_user varchar(30) not null
 );
-
--- CRIANDO TABELA DE MODERADORES
--- create table moderador(
---     id_moderador integer not null primary key auto_increment,
---     nome_mode varchar(30) not null,
---     nickname varchar(30) not null,
---     email varchar(100) not null,
---     senha varchar(30) not null,
---     status_moderador varchar(30) not null
--- );
-
 -- CIANDO TABELA DE PERGUNTAS
 create table perguntas(
     id_User integer null,
@@ -41,6 +30,21 @@ create table respostas(
     foreign key (id_perg) references perguntas(id_pergunta) on delete cascade,
     foreign key (id_usuario) references usuarios(id_user) on delete cascade
 );
+
+
+drop view if exists vw_status;
+create VIEW vw_status as 
+select u.id_user, u.email, u.nickname, u.nome_user, u.senha from usuarios u
+where u.status_user = "admin";
+select * from vw_status;
+
+
+drop view if exists vw_feed;
+create VIEW vw_feed as
+select p.id_User,u.nickname, p.id_pergunta, p.pergunta, p.tema, p.data, r.id_usuario, r.resposta, r.dataResp from perguntas p 
+inner join respostas r on p.id_pergunta = r.id_perg
+inner join usuarios u on  u.id_user = p.id_User;
+select * from vw_feed;
 
 
 insert into usuarios values(default,'Ana Paiva', 'juinhololzeiro', 'ana891@gmail.com','anagatinha','usuario');
@@ -63,32 +67,35 @@ insert into usuarios values(default,'Luiza', 'LolaPVP', 'lolinha123@gmail.com','
 
 select * from usuarios;
 
-drop view if exists vw_status;
-create VIEW vw_status as 
-select u.id_user, u.email, u.nickname, u.nome_user, u.senha from usuarios u
-where u.status_user = "admin";
-select * from vw_status;
 
--- TEMA PICARETA: PARA USUARIOS COM DUVIDAS EM CRIAÇÃO DE COISAS
--- TEMA ENDGAME: PARA USUARIOS COM ERROS NO JOGO
--- TEMA LIVRO: PARA USUARIOS QUE QUEREM DICAS SOBRE TUDO
+-- TEMA CRAFTS: PARA USUARIOS COM DUVIDAS EM CRIAÇÃO DE COISAS
+-- TEMA BUGS: PARA USUARIOS COM ERROS NO JOGO
+-- TEMA DICAS: PARA USUARIOS QUE QUEREM DICAS SOBRE TUDO
 -- TEMA MODS: PARA USUARIOS QUE QUEREM SABER SOBRE MODS(COMO BAIXAR, USAR, JOGAR E ETC)
--- insert into perguntas values(1,default,'É possível criar um iron golen?','Picareta','22/02/22');
--- insert into respostas values(17,1,'Sim, Itens necessários: 4 blocos de ferro e uma abobora cortada com TESOURA.
--- Posicione os ferros em formato de T e então coloque a abobora no topo, assim o irom golen será criado.','26/02/22');
+
+insert into perguntas values(1,default,'É possível criar um iron golen?','CRAFTS','22/02/22');
+insert into respostas values(17,1,'Sim, Itens necessários: 4 blocos de ferro e uma abobora cortada com TESOURA.
+Posicione os ferros em formato de T e então coloque a abobora no topo, assim o irom golen será criado.','26/02/22');
 
 insert into perguntas values(11,default,'É possível baixar MODS no minecraft?','MODS', '2022-11-02');
-insert into respostas values(8,1,'Sim meu mano, da para baixar',curDate());
+insert into respostas values(8,2,'Sim meu mano, da para baixar',curDate());
 
-insert into perguntas values(6,default,'Como achar o portal do End?','Livro', '2022-11-20');
-insert into respostas values(14,2,'Você precisa pegar o olho do enderman e ele vai te guiando ate o portal',curDate());
+insert into perguntas values(6,default,'Como achar o portal do End?','DICAS', '2022-11-20');
+insert into respostas values(14,3,'Você precisa pegar o olho do enderman e ele vai te guiando ate o portal',curDate());
 
+insert into perguntas values(7,default,'Como entrar na colmeia do minecraft?','DICAS', '2022-10-20');
+insert into respostas values(11,4,'Não tem como entrar sem usar mod, o mod que eu uso é o Bumblezone','2022-10-21');
 
-drop view if exists vw_feed;
-create VIEW vw_feed as
-select p.id_User,u.nickname, p.id_pergunta, p.pergunta, p.tema, p.data, r.id_usuario, r.resposta, r.dataResp from perguntas p 
-inner join respostas r on p.id_pergunta = r.id_perg
-inner join usuarios u on  u.id_user = p.id_User;
-select * from vw_feed;
+insert into perguntas values(9,default,'Como chocar o ovo do ender dragon?','DICAS', '2022-11-05');
+insert into respostas values(2,5,'Olá filhodoN3y, infelizmente não é possível chocar o ovo do ender dragon sem utilizar MODS. 
+O ovo fica apenas como um troféu após concluir o jogo.','2022-11-07');
 
+insert into perguntas values(12,default,'Como fazer uma armadura de tartaruga?','DICAS', '2022-11-01');
+insert into respostas values(5,6,'Olá jotóba_MOkano, utilizando as escamas que dropam de filhotes de tartaruga, com elas se formam apenas um CAPACETE.','2022-11-03');
+
+insert into perguntas values(1,default,'Não consigo abrir meu minecraft','BUGS', '2022-09-21');
+insert into respostas values(11,7,'Vose tem o java imstalado no seu computador? Se vc tiver, atualiza os drivis do pc','2022-10-21');
+
+insert into perguntas values(1,default,'Não consigo abrir meu minecraft','BUGS', '2022-09-21');
+insert into respostas values(11,7,'Vose tem o java imstalado no seu computador? Se vc tiver, atualiza os drivis do pc','2022-10-21');
 
