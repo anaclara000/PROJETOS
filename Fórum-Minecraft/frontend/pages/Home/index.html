@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body onload="carregar()">
+
+    <div id="container">
+
+        <header>
+            <div class="nav-img">
+                <img class="img-banner" src="img/banner.jpg" alt="">
+
+                <nav>
+                    <ul class="cont-ul">
+                        <img class="img-menu" src="img/output-onlinepngtools.png" alt="">
+                        <h1>RENASCRAFT</h1>
+                        <li><i class='bx bxs-home'></i>HOME</li>
+                        <li><i class='bx bxs-user-account'></i>INTEGRANTES</li>
+                        <li onclick="menuDow()">TÓPICOS<i class='bx bx-caret-down'></i>
+                            <ul class="dropDown model">
+                                <li><a href=""><i class='bx bxs-pin'></i>CRAFTS</a></li>
+                                <li><a href=""><i class='bx bxs-error'></i>BUGS</a></li>
+                                <li><a href=""><i class='bx bxs-invader'></i>DICAS</a></li>
+                                <li><a href=""><i class='bx bx-card'></i>MODS</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+
+
+
+            <div id="section-02">
+
+                <div class="inf-user">
+                    <img src="" alt="">
+
+                    <i class='bx bxs-user-circle user-icon'></i>
+                    <p class="email">usuario@gmail.com</p>
+                    <p class="nick"><span>Usuario</span></p>
+
+                    <div class="actions">
+                        <i class='bx bx-cog'></i>
+                        <a href="../../Login/index.html"><i class='bx bx-log-out'></i></a>
+                    </div>
+
+                    <!-- <hr> -->
+
+                    <!-- <hr> -->
+                </div>
+
+                <div class="cont-pergunta">
+                    <button onclick="modalPergunta()">+NOVA PERGUNTA</button>
+                </div>
+
+                <div class="cont-inf">
+
+                    <h5>Informações</h5>
+
+                    <div class="c-1">
+                        <div>
+                            <i class='bx bxs-user'></i>
+                            <p> - <span class="qtdUsuarios"></span></p>
+
+                        </div>
+
+                        <div>
+                            <i class='bx bxs-star'></i>
+                            <p>Perguntas: <span class="qtdPerguntas"></span> </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cont-contribuidores">
+
+                    <div class="title-contribuidores">
+                        <i class='bx bxs-heart'></i>
+                        <h5>Moderadores</h5>
+                        <i class='bx bxs-heart'></i>
+                    </div>
+
+
+                    <div class="contribuidores model" style="display: none;">
+                        <img class="img-user"
+                            src="https://www.minecraft.net/etc.clientlibs/minecraft/clientlibs/main/resources/img/minecraft-creeper-face.jpg"
+                            alt="">
+                        <div>
+                            <h5 class="nome-admin-modal">Rennas Ala Fulano</h5>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+                </div>
+
+
+                <div class="agradecimentos">
+
+                    <div class="title-agradecimentos">
+                        <i class='bx bxs-heart'></i>
+                        <h5 class="contribuidores-">USUARIOS</h5>
+                        <i class='bx bxs-heart'></i>
+                    </div>
+
+                    <hr>
+
+                    <div class="usuarios-modal model" style="display: none;">
+
+                        <img class="img-user-modal"
+                            src="https://www.minecraft.net/etc.clientlibs/minecraft/clientlibs/main/resources/img/minecraft-creeper-face.jpg"
+                            alt="">
+                        <div>
+                            <h5 class="nome-user-modal">s</h5>
+                        </div>
+                    </div>
+
+
+                </div>
+
+
+
+
+            </div>
+
+
+        </header>
+
+
+        <main>
+
+            <div class="cont-section-01">
+
+                <!-- <div class="title">
+                    <i class='bx bxs-home' ></i>
+                    <h1>Home</h1>
+                </div> -->
+
+                <div class="cont-cards">
+
+
+                    <a href="https://www.tecmundo.com.br/seguranca/227907-novo-ransomware-age-disfarcado-arquivo-minecraft.htm">
+                        <div class="cards">
+                        <h4>Ransomware disfarçado de arquivo para Minecraft!</h4>
+                        <img src="img/banner-02.jpg" alt="">
+                        <label></label>
+                        <p>De acordo com o relatório, o ransomware está disfarçado de um arquivo de texto contendo alt
+                            lists, que são conjuntos de contas vazadas de Minecraft disponíveis para usuários logar</p>
+                    </div>
+                    </a>
+
+                    <a href="https://www.tecmundo.com.br/voxel/238293-minecraft-aparece-graca-android-temporariamente.htm">
+                        <div class="cards">
+                            <h4>Minecraft de graça no Android?</h4>
+                            <img src="img/banner-03.jpg" alt="">
+                            <label></label>
+                            <p class="legenda-cards">Quem ficou acordado até tarde na noite desta segunda-feira (9) pode ter
+                                aproveitado uma grande "promoção" que aconteceu na Play Store</p>
+                        </div>
+                    </a>
+                    
+
+                </div>
+
+
+                <div class="last-questions">
+
+                    <div class="title">
+                        <h1><i class='bx bxs-hot'></i>Ultimas Perguntas!</h1>
+                    </div>
+
+                </div>
+
+
+                <div class="cont-questions">
+
+                    <div class="container-cards">
+
+                        <div class="questions model">
+
+                            <div class="header-question">
+                                <div class="h-sec-01">
+
+                                    <div class="model">
+                                        <span class="id_pergunta"></span>
+                                        <span class="id_usuario"></span>
+                                    </div>
+
+                                    <img src="https://www.minecraft.net/etc.clientlibs/minecraft/clientlibs/main/resources/img/minecraft-creeper-face.jpg"
+                                        alt="">
+                                    <div>
+                                        <div class="tittle-question">
+                                            <h5 class="nome-user-card">Rennas Ala Fulano </h5>
+                                            <p class="data-question">ss</p>
+                                        </div>
+
+                                        <p>Tema: <span class="tema-card-question"></span></p>
+                                    </div>
+                                </div>
+
+                                <div class="cont-bujigangas">
+                                    <i class='bx bx-bookmark favoritar-vazio' onclick="favoritar()"></i>
+                                    <i class='bx bxs-bookmark model favoritar-cheio' onclick="favoritar()"></i>
+
+                                    <i class='bx bx-heart curtir-vazio' onclick="curtir()"></i>
+                                    <i class='bx bxs-heart model curtir-cheio' onclick="curtir()"></i>
+                                </div>
+
+                                <!-- <hr> -->
+                            </div>
+
+                            <div>
+                                <p class="question-p"></p>
+                            </div>
+
+                            <hr>
+                            <div class="input-answer">
+                                <div class="cont-input">
+                                    <input type="text" placeholder="Insira a sua Resposta. . . .">
+
+                                    <i class='bx bxs-right-arrow-circle i-enviar'></i>
+                                </div>
+
+
+                                <div class="cont-ver-mais-resposta" onclick="ativarModalResposta(this)">
+                                    <p>VER RESPOSTAS</p>
+                                    <i class='bx bx-chevrons-down'></i>
+                                </div>
+
+                            </div>
+
+
+                        </div>
+
+                    </div>
+
+                    <div class="answer model">
+
+                        <div class="title-answer">
+
+                            <div class="cont-title-answer">
+                                <h4 class="nome-usuario"></h4>
+                                <span class="data-question-answer"></span>
+
+                            </div>
+                            <p class="tema-answer"></p>
+                            <p class="pergunta-answer"></p>
+                        </div>
+
+                        <hr>
+
+                        <div class="user-answer">
+                            <h2>RESPOSTAS</h2>
+
+                            <hr>
+
+                            <div class="answer-card model">
+                                <div class="header-user-answer">
+                                    <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/160745e3-9f8c-46b9-a326-cc9efff1e5aa/d7kxdcf-094a44e7-d459-47b6-8bf8-689a3a84d106.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzE2MDc0NWUzLTlmOGMtNDZiOS1hMzI2LWNjOWVmZmYxZTVhYVwvZDdreGRjZi0wOTRhNDRlNy1kNDU5LTQ3YjYtOGJmOC02ODlhM2E4NGQxMDYucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.l8kabRud63qyIqTQtuZ-7PjI9yOxibEgYdsK2zaUHgc"
+                                        alt="">
+
+                                    <div class="user-answer-title">
+                                        <div>
+                                            <h5>sdadada</h5>
+                                            <span>LORE</span>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <div class="cont-answer-r">
+                                    <p class="answer-r">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                        Incidunt, autem eum et voluptate nobis repellat quis molestias voluptatum nam
+                                        sed sint quam beatae eius non esse totam ullam quasi? Facere.</p>
+                                </div>
+
+                            </div>
+
+
+
+
+
+
+                        </div>
+
+                    </div>
+
+
+                    <img class="img-noth" src="img/Designs/pngs/notch.png" alt="">
+
+
+
+
+                </div>
+
+                <div class="title">
+                    <h1>Tópicos</h1>
+                    <span> - Confira os tópicos para uma busca mais profunda</span>
+                </div>
+
+                <div class="sub-topics">
+
+                    <div class="cont-topics">
+
+                        <div class="topicos1">
+
+                            <img src="./img/1.png"
+                                alt="">
+
+                            <div class="caption-topics">
+                                <h5>CRAFTS</h5>
+                                <p class="conferir-topico-button">CONFERIR</p>
+                            </div>
+
+                        </div>
+
+                        <div class="topicos2">
+
+                            <img src="./img/2.png" alt="">
+
+                            <div class="caption-topics">
+                                <h5>MODS</h5>
+                                <p class="conferir-topico-button">CONFERIR</p>
+                            </div>
+
+                        </div>
+
+                        <div class="topicos3">
+
+                            <img src="./img/4.png"
+                                alt="">
+
+                            <div class="caption-topics">
+                                <h5>DICAS</h5>
+                                <p class="conferir-topico-button">CONFERIR</p>
+                            </div>
+
+                        </div>
+
+                        <div class="topicos4">
+
+                            <img src="./img/3.png"
+                                alt="">
+
+                            <div class="caption-topics">
+                                <h5>BUGS</h5>
+                                <p class="conferir-topico-button">CONFERIR</p>
+                            </div>
+
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+            </div>
+
+
+
+
+
+        </main>
+
+
+
+    </div>
+
+    <div class="modal-pergunta model">
+
+        <div class="cont-title-modal-pergunta">
+            <span>Tema da Pergunta:</span>
+            <select class="select_status" name="" id="">
+                <option value="crafts">CRAFTS</option>
+                <option value="bugs">BUGS</option>
+                <option value="dicas">DICAS</option>
+                <option value="mods">MODS</option>
+            </select>
+        </div>
+
+        <div class="cont-modal-quest-data">
+            <p class="data-modal-quest"></p>
+        </div>
+
+        <div>
+            <textarea name="" id="txtPerguntar" cols="30" rows="10" placeholder=" Insira Aqui a sua Dúvida...."></textarea>
+            <div class="cont-btn">
+                <P onclick="fecharModalPergunta()">Cancelar</P>
+                <p onclick="cadastrarPergunta()">ENVIAR</p>
+            </div>
+        </div>
+
+    </div>
+
+
+    <!-- <footer>
+        s
+    </footer> -->
+</body>
+
+<script src="js/script.js"></script>
+
+</html>

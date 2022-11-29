@@ -31,6 +31,7 @@ create table respostas(
     foreign key (id_usuario) references usuarios(id_user) on delete cascade
 );
 
+
 drop view if exists vw_status;
 create VIEW vw_status as 
 select u.id_user, u.email, u.nickname, u.nome_user, u.senha from usuarios u
@@ -95,6 +96,5 @@ insert into respostas values(5,6,'Olá jotóba_MOkano, utilizando as escamas que
 insert into perguntas values(1,default,'Não consigo abrir meu minecraft','BUGS', '2022-09-21');
 insert into respostas values(11,7,'Vose tem o java imstalado no seu computador? Se vc tiver, atualiza os drivis do pc','2022-10-21');
 
-insert into perguntas values(1,default,'Não consigo abrir meu minecraft','BUGS', '2022-09-21');
-insert into respostas values(11,7,'Vose tem o java imstalado no seu computador? Se vc tiver, atualiza os drivis do pc','2022-10-21');
+
 

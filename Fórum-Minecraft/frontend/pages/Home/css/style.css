@@ -1,0 +1,746 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,500;1,600&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins';
+}
+
+body {
+    background-image: url('https://www.todofondos.net/wp-content/uploads/4k-minecraft-wallpapers-los-mejores-fondos-4k-minecraft-gratis.-fondo-de-pantalla-hd-1080p-de-minecraft.png');
+    background-size: cover;
+}
+
+.model {
+    display: none;
+    visibility: hidden;
+}
+#container {
+    width: 75vw;
+    margin: 0 auto;
+    background-color: white;
+    /* height: 120vh; */
+}
+
+.nav-img {
+    width: 79.3%;
+}
+
+.img-banner{
+    width: 100%;
+    height: 30vh;
+    object-fit: cover;
+    /* margin-top: 5px; */
+}
+
+header {
+    display: flex;
+        
+}
+
+.cont-ul {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    margin-top: -8px;
+    background-color: #212124;
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.dropDown {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: #212124;
+    list-style: none;
+    margin-left: -10px;
+    border-radius: 10px 10px;
+    /* padding: 5px; */
+}
+
+.dropDown li {
+    padding: 10px 10px;
+    padding-right: 25px;
+    text-align: justify;
+    font-size: 12pt;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.568);
+}
+.dropDown li:last-child {
+    border: none;
+}
+
+.dropDown li a {
+    text-decoration: none;
+    color: white;
+}
+nav  {
+    margin-left: -8px;
+}
+nav ul li {
+    font-size: 14pt;
+    padding: 0 20px;
+    cursor: pointer;
+    /* border-left: 1px solid white;
+    border-right: 1px solid white; */
+
+}
+nav ul li i {
+    margin-right: 5px;
+}
+
+nav ul h1 {
+    margin-left: 6px;
+    padding-right: 5%;
+}
+
+.img-menu {
+    width: 2%;
+    color: white;
+}
+
+.inf-user {
+    
+    /* width: 16vw; */
+    margin: 0 auto;
+    border-radius: 10px;
+    text-align: center;
+    color: white;
+    background-color: #212124;
+    padding: 20px 10px 0px 10px;
+}
+.inf-user .email, .cargo {
+    font-size: 10pt;
+    margin-top: 7px;
+    font-weight: 300;
+}
+
+.user-icon {
+    font-size: 25pt;
+    /* color: black; */
+}
+
+.actions {
+    display: flex;
+    justify-content: center;
+}
+.actions i{
+    font-size: 20pt;
+    color: #ffffff;
+    margin: 25px 5px;
+}
+
+
+.cont-pergunta {
+    margin-top: 1px;
+    background-color: #212124;
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    width: 100%;
+    /* border-radius: 10px; */
+}
+
+
+.cont-inf {
+    margin-top: 1px;
+    padding-top: 10px;
+    background-color: #212124;
+    color: white;
+    text-align: center;
+    font-size: 13pt;
+}
+
+
+
+.c-1  {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 12pt;
+    padding: 16px 5px;
+}
+
+.c-1 div {
+    display: flex;
+}
+
+.c-1 i {
+    font-size: 16pt;
+}
+
+.cont-contribuidores{
+    overflow-y: scroll;
+    height: 23vh;
+    margin-top: 1px;
+    padding-top: 10px;
+    background-color: #212124;
+    color: white;
+    padding-bottom: 10px;
+    text-align: center;
+    font-size: 13pt;
+    
+}
+
+.cont-contribuidores::-webkit-scrollbar{
+    width: 12px;
+    border-left: 1px solid rgba(255, 255, 255, 0.486);    
+}
+
+.cont-contribuidores::-webkit-scrollbar-thumb {
+    background-color: #515153;
+    border-radius: 0px 10px 30px;
+}
+
+
+
+.title-contribuidores , .title-agradecimentos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.title-agradecimentos {
+    padding-top: 10px;
+}
+
+.title-contribuidores h5 {
+    padding: 1px;
+}
+.contribuidores  {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 25px;
+    background-color: #515153;
+    
+}
+
+.usuarios-modal {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 25px;
+    background-color: #515153;
+}
+
+
+.img-user , .img-user-modal{
+    width: 25px;
+    height: 25px;
+    object-fit: cover;
+    border-radius: 15px;
+    margin-right: 10px;
+}
+
+
+.cont-pergunta button {
+    border: none;
+    background: white;
+    padding: 5px;
+    border-radius: 5px;
+    font-weight: 500;
+}
+
+
+.agradecimentos {
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+    margin-top: 1px;
+    height: 40.5vh;
+    background-color: #212124;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.agradecimentos::-webkit-scrollbar{
+    width: 12px;
+    border-left: 1px solid rgba(255, 255, 255, 0.486);    
+}
+
+.agradecimentos::-webkit-scrollbar-thumb {
+    background-color: #515153;
+    border-radius: 0px 10px 30px;
+}
+
+.agradecimentos hr {
+    width: 85%;
+    margin: 2% auto;
+    border: 1px solid rgba(255, 255, 255, 0.315);
+}
+.agradecimentos h5 , i {
+    color: white;
+}
+
+
+.cont-section-01 {
+    max-width: 62vw;
+    margin: 5px 5px;
+    
+}
+
+
+.title {
+    width: 95%;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    color: black;
+    /* margin-left: -15px; */
+    background-color: #212124;
+    color: rgb(252, 252, 252);
+    border-radius: 10px;
+    
+
+}
+
+.title > h1 {
+    margin-right:10px;
+    text-align: center;
+    font-size: 15pt;
+
+}
+
+.title > span{
+    font-size: 18px;
+}
+
+
+
+.cont-section-01 {
+    display: flex;
+    flex-direction: column;
+}
+.cont-cards {
+    display: flex;
+    margin: 15px 0px;
+    width: 94%;
+    /* background-color: #212124; */
+}
+
+.cards {
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.37);
+    margin: 10px;
+    background-color: white;
+    padding: 5px 0px;
+    border-radius: 2px;
+}
+
+
+.cards p , h4 {
+    padding-left: 10px;
+}
+
+.cont-cards img {
+    width: 100%;
+    object-fit: cover;
+}
+
+#section-02 {
+    margin: 2px;
+    position: fixed;
+    left: 72.4%;
+    width: 15vw;
+}
+
+.cont-questions {
+    display: flex;
+    justify-content: space-around;
+    /* flex-direction: column-reverse; */
+    width:55vw;
+    margin: 10px 35px;
+    
+}
+.questions  {
+    /* border: 1px solid rgba(0, 0, 0, 0.404); */
+    margin-bottom: 30px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.466);
+    border-radius: 5px;
+    width: 95%;  
+    padding: 10px;    
+}
+
+.img-noth {
+    width: 35%;
+    object-fit: contain;
+}
+
+.header-question {
+    display: flex;
+    align-items: center;
+    padding: 10px
+
+}
+
+.questions hr {
+    width: 90%;
+    margin: 10px auto;
+}
+.questions div {
+    padding-left: 5px;
+}
+.questions img {
+    width: 10%;
+    object-fit: cover;
+    border-radius: 10%;
+}
+
+.question-p {
+    padding-left: 1%;
+}
+.tittle-question {
+    display: flex;
+    align-items: center;
+}
+
+.tittle-question p {
+    font-size: 10pt;
+    margin-left: 5px;
+    font-weight: 600;
+}
+
+.input-answer {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.i-enviar {
+    font-size: 15pt;
+    margin-left: -40px;
+    cursor: pointer;
+}
+.cont-input {
+    width: 60%;
+    display: flex;
+    align-items: center;
+}
+
+.input-answer input{
+    width: 100%;
+    margin: 10px;
+    padding: 3px 15px;
+    border-radius: 40px;
+    border: 1px solid rgba(0, 0, 0, 0.288);
+}
+
+.cont-ver-mais-resposta {
+    display: flex;
+    align-items: center;
+}
+
+.cont-ver-mais-resposta p {
+    font-size: 11pt;
+}
+
+.h-sec-01  {
+    display: flex;
+}
+
+.cont-bujigangas {
+    display: flex;
+}
+
+.cont-bujigangas i {
+    font-size: 17pt;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.favoritar-vazio:hover {
+    transition: 0.1s;
+    color: rgb(160, 160, 10);
+}
+.favoritar-cheio {
+    color: #ffd700;
+}
+
+.curtir-vazio:hover {
+    transition: 0.1s;
+    color: rgba(255, 0, 0, 0.815);
+}
+.curtir-cheio {
+    color: rgba(255, 0, 0, 0.815);
+}
+
+
+.answer {
+    position: absolute;
+    left: 50%;
+    width: 22%;
+    height: 64vh;
+    background-color: #ffffff;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.288);
+}
+
+
+.answer h4 {
+    text-align: center;
+}
+
+.answer hr {
+    margin-bottom: 10px;
+}
+
+.title-answer {
+    padding: 10px;
+}
+
+.pergunta-answer {
+    text-align: justify;
+}
+
+.tema-answer {
+    text-align: center;
+}
+
+.answer-card {
+    background-color: #515153;
+    padding: 5px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.cont-title-answer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.data-question-answer {
+    margin-left: 10px;
+    font-size: 11pt;
+}
+.user-answer {
+    overflow-y: scroll;
+    background-color: #212124;
+    padding: 10px;
+    height: 52.6vh;
+
+}
+
+.user-answer::-webkit-scrollbar{
+    width: 12px;
+    border-left: 1px solid rgba(255, 255, 255, 0.486);
+    
+}
+
+.user-answer::-webkit-scrollbar-thumb {
+    background-color: #515153;
+}
+.answer h2 {
+    font-size: 13pt;
+    color: white;
+    text-align: center;
+    
+}
+.answer-card img {
+    width: 13%;
+    object-fit: cover;
+    border-radius: 5px;
+}
+.header-user-answer {
+    display: flex;
+    border-radius: 20px;
+    
+}
+
+.user-answer-title {
+    margin-left: 10px;
+    color: white;
+}
+
+.answer-r {
+    color: white;
+}
+
+.pergunta-answer {
+    text-align: center;
+}
+/********* SESSÃO DOS TÓPICOSS ******/
+.sub-topics {
+    display: flex;
+    flex-wrap: wrap;
+    /* background-color: #212124; */
+    width: 80%;
+    justify-content: center;
+    margin: 1% auto;
+}
+
+.cont-topics {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.topicos1, .topicos2, .topicos3,.topicos4 {
+    margin: 10px 0px;
+    padding-left: 10px;
+    
+    /* padding: 3px; */
+    display: flex;
+    /* border: 2px solid black; */
+    width: 48%;
+    text-align: center;
+    /* border-radius: 10px; */
+    border-radius: 5px;
+    color: white;
+    
+}
+
+.topicos1{
+    background-color: #87653C;
+    margin-left: 1px;
+}
+
+.topicos2{
+    background-color: #006D70;
+}
+
+.topicos3{
+    background-color: #342B6E;
+}
+
+.topicos4{
+    background-color: #9D3AB4;
+}
+
+
+
+.topicos1 > img, .topicos2 > img, .topicos3 > img, .topicos4 > img{
+    margin: 10px;
+    width: 30%;
+    object-fit: cover;
+    /* border-radius: 20px; */
+    background-color: #212124;
+    
+}
+
+.caption-topics {
+    /* background-color: #212124; */
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 10px;
+    font-size: 20px;
+    /* background-color: #212124; */
+}
+
+.conferir-topico-button {
+    font-size: 17px;
+    border: 1px solid white;
+    border-radius: 30px;
+    padding: 3px 0px;
+    width: 60%;
+    margin: 0 auto;
+    cursor: pointer;
+}
+
+.conferir-topico-button:hover{
+    background-color: white;
+    color: black;
+}
+/************** FIM DA SESSÃO DOS TÓPICOS **************/
+
+/******************** MODAL PERGUNTA ********************/
+
+.modal-pergunta {
+    width: 55%;
+    /* margin: 10px; */
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0px 0px 10px black;
+    position: fixed;
+    top: 25%;
+    left: 15%;
+}
+.cont-title-modal-pergunta {
+    display: flex;
+    justify-content: center;
+    margin: 10px auto;
+    color: rgb(0, 0, 0);
+}
+
+.data-modal-quest {
+    text-align: center;
+    color: rgba(0, 0, 0, 0.596);
+    
+}
+
+.cont-title-modal-pergunta select {
+    padding: 1px 10px;
+    margin-left: 10px;
+    border-radius: 30px;
+}
+.modal-pergunta textarea {
+    padding: 5px;
+    resize: none;
+    width: 100%;
+    height: 15vh;
+    display: block;
+    margin: 0 auto;
+}
+
+.cont-btn {
+    margin-top: 15px;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    font-size: 10pt;
+}
+
+.cont-btn p:nth-child(1) {
+    margin-right: 20px;
+    border: 1px solid rgb(255, 0, 0);
+    padding: 3px 15px;
+    color: red;
+    font-weight: 500;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.cont-btn p:nth-child(2) {
+    margin-right: 20px;
+    border: 1px solid rgb(2, 2, 2);
+    padding: 3px 25px;
+    color: rgb(0, 0, 0);
+    font-weight: 500;
+    border-radius:50px;
+    cursor: pointer;
+}
+
+
+.cont-btn p:nth-child(1):hover {
+    transition: 0.2s;
+    background-color: red;
+    color: white;
+}
+
+.cont-btn p:nth-child(2):hover {
+    transition: 0.2s;
+    background-color: rgb(0, 0, 0);
+    color: white;
+}
+
+
+/************* FIM DO MODAL PERGUTAR *************/
+
+footer {
+    background-color: #212124;
+    width: 100%;
+}
+
+/************* LINK NOS CARDS *************/
+
+a{
+    text-decoration: none;
+    color: black;
+}
