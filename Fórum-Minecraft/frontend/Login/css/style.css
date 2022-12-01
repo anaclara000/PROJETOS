@@ -184,6 +184,7 @@ form > p{
     color: red;
     text-align: center;
 }
-.modal{
+.modal, .tela{
     display: none;
+    visibility: hidden;
 }
