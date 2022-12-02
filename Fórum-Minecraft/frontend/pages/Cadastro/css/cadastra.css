@@ -146,6 +146,26 @@ label {
 }
 
 .modal-certo{
-    display: fixed;
-    top: 0%;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    display: flex;
+    position: absolute;
+    top: 30%;
+    left: 35%;
+    height: 40%;
+    width: 40%;
+    background-color: rgba(0, 0, 0, 0.103);
+    border-radius: 10px;
+}
+
+.modal-certo > img{
+    width: 15vw;
+    height: 10vw;
+}
+
+.modal-certo > button{
+    width: 10vw;
+    display: flex;
+    justify-content: center;
 }

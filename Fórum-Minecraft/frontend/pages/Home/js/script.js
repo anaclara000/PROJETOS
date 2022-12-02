@@ -45,6 +45,8 @@ function carregar() {
 
 function preencher() {
 
+
+
     document.querySelector('.qtdPerguntas').innerHTML = questions.length
     document.querySelector('.qtdUsuarios').innerHTML = usuarios.length
 
@@ -57,6 +59,7 @@ function preencher() {
             novoUser.style.display = 'flex'
 
             novoUser.querySelector('.nome-user-modal').innerHTML = u.nickname
+            novoUser.querySelector('.id_user').innerHTML = u.id_user
             document.querySelector('.agradecimentos').appendChild(novoUser)
         }
 
@@ -68,8 +71,26 @@ function preencher() {
 
             novoadmin.querySelector('.nome-admin-modal').innerHTML = u.nickname
             document.querySelector('.cont-contribuidores').appendChild(novoadmin)
+
+
         }
     })
+
+}
+
+
+// FUNÇÕES PRIVILEGIO DE ADM
+function editarUser(e) {
+
+    var idUser = e.parentNode.parentNode.querySelector('.id_user').innerHTML
+    var modal = document.querySelector('.modal-editar-usuario')
+    var idUsuario = document.querySelector('.id_user_model')
+
+    modal.classList.toggle('model')
+
+
+    idUsuario.innerHTML = idUser
+
 
 }
 

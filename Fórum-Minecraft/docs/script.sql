@@ -41,9 +41,9 @@ select * from vw_status;
 
 drop view if exists vw_feed;
 create VIEW vw_feed as
-select p.id_User,u.nickname, p.id_pergunta, p.pergunta, p.tema, p.data, r.id_usuario, r.resposta, r.dataResp from perguntas p 
+select p.id_User, p.id_pergunta, p.pergunta, p.tema, p.data, r.id_usuario, u.nickname ,r.resposta, r.dataResp from perguntas p 
 inner join respostas r on p.id_pergunta = r.id_perg
-inner join usuarios u on  u.id_user = p.id_User;
+inner join usuarios u on  u.id_user = r.id_usuario;
 select * from vw_feed;
 
 
