@@ -16,24 +16,25 @@ function ativar() {
         .catch(err => console.error(err));
     
 }
-
-function logar() {
+ 
+function logar(e) {
     var inpUser = document.querySelector('#user').value
     var inpSenha = document.querySelector('#senha').value 
-
+    var id 
     var encontrado = false
     var usuarioEncontrado = false
-
-    console.log(users)
 
     users.forEach(e => {
 
         if(inpUser == e.email && inpSenha == e.senha ) {
             encontrado = true
+            id  = e.id_user;
+            console.log(id)
         }
         else if(inpUser == e.nickname && inpSenha == e.senha) {
             usuarioEncontrado = true
-            
+            id  = e.id_user;
+            console.log(id)
 
 
         }
@@ -41,11 +42,11 @@ function logar() {
     })
 
     if(encontrado == true) {
-        localStorage.setItem("info", JSON.stringify({"email":inpUser, "senha":inpSenha}));
+        localStorage.setItem("info", JSON.stringify({"email":inpUser, "senha":inpSenha, "id_user":id}));
         window.location.href = '../pages/Home/index.html'
 
     }if(usuarioEncontrado == true){
-        localStorage.setItem("info", JSON.stringify({"nickname":inpUser, "senha":inpSenha}));
+        localStorage.setItem("info", JSON.stringify({"nickname":inpUser, "senha":inpSenha, "id_user":id}));
         window.location.href = '../pages/Home/index.html'
     }
     else {

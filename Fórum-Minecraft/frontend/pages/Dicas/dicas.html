@@ -23,14 +23,14 @@
                     <ul class="cont-ul">
                         <img class="img-menu" src="img/output-onlinepngtools.png" alt="">
                         <h1>RENASCRAFT</h1>
-                        <li><i class='bx bxs-home'></i>HOME</li>
+                        <li><a href="../Home/index.html"><i class='bx bxs-home'></i>HOME</a></li>
                         <li><i class='bx bxs-user-account'></i>INTEGRANTES</li>
                         <li onclick="menuDow()">TÓPICOS<i class='bx bx-caret-down'></i>
                             <ul class="dropDown model">
-                                <li><a href=""><i class='bx bxs-pin'></i>CRAFTS</a></li>
+                                <li><a href="../Crafts/crafts.html"><i class='bx bxs-pin'></i>CRAFTS</a></li>
                                 <li><a href=""><i class='bx bxs-error'></i>BUGS</a></li>
-                                <li><a href=""><i class='bx bxs-invader'></i>DICAS</a></li>
-                                <li><a href=""><i class='bx bx-card'></i>MODS</a></li>
+                                <li><a href="../Dicas/dicas.html"><i class='bx bxs-invader'></i>DICAS</a></li>
+                                <li><a href="../Mods/mods.html"><i class='bx bx-card'></i>MODS</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -97,13 +97,6 @@
                             <h5 class="nome-admin-modal">Rennas Ala Fulano</h5>
                         </div>
                     </div>
-
-
-
-
-
-
-
                 </div>
 
 
@@ -178,6 +171,13 @@
 
                 </div>
 
+                <div class="filtro">
+
+                   <input class="inpFiltrar" placeholder="Insira algo para filtrar . . . " type="text" name="" id="">
+
+                   <button class="btn-filter"> FILTRAR</button>
+                </div>
+
 
                 <div class="cont-questions">
 
@@ -206,11 +206,11 @@
                                 </div>
 
                                 <div class="cont-bujigangas">
-                                    <i class='bx bx-bookmark favoritar-vazio' onclick="favoritar()"></i>
-                                    <i class='bx bxs-bookmark model favoritar-cheio' onclick="favoritar()"></i>
+                                    <i class='bx bx-bookmark favoritar-vazio' onclick="favoritar(this)"></i>
+                                    <i class='bx bxs-bookmark model favoritar-cheio' onclick="favoritar(this)"></i>
 
-                                    <i class='bx bx-heart curtir-vazio' onclick="curtir()"></i>
-                                    <i class='bx bxs-heart model curtir-cheio' onclick="curtir()"></i>
+                                    <i class='bx bx-heart curtir-vazio' onclick="curtir(this)"></i>
+                                    <i class='bx bxs-heart model curtir-cheio' onclick="curtir(this)"></i>
                                 </div>
 
                                 <!-- <hr> -->
@@ -230,7 +230,7 @@
                                 </div>
 
 
-                                <div class="cont-ver-mais-resposta" onclick="modalRespostas(this)">
+                                <div class="cont-ver-mais-resposta" onclick="ativarModalResposta(this)">
                                     <p>VER RESPOSTAS</p>
                                     <i class='bx bx-chevrons-down'></i>
                                 </div>
@@ -243,49 +243,26 @@
                                 <div class="user-answer model">
 
                                     
-
-
+                                   
                                         <h2>RESPOSTAS</h2>
-
-                                        <hr>
-
-                                        <div class="answer-card model">
-
-                                            <div class="header-user-answer">
-                                                <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/160745e3-9f8c-46b9-a326-cc9efff1e5aa/d7kxdcf-094a44e7-d459-47b6-8bf8-689a3a84d106.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzE2MDc0NWUzLTlmOGMtNDZiOS1hMzI2LWNjOWVmZmYxZTVhYVwvZDdreGRjZi0wOTRhNDRlNy1kNDU5LTQ3YjYtOGJmOC02ODlhM2E4NGQxMDYucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.l8kabRud63qyIqTQtuZ-7PjI9yOxibEgYdsK2zaUHgc"
-                                                    alt="">
-
-                                                <div class="user-answer-title">
-                                                    <div>
-                                                        <h5 class="usuario-resp">sdadada</h5>
-                                                        <span class="data-resp">LORE</span>
-                                                    </div>
-
-                                                </div>
-                                            </div>
-
-                                            <div class="cont-answer-r">
-                                                <p class="answer-r">Lorem ipsum dolor sit amet consectetur adipisicing
-                                                    elit.
-                                                    Incidunt, autem eum et voluptate nobis repellat quis molestias
-                                                    voluptatum nam
-                                                    sed sint quam beatae eius non esse totam ullam quasi? Facere.</p>
-                                            </div>
-
-
-                                        </div>
                                         
+                                    
+                                    
+                                    <i class='bx bx-x btn-fechar' onclick="fechandoModal(this)"></i>
+
+                                     <hr>
+
+                            
                                     
 
 
 
 
 
+                                        
                                 </div>
 
-                                <button onclick="fechandoModal(this)">fechar</button>
-
-
+                                
                             </div>
 
                         </div>
@@ -296,13 +273,7 @@
 
                 </div>
 
-
-
-
-                <!-- <img class="img-noth" src="img/Designs/pngs/notch.png" alt=""> -->
-
-
-
+           
 
             </div>
 
@@ -367,16 +338,9 @@
 
                 </div> -->
 
-
     </div>
 
-
-
-
-
     </main>
-
-
 
     </div>
 
@@ -407,10 +371,6 @@
 
     </div>
 
-
-    <!-- <footer>
-        s
-    </footer> -->
 </body>
 
 <script src="js/script.js"></script>

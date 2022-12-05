@@ -1,0 +1,516 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+
+/* MODEL UTILIZADO PRA SUMIR COM ELEMENTOS */
+.model {
+  display: none;
+  visibility: hidden;
+}
+
+/*------------ INICIO DO HEADER ------------*/
+
+/** IMAGEM DO MENU **/
+.bannerLogo {
+  width: 100%;
+  height: 30vh;
+  object-fit: cover;
+}
+/** FIM DA IMAGEM DO MENU **/
+
+/** TÍTULO DO MENU **/
+.cont-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  width: 100%;
+  top: 25%;
+  background-color: #212124;
+  color: white;
+  text-align: center;
+}
+.cont-title img {
+  width: 6%;
+  margin: 0px 10px;
+  object-fit: cover;
+}
+/** FIM DO TITULO DO MENU **/
+
+/** MENU HAMBURGUER **/
+  /* #header{
+        display: block;
+        position: absolute;
+        top: 2%;
+        left: 85%;
+       
+        background-color: #212124;
+        border-radius: 5px;    
+  }
+  #menu {
+    display: block;
+    position: absolute;
+    top: 70px;
+    letter-spacing: normal;
+    padding-top: 20px;
+    right: 0px;
+    
+    transition: 0.6s;
+    background-color: white;
+    height: 0px;
+    visibility: hidden;
+    overflow-y: hidden;
+  }
+  #nav.active #menu {
+    height: calc(100vh - 70px);
+    visibility: visible;
+    overflow-y: auto;
+  }
+  #menu li:hover {
+      color: white;
+      background-color: white;
+  }
+  #menu a {
+    padding: 1rem 0;
+    margin: 0 1rem;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.05);
+  }
+  #btn-mobile {
+    display: flex;
+    padding:  10px;
+    padding-top: 13px;
+    font-size: 12pt;
+    border: none;
+    background: none;
+    cursor: pointer;
+    gap: 0.5em;
+  }
+  #hamburger {
+    border-top: 2px solid;
+    width: 20px;
+    color: white;
+  }
+  #hamburger::after,
+  #hamburger::before {
+    content: '';
+    display: block;
+    width: 20px;
+    height: 2px;
+    background: currentColor;
+    margin-top: 5px;
+    transition: 0.3s;
+    position: relative;
+  }
+  #nav.active #hamburger {
+    border-top-color: transparent;
+  }
+  #nav.active #hamburger::before {
+    transform: rotate(135deg);
+  }
+  #nav.active #hamburger::after {
+  transform: rotate(-135deg);
+  top: -7px;
+  } */
+/** FIM DO MENU HAMBURGUER **/
+
+/*------------ FIM DA SESSAO <HEADER>  ------------*/
+
+/*------------ INICIO DO <MAIN> ------------*/
+
+/* SLIDERS */
+
+.slick-track {
+  width: 0;
+}
+.slick-slide > div {
+    margin: 5px;  
+    margin-top: 15px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.438);
+    border-radius: 5px;
+    /* padding: 10px; */
+}
+
+.slick-slide img {
+  width: 100%;
+} 
+
+.slick-dots{
+  margin-bottom: 5px;
+}
+.slick-slide h3 {
+  /* text-align: center; */
+  font-size: 12pt;
+}
+.slick-slide p {
+  text-align: justify;
+}
+.slick-slide h3, p {
+  margin: 5px 10px;
+}
+.slick-list {
+  /* margin: 0 -10px; */
+}
+
+.card {
+  border: 1px solid #fff;
+  background: black;
+  border-radius: 8px;
+  overflow: hidden;
+
+  height: 400px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.card-top h1 {
+  font-size: 0.9rem;
+  margin: 20px;
+}
+
+.card-top > img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  background: black;
+}
+
+.card-bottom {
+  margin: 10px 20px;
+}
+
+.category {
+  position: relative;
+}
+.category::before {
+  content: '';
+  background: rgb(255, 61, 61);
+  position: absolute;
+  top: calc(100% + 10px);
+  left: 0;
+  right: 0;
+  height: 2px;
+}
+
+
+/* FIM DOS SLIDES */
+
+
+/** BOTÃO NEW QUESTION **/
+.cont-btn-NQuestion {
+  display: flex;
+  padding: 1px 6px;
+  background-color: white;
+  /* padding: 1px 15px; */
+  /* margin-left: 20px; */
+  margin-left: 30px;
+  border-radius: 5px;
+}
+.btnNQuestion {
+  font-size: 20pt;
+  
+  color: black;
+}
+
+
+/* LAST QUESTIONS */
+.title {
+  margin: 2px;
+  background-color: #212124;
+  color: white;
+  padding: 5px;
+  margin-top: 6%;
+  display: flex;
+  align-items: center;
+  border-radius: 10px;
+}
+
+.title h1 {
+  font-size: 15pt;
+  margin-left: 15px;
+
+}
+
+/* CARDS DAS PERGUNTAS */
+.cont-card-questions {
+
+}
+.question {
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.74);
+  width: 95%;
+  margin: 4% auto;
+  padding: 5px;
+}
+
+.header-question {
+  margin: 10px;
+  display: flex;
+}
+.header-question img {
+  width: 13%;
+  border-radius: 5px;
+  object-fit: cover;
+}
+
+.cont-title-question {
+  margin-left: 10px;
+}
+.cont-title-question h2 {
+  font-size: 11pt;
+}
+
+.main-question {
+  /* width: 95%; */
+}
+
+.main-question input {
+  display: block;
+  width: 90%;
+  margin: 0 auto;
+  padding: 4px 5px;
+  border-radius: 20px;
+  border: 1px solid rgba(0, 0, 0, 0.664);
+}
+
+.cont-icon {
+  display: flex;
+  justify-content: space-between;
+  font-size: 16pt;
+  margin: 20px 25px 0px 25px;
+
+}
+.icons {
+  margin: 1px 5px;
+}
+
+/********** FIM DAS PERGUNTAS **********/
+
+/********** RESPOSTAS **********/
+.answer {
+  background-color: #212124;
+  height: 30vh;
+  overflow-y: scroll;
+}
+
+.cont-title-modal-answer {
+  text-align: center;
+  color: white;
+  font-size: 10pt;
+}
+
+.cont-title-modal-answer hr {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.answer-card {
+  display: flex;
+  flex-direction: column;
+} 
+
+.cards {
+  background-color: #87653c91;
+  margin: 5px;
+}
+
+.head-answer-card {
+  display: flex;
+  padding: 10px;
+}
+.head-answer-card img {
+  width: 15%;
+  height: 6vh;
+  object-fit: cover;
+}
+
+.head-answer-title h3 {
+  font-size: 11pt;
+  margin-left: 10px;
+  color: rgba(255, 255, 255, 0.89);
+
+}
+
+.head-answer-title p {
+  color: white;
+  font-size: 11pt;
+  margin-bottom: -100%;
+
+}
+
+.resposta {
+  margin: 2px;
+  text-align: justify;
+  color: white;
+  font-size: 11pt;
+  margin-top: -20vh;
+
+}
+
+/********** FIM DAS RESPOSTAS **********/
+
+
+/********** TÓPICOS **********/
+.topicos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+}
+
+.container-cards-topics  {
+  display: flex;
+  margin: 10px;
+  width: 65%;
+  padding: 5px;
+  border-radius: 5px;
+  
+}
+
+.container-cards-topics:nth-child(1) {background-color: #87653C;}
+.container-cards-topics:nth-child(2) {background-color: #006D70;}
+.container-cards-topics:nth-child(3) {background-color: #342B6E;}
+.container-cards-topics:nth-child(4) {background-color: #9D3AB4;}
+
+.container-cards-topics img {
+  width: 35%;
+  object-fit: cover;
+}
+
+.topicos div {
+  grid-template-rows: 1;
+}
+
+.topicos-title {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: space-around;
+  margin-left: 15%;
+  color: white;
+
+}
+
+.topicos-title p {
+  font-weight: 600;
+  font-size: 11pt;
+}
+
+.topicos-title button {
+  background: none;
+  border: 1px solid white;
+  padding: 2px 10px;
+  border-radius: 30px;
+  color: white;
+}
+
+
+/********* FIM DOS TÓPICOS **********/
+
+
+/*------------ FIM DO <MAIN> ------------*/
+
+
+/* CSS TESTE */
+
+.icon {
+  position: absolute;
+  z-index: 4;
+  left: 1%;
+  width: fit-content;
+  height: 44px;
+}
+
+.hamburguer {
+  top: 35%;
+  left: 10%;
+  width: 30px;
+  height: 6px;
+  background-color: #ff3300;
+  position: absolute;
+  box-shadow: 0 2px 5px rgba(0,0,0,.2);
+  transition: 0.5s;
+}
+
+.hamburguer::before {
+    top: -12px;
+    content: '';
+    position: absolute;
+    width: 37px;
+    height: 6px;
+    background: #ff3300;
+    box-shadow: 0 2px 5px rgba(0,0,0,.2);
+    transition: 0.5s;
+
+}
+
+.hamburguer::after {
+  top: 12px;
+  content: '';
+  position: absolute;
+  width: 37px;
+  height: 6px;
+  background: #ff3300;
+  box-shadow: 0 2px 5px rgba(0,0,0,.2);
+  transition: 0.5s;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  left: 1%;
+  padding: 45px 0 0;
+  color: white;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.list .listItems {
+  padding: 0;
+  list-style: none;
+}
+
+.list .listItems li {
+  margin: 2px 8px;
+  cursor: pointer;
+}
+
+.list .listItems li:hover {
+  font-weight: 800;
+}
+
+.icon.iconActive .hamburguer {
+  background: transparent;
+  box-shadow: 0px 2px 5px transparent;
+}
+
+.icon.iconActive .hamburguer:after {
+  top: 0;
+  background: rgb(20, 2, 2);
+  transform: rotate(225deg);
+  box-shadow: 0 -2px 5px rgba(0,0,0,.2);
+}
+
+.icon.iconActive .hamburguer:before {
+  top: 0;
+  background: white;
+  transform: rotate(225deg);
+  box-shadow: 0 -2px 5px rgba(0,0,0,.2);
+}
+
+.menu.MenuOpen {
+  width: 150px;
+  height: 100vh;
+  background-color: #000;
+  box-shadow: 10px 0px 69px 0px rgba(0, 0, 0, 0.74);
+}
+
+.menu.menuClose {
+  display: none;
+  width: 0;
+}

@@ -27,10 +27,10 @@
                         <li><i class='bx bxs-user-account'></i>INTEGRANTES</li>
                         <li onclick="menuDow()">TÓPICOS<i class='bx bx-caret-down'></i>
                             <ul class="dropDown model">
-                                <li><a href=""><i class='bx bxs-pin'></i>CRAFTS</a></li>
+                                <li><a href="../Crafts/crafts.html"><i class='bx bxs-pin'></i>CRAFTS</a></li>
                                 <li><a href=""><i class='bx bxs-error'></i>BUGS</a></li>
-                                <li><a href=""><i class='bx bxs-invader'></i>DICAS</a></li>
-                                <li><a href=""><i class='bx bx-card'></i>MODS</a></li>
+                                <li><a href="../Dicas/dicas.html"><i class='bx bxs-invader'></i>DICAS</a></li>
+                                <li><a href="../Mods/mods.html"><i class='bx bx-card'></i>MODS</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -47,6 +47,7 @@
                     <i class='bx bxs-user-circle user-icon'></i>
                     <p class="email">usuario@gmail.com</p>
                     <p class="nick"><span>Usuario</span></p>
+                    <p class="id"><span>2</span></p>
 
                     <div class="actions">
                         <i class='bx bx-cog'></i>
@@ -95,8 +96,6 @@
                             alt="">
                         <div>
                             <h5 class="nome-admin-modal">Rennas Ala Fulano</h5>
-
-                            
                         </div>
                     </div>
 
@@ -126,12 +125,6 @@
                             alt="">
                         <div>
                             <h5 class="nome-user-modal">s</h5>
-                            <p class="id_user model"></p>
-                            <div class="acoes">
-                                <i class='bx bxs-message-square-edit' onclick="editarUser(this)" ></i>
-                                <i class='bx bxs-trash-alt' ></i>
-
-                            </div>
                         </div>
                     </div>
 
@@ -139,20 +132,7 @@
                 </div>
 
 
-             
 
-
-            </div>
-            <div class="modal-editar-usuario model">
-
-                <h1 class="id_user_model"></h1>
-                
-                <select name="" id="">
-                    <option value="user">USER</option>
-                    <option value="admin">ADMIN</option>
-                </select>
-
-                <button>Salvar</button>
 
             </div>
 
@@ -249,9 +229,9 @@
                             <hr>
                             <div class="input-answer">
                                 <div class="cont-input">
-                                    <input type="text" placeholder="Insira a sua Resposta. . . .">
+                                    <input  class="inpResp"type="text" placeholder="Insira a sua Resposta. . . .">
 
-                                    <i class='bx bxs-right-arrow-circle i-enviar'></i>
+                                    <i class='bx bxs-right-arrow-circle i-enviar' onclick="cadastrarResposta(this)"></i>
                                 </div>
 
 

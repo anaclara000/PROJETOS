@@ -45,8 +45,6 @@ function carregar() {
 
 function preencher() {
 
-
-
     document.querySelector('.qtdPerguntas').innerHTML = questions.length
     document.querySelector('.qtdUsuarios').innerHTML = usuarios.length
 
@@ -59,7 +57,6 @@ function preencher() {
             novoUser.style.display = 'flex'
 
             novoUser.querySelector('.nome-user-modal').innerHTML = u.nickname
-            novoUser.querySelector('.id_user').innerHTML = u.id_user
             document.querySelector('.agradecimentos').appendChild(novoUser)
         }
 
@@ -71,108 +68,14 @@ function preencher() {
 
             novoadmin.querySelector('.nome-admin-modal').innerHTML = u.nickname
             document.querySelector('.cont-contribuidores').appendChild(novoadmin)
-
-
         }
     })
 
 }
 
-
-// FUNÇÕES PRIVILEGIO DE ADM
-function editarUser(e) {
-
-    var idUser = e.parentNode.parentNode.querySelector('.id_user').innerHTML
-    var modal = document.querySelector('.modal-editar-usuario')
-    var idUsuario = document.querySelector('.id_user_model')
-
-    modal.classList.toggle('model')
-
-
-    idUsuario.innerHTML = idUser
-
-
-}
-
-
-function ativarFetchesPerguntas() {
-
-    const options = { method: 'GET' };
-
-    fetch(uriQuestions, options)
-        .then(res => res.json())
-        .then(res => {
-            questions = res;
-            cardsPerguntas();
-        }
-        )
-        .catch(err => console.error(err));
-
-    fetch(uriUsuarios, options)
-        .then(res => res.json())
-        .then(res => {
-            usuarios = res;
-            cardsPerguntas();
-        }
-        )
-        .catch(err => console.error(err));
-
-}
-var qtdRep = 0
-function cardsPerguntas() {
-
-    console.log('entrando')
-
-    qtdRep += 1
-
-    questions.reverse()
-
-
-    if (qtdRep == 1) {
-        questions.forEach((q, i) => {
-
-            if (i < 3) {
-                var novoCardQuestion = cardQuestion.cloneNode(true)
-
-                novoCardQuestion.classList.toggle('model')
-
-                var idUsuario = q.id_User
-
-                usuarios.forEach(u => {
-
-                    if (idUsuario == u.id_user) {
-                        novoCardQuestion.querySelector('.nome-user-card').innerHTML = u.nome_user
-
-                    }
-
-                })
-
-                var data = q.data
-
-                const [ano, mes, juncao] = data.split('-')
-
-                var dia = juncao[0] + juncao[1]
-
-                var dataCompleta = dia + ' ' + mes + ' ' + ano
-
-                novoCardQuestion.querySelector('.id_usuario').innerHTML = q.id_User
-                novoCardQuestion.querySelector('.id_pergunta').innerHTML = q.id_pergunta
-                novoCardQuestion.querySelector('.data-question').innerHTML = '- ' + dataCompleta
-                novoCardQuestion.querySelector('.question-p').innerHTML = q.pergunta
-                novoCardQuestion.querySelector('.tema-card-question').innerHTML = q.tema
-
-                document.querySelector('.container-cards').appendChild(novoCardQuestion)
-            }
-
-        })
-    }
-
-
-}
+// -------------- MODAL E CAD RESPOSTAS -----------------
 
 function ativarModalResposta(e) {
-
-
     var id_quest = e.parentNode.parentNode.querySelector('.id_pergunta').innerHTML
     var id_user = e.parentNode.parentNode.querySelector('.id_pergunta').innerHTML
 
@@ -259,18 +162,98 @@ function modalRespostas() {
                         document.querySelector('.user-answer').appendChild(novaResposta)
                         
                     }
-               
             })
-
-            
         })
+}
 
-   
+function cadastrarResposta(e) {
+    var hoje = new Date()
+    var dia = String(hoje.getDate()).padStart(2, '0')
+    var mes = String(hoje.getMonth() + 1).padStart(2, '0')
+    var ano = hoje.getFullYear()
 
+    dataAtual = ano + '-' + mes + '-' + dia;
+
+    var id_pergunta = e.parentNode.parentNode.parentNode.querySelector('.id_pergunta').innerHTML
+    var inptResp = e.parentNode.querySelector(".inpResp").value;
+    var iduser = document.querySelector(".id").innerHTML;
+    console.log(inptResp)
+    if(inptResp != '') {
+        let options = JSON.stringify({
+            "id_usuario": iduser,
+            "id_perg": id_pergunta,
+            "resposta": inptResp,
+            "dataResp": dataAtual
+        })
+    
+        fetch("http://localhost:3000/Respostas", {
+            "method": "POST",
+            "headers": {
+                "Content-Type": "application/json"
+            },
+            "body": options
+        })
+        .then(resp=> {return resp})
+        .then(resp => { 
+                alert("aaaaa!");
+                window.location.reload();
+        })
+    }else{
+        alert("erro")
+    }
+
+    
+    
+        
+}
+
+
+//  ----------------- MODAL PERGUNTA E CAD DE PERGUNTAS -------------------------
+function cadastrarPergunta() {
+    var txtPergunta = document.querySelector('#txtPerguntar').value
+
+    
+    if(txtPergunta.length > 0) {
+        var select_status = document.querySelector(".select_status")
+        let seleStatus = select_status.options[select_status.selectedIndex].value;
+        if (seleStatus == 'crafts') { var tema = 'CRAFT'} 
+        if (seleStatus == 'bugs') { var tema = 'BUGS'} 
+        if (seleStatus == 'dicas') { var tema = 'DICAS'} 
+        if (seleStatus == 'mods') { var tema = 'MODS'} 
+    
+        if(txtPergunta !== ""){
+            let data = {
+                "id_user": 2,
+                "tema": tema,
+                "pergunta": txtPergunta,
+                "data": dataAtual
+        
+            }
+            console.log(data)
+        
+            fetch(uriQuestions, {
+                "method":"POST",
+                "headers": {
+                    "Content-Type":"application/json"
+                },
+                "body":JSON.stringify(data)
+            })
+            .then(res => { 
+                if(res.status == 201){
+                    console.log("aaaa")
+                    
+                }
+             })
+            
+        }  else{
+            ('Insira a Sua Pergunta antes de enviar!')
+        }
+    }else {
+        alert('Insira a Sua Pergunta antes de enviar!')
+    }
 
 }
 
- 
 function modalPergunta() {
     var modalQuestion = document.querySelector('.modal-pergunta')
     var texto = document.querySelector('#txtPerguntar')
@@ -300,50 +283,80 @@ function fecharModalPergunta()
     document.querySelector('#container').style.opacity = ''
 
  }
-function cadastrarPergunta() {
-    var txtPergunta = document.querySelector('#txtPerguntar').value
 
-    if(txtPergunta.length > 0) {
-        var select_status = document.querySelector(".select_status")
-        let seleStatus = select_status.options[select_status.selectedIndex].value;
-        if (seleStatus == 'crafts') { var tema = 'CRAFT'} 
-        if (seleStatus == 'bugs') { var tema = 'BUGS'} 
-        if (seleStatus == 'dicas') { var tema = 'DICAS'} 
-        if (seleStatus == 'mods') { var tema = 'MODS'} 
-    
-    
-    
-        let data = {
-            "id_user": 2,
-            "tema": tema,
-            "pergunta": txtPergunta,
-            "data": dataAtual
-    
-        }
-        console.log(data)
-    
-        fetch(uriQuestions, {
-            "method":"POST",
-            "headers": {
-                "Content-Type":"application/json"
-            },
-            "body":JSON.stringify(data)
+var qtdRep = 0
+function cardsPerguntas() {
+
+    console.log('entrando')
+
+    qtdRep += 1
+
+    questions.reverse()
+
+
+    if (qtdRep == 1) {
+        questions.forEach((q, i) => {
+
+            if (i < 3) {
+                var novoCardQuestion = cardQuestion.cloneNode(true)
+
+                novoCardQuestion.classList.toggle('model')
+
+                var idUsuario = q.id_User
+
+                usuarios.forEach(u => {
+
+                    if (idUsuario == u.id_user) {
+                        novoCardQuestion.querySelector('.nome-user-card').innerHTML = u.nome_user
+
+                    }
+
+                })
+
+                var data = q.data
+
+                const [ano, mes, juncao] = data.split('-')
+
+                var dia = juncao[0] + juncao[1]
+
+                var dataCompleta = dia + ' ' + mes + ' ' + ano
+
+                novoCardQuestion.querySelector('.id_usuario').innerHTML = q.id_User
+                novoCardQuestion.querySelector('.id_pergunta').innerHTML = q.id_pergunta
+                novoCardQuestion.querySelector('.data-question').innerHTML = '- ' + dataCompleta
+                novoCardQuestion.querySelector('.question-p').innerHTML = q.pergunta
+                novoCardQuestion.querySelector('.tema-card-question').innerHTML = q.tema
+
+                document.querySelector('.container-cards').appendChild(novoCardQuestion)
+            }
+
         })
-        
-        .then(res => { return res.json() })
-        .then(resp => {
-                if (resp.id_user !== undefined && resp.tema !== undefined && resp.pergunta !== undefined && resp.data !== undefined) {
-                    alert('Deu Certo!')
-                }
-            })
     }
-    else {
-        alert('Insira a Sua Pergunta antes de enviar!')
-    }
-    
-    
-    
 
+
+}
+
+function ativarFetchesPerguntas() {
+
+    const options = { method: 'GET' };
+
+    fetch(uriQuestions, options)
+        .then(res => res.json())
+        .then(res => {
+            questions = res;
+            cardsPerguntas();
+        }
+        )
+        .catch(err => console.error(err));
+
+    fetch(uriUsuarios, options)
+        .then(res => res.json())
+        .then(res => {
+            usuarios = res;
+            cardsPerguntas();
+        }
+        )
+        .catch(err => console.error(err));
 
 }
 
@@ -376,8 +389,10 @@ function favoritar() {
 
 const emailUser = document.querySelector(".email");
 const nickUser = document.querySelector(".nick");
+const id = document.querySelector(".id");
 
 var userinfo = JSON.parse(localStorage.getItem("info"));
 
 emailUser.innerHTML = userinfo.email;
 nickUser.innerHTML = userinfo.nickname;
+id.innerHTML = userinfo.id_user;

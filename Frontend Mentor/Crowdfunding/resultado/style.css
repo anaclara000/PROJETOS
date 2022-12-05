@@ -1,0 +1,239 @@
+@import url('https://fonts.googleapis.com/css2?family=Commissioner:wght@400;500;700&display=swap');
+
+*{
+    font-family: 'Commissioner';
+    margin :0;
+    padding :0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Commissioner';
+    background-color: #fafafa;
+}
+
+header{
+    background-image : url('../images/image-hero-desktop.jpg');
+    background-repeat: no-repeat;
+    background-size: 100% ;
+    height: 50vh;
+}
+.head{
+    color: #fff;
+    display: flex;
+    justify-content: space-around;
+    padding-top: 2%;
+    font-size: 18px;
+}
+
+.head > p{
+    font-weight: bold;
+    font-size: 30px;
+}
+
+nav{
+    display: flex;
+    justify-content: flex-end;
+}
+
+ul{
+    display: flex;
+    justify-content: row;
+}
+
+li{
+    padding-top: 6%;
+    list-style: none;
+    padding-left: 20px;
+}
+
+.primary-container{
+    background-color: #fff;
+    margin: -5% auto;
+    width: 40%;
+    border-radius: 10px;
+    padding: 10px;
+    text-align: center;
+}
+
+.primary-container-title{
+    font-weight: 700;
+    font-size: 30px;
+    margin-top: 3%;
+}
+
+.primary-container-subtitle{
+    color: hsl(0, 0%, 48%);
+    font-size: 18px;
+    margin-top: 2%;
+}
+
+.primary-container > .mastercraft{
+    margin-top: -10%;
+
+}
+
+.btnGreen{
+    border: none;
+    color: #fff;
+    font-weight: 500;
+    width: 30%;
+    font-size: 15px;
+    padding: 15px 25px;
+    border-radius: 50px;
+    background-color: hsl(176, 72%, 28%);
+    cursor: pointer;
+}
+
+.icons{
+    margin: 6%;
+    margin-top: 5%;
+    margin-bottom: 3%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.bookmark{
+    width: 30%;
+    text-align: center;
+    background-color:#f5f5f5;
+    display: flex;
+    align-items: center;
+    border-radius: 50px;
+}
+
+.bookmark > p{
+    padding: 10px;
+    color: hsl(176, 72%, 28%);
+    font-weight: 700;
+}
+
+.second-container{
+    background-color: #fff;
+    margin: 6% auto;
+    width: 40%;
+    border-radius: 10px;
+    padding: 30px;
+    text-align: center;
+}
+.container-topics{
+    display: flex;
+    
+}
+
+.middle-topic{
+    border-right: 2px solid #ccc;
+    border-left: 2px solid #ccc;
+    height: 70px;
+    width: 30%;
+    margin-left: -10%;
+}
+
+.topics{
+    margin-left: -15%;
+    width: 50%;
+}
+.topics, .middle-topic {
+    padding: 10px;
+}
+.topics > p, .middle-topic > p{
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.topics > span, .middle-topic > span{
+    color: hsl(0, 0%, 48%);
+    font-size: 15px;
+    margin-left: 7%;
+}
+
+.progressBar{
+    background-color: hsl(176, 50%, 47%);
+}
+
+.third-container{
+    background-color: #fff;
+    margin: -5% auto;
+    width: 40%;
+    border-radius: 10px;
+    padding: 30px;
+}
+
+.third-container > h1{
+    font-size: 18px;
+    font-weight:  700;
+}
+
+.third-container > p{
+    font-size: 16px;
+    width: 90%;
+    color:hsl(0, 0%, 48%);
+    padding-top: 10px;
+    line-height: 170%;
+    margin-top: 20px;
+}
+
+.title-cards{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.title-cards > h1{
+    font-size: 18px;
+    font-weight:  700;
+}
+
+.title-cards > p{
+    color: hsl(176, 50%, 47%);
+    font-weight:  500;
+}
+.cards{
+    width: 100%;
+    margin-top: 30px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+}
+
+.cards > p {
+    color:hsl(0, 0%, 48%);
+    line-height: 170%;
+}
+
+.subIcons1, .subIcons2, .subIcons3{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.bottom-letter > p, .bottom-letter > p, .bottom-letter > p{
+    font-weight: 700;
+    font-size: 25px;
+}
+
+.subIcons1 > span, .subIcons2 > span, .subIcons3 > span{
+    color: #fff;
+    padding: 10px 28px;
+    border-radius: 50px;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.subIcons1 > span {
+    background-color: hsl(176, 72%, 28%);
+}
+
+.subIcons2 > span {
+    background-color: hsl(176, 50%, 47%);
+}
+
+.subIcons3 > span {
+    background-color: hsl(0, 5%, 77%);
+}
+.span-ligthGreen {
+    background-color: hsl(176, 50%, 47%);
+}
+

@@ -172,14 +172,6 @@ nav ul h1 {
     font-size: 16pt;
 }
 
-.modal-editar-usuario {
-    background-color: white;
-    padding:10px;
-    position: fixed;
-    top: 49%;
-    left: 0%;
-}
-
 .cont-contribuidores{
     overflow-y: scroll;
     height: 23vh;
@@ -424,6 +416,7 @@ nav ul h1 {
     font-size: 15pt;
     margin-left: -40px;
     cursor: pointer;
+    color: black;
 }
 .cont-input {
     width: 60%;
