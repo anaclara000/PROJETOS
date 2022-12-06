@@ -1,5 +1,8 @@
 const conDB = require('../dao/dbForum.js');
 const Usuarios = require('../models/usuarios')
+require('dotenv').config();
+
+const jwt = require('jsonwebtoken');
 
 const listarUsuarios = (req, res) => {
     conDB.query(Usuarios.toReadAll(), (err, result) => {
@@ -61,6 +64,33 @@ const editarUsuarios = (req, res) => {
     });
 };
 
+const login = (req, res) => {
+    jwt.sign(req.body, process.env.KEY, {expiresIn: '5m'}, (erro, token) => {
+
+        if(erro == null) {
+            conDB.query(Usuarios.toLogin(req.body), (err, result) => {
+                if(err == null) {
+                    result[0]["token"]= token
+                    res.status(200).json(result[0]).end();
+                }else{
+               
+                    res.status(404).json(err).end();
+                }
+            });
+
+        }else {
+            res.status(500).json(erro).end();
+        }
+    });
+
+    
+}
+
+
+const remover = (req, res, next) => {
+    const{id} = req.params;
+    res.status(200).json({msg:"usuario deletado"}).end()
+}
 
 module.exports = {
     listarUsuarios,
@@ -68,5 +98,7 @@ module.exports = {
     cadastrarUsuarios,
     editarUsuarios,
     listarUsuario,
-    Credenciais
+    Credenciais,
+    login,
+    remover
 }

@@ -6,6 +6,8 @@ const PerguntasController = require("./controller/perguntasController");
 const RespostasController = require("./controller/respostasController");
 const FeedController = require("./controller/feedController");
 const StatusController = require("./controller/statusController");
+const Middleware = require('./middleware/middleware')
+const Usuario = require('./controller/usuariosController')
 
 router.get("/Usuarios", UsuariosController.listarUsuarios);
 router.get("/Usuarios/:id_user", UsuariosController.listarUsuario);
@@ -29,5 +31,11 @@ router.put("/Respostas", RespostasController.editarRespostas);
 // VIEWS
 router.get("/Feed", FeedController.listarFeed);
 router.get("/Status", StatusController.listarStatus);
+
+// JSON token
+router.post('/login', Usuario.login)
+
+
+router.delete('/delete/:id', Middleware.validaAcesso, Usuario.remover)
 
 module.exports = router;

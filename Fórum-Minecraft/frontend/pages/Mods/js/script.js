@@ -128,7 +128,7 @@ function cardsPerguntas() {
         
         questions.forEach((q, i) => {
             
-            if (q.tema == 'BUGS') {
+            if (q.tema == 'MODS') {
                     
                         var novoCardQuestion = cardQuestion.cloneNode(true)
         
@@ -202,8 +202,7 @@ function modalRespostas(e) {
     var id_perg = e.parentNode.parentNode.querySelector('.id_pergunta').innerHTML
     var mResposta = e.parentNode.parentNode.querySelector('.user-answer')
     
-    mResposta.classList.remove('model')
-    
+    mResposta.classList.remove('model')  
 
     respostas.forEach(r => {
         
@@ -333,7 +332,7 @@ function cadastrarPergunta() {
     if (txtPergunta.length > 0) {
         var select_status = document.querySelector(".select_status")
         let seleStatus = select_status.options[select_status.selectedIndex].value;
-        if (seleStatus == 'crafts') { var tema = 'CRAFT' }
+        if (seleStatus == 'crafts') { var tema = 'CRAFTS' }
         if (seleStatus == 'bugs') { var tema = 'BUGS' }
         if (seleStatus == 'dicas') { var tema = 'DICAS' }
         if (seleStatus == 'mods') { var tema = 'MODS' }
