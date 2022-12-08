@@ -247,6 +247,12 @@ nav ul h1 {
     font-weight: 500;
 }
 
+.cont-pergunta > button:hover{
+    background-color: #000;
+    cursor: pointer;
+    color:#fff;
+}
+
 
 .agradecimentos {
     overflow-y: scroll;
@@ -515,6 +521,11 @@ nav ul h1 {
     align-items: center;
 }
 
+
+.tela{
+    display: none;
+}
+
 .data-question-answer {
     margin-left: 10px;
     font-size: 11pt;
@@ -635,6 +646,10 @@ nav ul h1 {
     /* background-color: #212124; */
 }
 
+.caption-topics > a{
+    color: #fff;
+}
+
 .conferir-topico-button {
     font-size: 17px;
     border: 1px solid white;
@@ -744,4 +759,10 @@ footer {
 a{
     text-decoration: none;
     color: black;
+}
+
+.btnClose {
+    background-color: red;
+    width: 2vw;
+    height: 2vh;
 }

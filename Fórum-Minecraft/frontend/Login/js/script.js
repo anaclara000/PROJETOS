@@ -1,59 +1,65 @@
-var uriUsuarios = 'http://localhost:3000/Usuarios'
+// var uriUsuarios = 'http://localhost:3000/login'
 
-var users = []
+// var users = []
 
-function ativar() {
+// function ativar() {
 
-    const options = { method: 'GET' };
+//     const options = { method: 'POST' };
 
-    fetch(uriUsuarios, options)
-        .then(res => res.json())
-        .then(res => {
-            users = res;
-            logar();
-        }
-        )
-        .catch(err => console.error(err));
+//     fetch(uriUsuarios, options)
+//         .then(res => res.json())
+//         .then(res => {
+//             users = res;
+//             logar();
+            
+//         }
+//         )
+       
+//         .catch(err => console.error(err));
     
-}
- 
-function logar(e) {
-    var inpUser = document.querySelector('#user').value
-    var inpSenha = document.querySelector('#senha').value 
-    var id 
-    var encontrado = false
-    var usuarioEncontrado = false
+// }
+const inpUser = document.querySelector('#user')
+const inpSenha = document.querySelector('#senha')
+var id 
 
-    users.forEach(e => {
+function logar() {
+   let data = {
+    "nickname": inpUser.value,
+    "email": inpUser.value,
+    "senha": inpSenha.value
+   }
+   console.log(data)
+   fetch("http://localhost:3000/login", {
+    "method":"POST",
+    "headers": {
+        "Content-Type":"application/json"
+    },
+    "body": JSON.stringify(data)
+})
+.then(res => {return res.json()})
+.then(data => {
+    if(data.erro === undefined) {
+        console.log(data)
+        localStorage.setItem("info", JSON.stringify({"email":inpUser.value, "id":data.id_user}));
 
-        if(inpUser == e.email && inpSenha == e.senha ) {
-            encontrado = true
-            id  = e.id_user;
-            console.log(id)
-        }
-        else if(inpUser == e.nickname && inpSenha == e.senha) {
-            usuarioEncontrado = true
-            id  = e.id_user;
-            console.log(id)
-
-
-        }
-        
-    })
-
-    if(encontrado == true) {
-        localStorage.setItem("info", JSON.stringify({"email":inpUser, "senha":inpSenha, "id_user":id}));
-        window.location.href = '../pages/Home/index.html'
-
-    }if(usuarioEncontrado == true){
-        localStorage.setItem("info", JSON.stringify({"nickname":inpUser, "senha":inpSenha, "id_user":id}));
-        window.location.href = '../pages/Home/index.html'
+         window.location.href = '../pages/Home/index.html'
     }
-    else {
-        var erro = document.querySelector('.erros')
-
-        erro.classList.remove('modal')
-        
-    }
+})
 }
+
+//     if(encontrado == true) {
+//         localStorage.setItem("info", JSON.stringify({"email":inpUser, "senha":inpSenha, "id_user":id}));
+//         window.location.href = '../pages/Home/index.html'
+
+//     }if(usuarioEncontrado == true){
+//         localStorage.setItem("info", JSON.stringify({"nickname":inpUser, "senha":inpSenha, "id_user":id}));
+//         window.location.href = '../pages/Home/index.html'
+//     }
+//     else {
+//         var erro = document.querySelector('.erros')
+
+//         erro.classList.remove('modal')
+        
+//     }
+// }
 

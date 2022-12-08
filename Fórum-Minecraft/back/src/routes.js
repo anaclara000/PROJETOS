@@ -30,6 +30,7 @@ router.put("/Respostas", RespostasController.editarRespostas);
 
 // VIEWS
 router.get("/Feed", FeedController.listarFeed);
+router.get("/Feed/:id_pergunta", FeedController.listarFeedID);
 router.get("/Status", StatusController.listarStatus);
 
 // JSON token
