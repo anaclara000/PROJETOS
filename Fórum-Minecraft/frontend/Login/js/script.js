@@ -40,7 +40,7 @@ function logar() {
 .then(data => {
     if(data.erro === undefined) {
         console.log(data)
-        localStorage.setItem("info", JSON.stringify({"email":inpUser.value, "id":data.id_user}));
+        localStorage.setItem("info", JSON.stringify({"email":data.email, "nick": data.nickname, "id":data.id_user,}));
 
          window.location.href = '../pages/Home/index.html'
     }
