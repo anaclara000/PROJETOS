@@ -60,8 +60,16 @@ function abrirInfos(e) {
 
     fetch('http://localhost:3000/nick/' + sta, options)
         .then(response => response.json())
-        .then(response => console.log(response))
-        .catch(err => console.error(err));
+        .then(resp => {
+            if(resp.erro === undefined) {
+                localStorage.setItem("data", JSON.stringify({"email":resp.email, "nick": resp.nickname, "id":resp.id_user, "status":resp.status_user}))
+                 window.location.href = '../Perfil/perfil.html'
+                console.log(resp)
+            }
+
+           
+        })
+        
         console.log(sta)
 }
 
