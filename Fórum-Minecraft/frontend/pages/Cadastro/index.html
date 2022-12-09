@@ -30,8 +30,8 @@
 
                     <div class="inps">
                         <div class="single-input">
-                            <input type="text" class="input">
-                            <label>Nome</label>
+                            <input type="text" class="input" id="nome">
+                            <label>Nome*</label>
                         </div>
 
                         <div class="single-input">
@@ -42,31 +42,31 @@
 
                     <div class="inps">
                         <div class="single-input">
-                            <input class="input" type="text" id="user">
-                            <label for="user">Usúario</label>
+                            <input class="input" type="text" id="nick">
+                            <label for="user">Nickname*</label>
                         </div>
 
                         <div class="single-input">
-                            <input class="input" type="email">
-                            <label>Email</label>
+                            <input class="input" type="email" id="email">
+                            <label>Email*</label>
                         </div>
                     </div>
 
                     <div class="inps">
 
                         <div class="single-input">
-                            <input class="input" type="password">
-                            <label>Senha</label>
+                            <input class="input" type="password" id="senha">
+                            <label>Senha*</label>
                         </div>
 
                         <div class="single-input">
                             <input class="input" type="password">
-                            <label>Confirmar Senha</label>
+                            <label>Confirmar Senha*</label>
                         </div>
 
                     </div>
 
-                    <div class="btn-cadastrar">
+                    <div class="btn-cadastrar " onClick="cad()">
                         <button class="btn-cadastrar">
                             <img class="img-btn" src="../../Login/img/creeper face.png" alt="">
 
@@ -77,13 +77,22 @@
                     </div> 
 
                 </div class="input">
-                <p class="link-login">Já Possui Cadastro?</label>
+                <a href="../../Login/index.html"><p class="link-login">Já Possui Cadastro?</p></a>
 
             </div>
 
         </div>
     </div>
+    <div class="modal-certo model">
+
+        <img src="./img/IMAGES/2.gif" alt="">
+
+        <p>Ticket Cadastrado Com Sucesso!</p>
+
+        <button onclick="esconderModalCheck()" class="btn-check">OK</button>
+    </div>
 
 </body>
 
 </html>
+<script src="./js/script.js"></script>

@@ -15,6 +15,8 @@ router.post("/Usuarios", UsuariosController.cadastrarUsuarios);
 router.post("/Usuarios/credenciais", UsuariosController.Credenciais);
 router.delete("/Usuarios", UsuariosController.excluirUsuarios);
 router.put("/Usuarios", UsuariosController.editarUsuarios);
+router.get("/nick/:nickname", UsuariosController.listarName);
+
 
 router.get("/Perguntas", PerguntasController.listarPerguntas);
 router.get("/Perguntas/user/:id_user", PerguntasController.listarPerguntaUser);
@@ -31,6 +33,7 @@ router.put("/Respostas", RespostasController.editarRespostas);
 // VIEWS
 router.get("/Feed", FeedController.listarFeed);
 router.get("/Feed/:id_pergunta", FeedController.listarFeedID);
+router.get("/tema/:tema", FeedController.listarTema);
 router.get("/Status", StatusController.listarStatus);
 
 // JSON token

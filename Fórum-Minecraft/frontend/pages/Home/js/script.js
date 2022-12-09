@@ -41,6 +41,28 @@ function carregar() {
         .catch(err => console.error(err));
 
     ativarFetchesPerguntas()
+
+    var acoes = document.querySelector(".acoes")
+    var st = document.querySelector(".status").innerHTML
+    console.log(st)
+    if (st === "Moderador") {
+        var up = document.createElement('i')
+        up.classList = ' bx bx-edit'
+        up.setAttribute('onClick', 'abrirInfos(this)')
+        acoes.appendChild(up)
+    }
+
+}
+
+function abrirInfos(e) {
+    const sta = e.parentNode.parentNode.querySelector(".nome-user-modal").innerHTML
+    const options = { method: 'GET' };
+
+    fetch('http://localhost:3000/nick/' + sta, options)
+        .then(response => response.json())
+        .then(response => console.log(response))
+        .catch(err => console.error(err));
+        console.log(sta)
 }
 
 function preencher() {
@@ -72,23 +94,33 @@ function preencher() {
     })
 
 }
-
+var cardRespostaHome = document.querySelector('.answer-card')
 // -------------- MODAL E CAD RESPOSTAS -----------------
-const corpo = document.querySelector(".corpo");
 function ativarModalResposta(e) {
+
+    const corpo = e.parentNode.parentNode.querySelector(".corpo");
+
+    corpo.classList.remove('tela')
+
+    var btnVerMais = e.parentNode.querySelector('.cont-ver-mais-resposta')
+
+    btnVerMais.classList.add('tela')
+
     var id_perg = e.parentNode.parentNode.querySelector('.id_pergunta').innerHTML
     fetch("http://localhost:3000/Feed")
         .then(resp => { return resp.json() })
         .then(data => {
-            var modalResposta = document.querySelector('.answer-card').cloneNode(true);
-            modalResposta.classList.remove('tela')
             if (id_perg != null) {
                 const options = { method: 'GET' };
-
                 fetch('http://localhost:3000/Feed/' + id_perg, options)
                     .then(response => response.json())
                     .then(resp => {
                         resp.forEach(r => {
+                            var modalResposta = cardRespostaHome.cloneNode(true);
+
+                            console.log(modalResposta)
+
+                            modalResposta.classList.remove('tela')
                             modalResposta.querySelector(".answer-r").innerHTML = r.resposta
                             modalResposta.querySelector(".nameUser").innerHTML = r.nickname
 
@@ -100,7 +132,12 @@ function ativarModalResposta(e) {
                             var close = document.createElement('button')
                             close.classList.add("btnClose")
                             close.setAttribute('onClick', 'fecharModal()')
-                            modalResposta.appendChild(close)
+
+                            corpo.appendChild(modalResposta)
+                            console.log(corpo)
+
+                            // modalResposta.appendChild(close)
+
                         })
 
                     })
@@ -108,16 +145,31 @@ function ativarModalResposta(e) {
             }
 
             // modalResposta.setAttribute('onClick', 'exibirResp(this)')
-            
-            corpo.appendChild(modalResposta);
+
             console.log(id_perg)
         })
 
 }
 
-function fecharModal(){
-    var modalResposta = document.querySelector('.answer-card')
-    modalResposta.classList.add('tela')
+function fechandoModal(e) {
+    
+    var btnVerMais = e.parentNode.parentNode.querySelector('.cont-ver-mais-resposta')
+    
+    btnVerMais.classList.remove('tela') 
+    console.log(btnVerMais)
+    
+    for(let i = 1; i > 0; i++) {
+        var mResposta = e.parentNode.parentNode.querySelector('.corpo')
+        var secResp = document.querySelector('.answer-card')
+        
+        mResposta.classList.add('tela')
+        
+        mResposta.remove(secResp)
+    }
+
+
+
+        
 }
 
 function cadastrarResposta(e) {
@@ -339,11 +391,20 @@ function favoritar() {
     favoritarCheio.classList.toggle('model')
 }
 
-
+// INFOS DO USUARIO 
 const emailUser = document.querySelector(".email");
 const id = document.querySelector(".id");
+const nick = document.querySelector(".nick");
+const status = document.querySelector(".status");
 
 var userinfo = JSON.parse(localStorage.getItem("info"));
 
 emailUser.innerHTML = userinfo.email;
+nick.innerHTML = userinfo.nick;
 id.innerHTML = userinfo.id;
+status.innerHTML = userinfo.status;
+if (status.innerHTML == "admin") {
+    status.innerHTML = "Moderador"
+} else {
+    status.innerHTML = "Usuário"
+}

@@ -23,6 +23,10 @@ return `UPDATE usuarios SET id_user = '${model.id_user}', nome_user = '${model.n
 const toLogin = (model) => {
     return `SELECT * FROM usuarios WHERE email = '${model.email}' OR nickname = '${model.nickname}' AND senha = '${model.senha}'`;
 }
+const toName = (model) => {
+    return `SELECT * FROM usuarios WHERE nickname = '${model.nickname}'`;
+}
+
 module.exports = {
 toReadAll,
 toCreate,
@@ -30,5 +34,6 @@ toDel,
 toUpdate,
 toRead,
 credenciais,
-toLogin
+toLogin,
+toName
 }

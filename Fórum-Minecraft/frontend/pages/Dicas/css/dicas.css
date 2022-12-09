@@ -305,9 +305,6 @@ nav ul h1 {
 }
 
 /************** CABEÇALHO DO ÚSUARIO **************/
-.header-User {
-    
-}
 
 /************** FIM DO CABEÇALHO DO ÚSUARIO **************/
 
@@ -763,3 +760,27 @@ footer {
     width: 100%;
 }
 
+#container-users{
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+#container-users > .acoes > i {
+    margin-left: 20%;
+}
+
+
+.id{
+    display: none;
+    visibility: hidden;
+}
+
+.cont-ul > li > a{
+    text-decoration: none;
+    color: white;
+}
+
+.cont-ul > li > a > i{
+    color: white;
+}

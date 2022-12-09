@@ -140,3 +140,29 @@ label {
     font-size: 220px;
 }
 
+.model{
+    display: none;
+    visibility:hidden;
+}
+
+.modal-certo{
+    background-color:rgb(80, 76, 76);
+    position: absolute;
+    top: 22%;
+    left: 40%;
+    display: flex;
+    flex-direction: column;
+    padding: 5%;
+    width: 25vw;
+    border-radius: 10%;
+}
+.btn-check{
+    width: 10vw;
+    display: flex;
+    justify-content: center;
+}
+
+.modal-certo > p{
+    margin-top: 2%;
+    color: white;
+}

@@ -72,7 +72,7 @@ const login = (req, res) => {
             let data = {
                 "id_user": result[0].id_user,
                 "nome_user": result[0].nome_user,
-                "nicname": result[0].nickname,
+                "nickname": result[0].nickname,
                 "email": result[0].email,
                 "senha":result[0].senha,
                 "status_user":result[0].status_user
@@ -93,8 +93,15 @@ const login = (req, res) => {
     })
 }
 
-
-
+const listarName = (req, res) => {
+    conDB.query(Usuarios.toName(req.params), (err, result) => {
+        if (err == null) {
+            res.json(result).status(200).end();
+        } else {
+            res.status(500).end();
+        }
+    })
+};
 
 
 
@@ -115,5 +122,6 @@ module.exports = {
     listarUsuario,
     Credenciais,
     login,
-    remover
+    remover,
+    listarName
 }

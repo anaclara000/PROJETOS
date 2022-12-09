@@ -27,24 +27,10 @@ function cad() {
                 if(res.status == 201){
                     var modalCerto = document.querySelector('.modal-certo')
                     modalCerto.classList.remove('model')
-                    console.log("aaaaaaaaaaaaaaaa")
                 }
             })
     }
     
-        // .then(resp => {
-        //     if(resp.nome_user !== undefined && resp.nickname !== undefined 
-        //         && resp.email !== undefined && resp.senha !== undefined && resp.status_user !== undefined){
-        //             var modalCerto = document.querySelector('.modal-certo')
-        //             modalCerto.classList.remove('model')
-        //             console.log("entrou")
-        //         }else{
-        //             alert("aa")
-        //         }
-            
-            
-
-        // })
 }
 
 function esconderModalCheck() {

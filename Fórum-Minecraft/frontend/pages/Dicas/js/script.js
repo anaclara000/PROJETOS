@@ -46,7 +46,28 @@ function carregar() {
 
 
     ativarFetchesPerguntas()
+    var acoes = document.querySelector(".acoes")
+    var st = document.querySelector(".status").innerHTML
+    console.log(st)
+    if (st === "Moderador") {
+        var up = document.createElement('i')
+        up.classList = ' bx bx-edit'
+        up.setAttribute('onClick', 'abrirInfos(this)')
+        acoes.appendChild(up)
+    }
 }
+
+function abrirInfos(e) {
+    const sta = e.parentNode.parentNode.querySelector(".nome-user-modal").innerHTML
+    const options = { method: 'GET' };
+
+    fetch('http://localhost:3000/nick/' + sta, options)
+        .then(response => response.json())
+        .then(response => console.log(response))
+        .catch(err => console.error(err));
+        console.log(sta)
+}
+
 
 function preencher() {
 
@@ -424,3 +445,20 @@ search_btn.addEventListener('click', () => {
   }
 
 })
+// INFOS DO USUARIO 
+const emailUser = document.querySelector(".email");
+const id = document.querySelector(".id");
+const nick = document.querySelector(".nick");
+const status = document.querySelector(".status");
+
+var userinfo = JSON.parse(localStorage.getItem("info"));
+
+emailUser.innerHTML = userinfo.email;
+nick.innerHTML = userinfo.nick;
+id.innerHTML = userinfo.id;
+status.innerHTML = userinfo.status;
+if (status.innerHTML == "admin") {
+    status.innerHTML = "Moderador"
+} else {
+    status.innerHTML = "Usuário"
+}

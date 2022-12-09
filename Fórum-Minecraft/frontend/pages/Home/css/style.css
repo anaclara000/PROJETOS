@@ -508,13 +508,29 @@ nav ul h1 {
     text-align: center;
 }
 
-.answer-card {
-    background-color: #515153;
+.corpo {
+    height: 25vh;
+    overflow-y: scroll;
+    background-color: #212124;
     padding: 5px;
     border-radius: 10px;
     margin-bottom: 10px;
 }
 
+
+.corpo h2 {
+    text-align: center;
+    color: white;
+}
+.corpo i {
+    display: flex;
+    justify-content: end;
+    position: relative;
+    right: 2%;
+    top: -12%;
+    font-size: 18pt;
+    margin-bottom: -30px;
+}
 .cont-title-answer {
     display: flex;
     justify-content: center;
@@ -523,6 +539,7 @@ nav ul h1 {
 
 
 .tela{
+    visibility: hidden;
     display: none;
 }
 
@@ -765,4 +782,19 @@ a{
     background-color: red;
     width: 2vw;
     height: 2vh;
+}
+
+#container-users{
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+#container-users > .acoes > i {
+    margin-left: 20%;
+}
+
+.id{
+    display: none;
+    visibility: hidden;
 }

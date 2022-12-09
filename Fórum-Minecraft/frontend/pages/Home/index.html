@@ -6,12 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RENASCRAFT | HOME</title>
-
+    <link rel="shortcut icon" href="../Home/img/icon.png" type="image/x-icon">
     <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body onload="carregar()">
+<body onload="carregar()" >
 
     <div id="container">
 
@@ -45,8 +45,10 @@
                     <img src="" alt="">
 
                     <i class='bx bxs-user-circle user-icon'></i>
+                    <p class="nick">a</p>
                     <p class="email">usuario@gmail.com</p>
                     <p class="id"><span>2</span></p>
+                    <p class="status"></p>
 
                     <div class="actions">
                         <i class='bx bxs-user-detail'></i>
@@ -124,8 +126,15 @@
                         <img class="img-user-modal"
                             src="https://www.minecraft.net/etc.clientlibs/minecraft/clientlibs/main/resources/img/minecraft-creeper-face.jpg"
                             alt="">
-                        <div>
-                            <h5 class="nome-user-modal">s</h5>
+                        <div id="container-users">
+                            <div>
+                                <h5 class="nome-user-modal">s</h5>
+                            </div>
+
+                           <div class="acoes">
+                                
+                           </div> 
+                            <!-- <i class='bx bx-edit'></i> -->
                         </div>
                     </div>
 
@@ -153,8 +162,8 @@
                 <div class="cont-cards">
 
 
-                    <!-- <a
-                        href="https://www.tecmundo.com.br/seguranca/227907-novo-ransomware-age-disfarcado-arquivo-minecraft.htm"> -->
+                    <a
+                        href="https://www.tecmundo.com.br/seguranca/227907-novo-ransomware-age-disfarcado-arquivo-minecraft.htm">
                         <div class="cards">
                             <h4>Ransomware disfarçado de arquivo para Minecraft!</h4>
                             <img src="img/banner-02.jpg" alt="">
@@ -164,10 +173,10 @@
                                 lists, que são conjuntos de contas vazadas de Minecraft disponíveis para usuários logar
                             </p>
                         </div>
-                    <!-- </a> -->
-<!-- 
+                    </a>
+
                     <a
-                        href="https://www.tecmundo.com.br/voxel/238293-minecraft-aparece-graca-android-temporariamente.htm"> -->
+                        href="https://www.tecmundo.com.br/voxel/238293-minecraft-aparece-graca-android-temporariamente.htm">
                         <div class="cards">
                             <h4>Minecraft de graça no Android?</h4>
                             <img src="img/banner-03.jpg" alt="">
@@ -176,7 +185,7 @@
                                 ter
                                 aproveitado uma grande "promoção" que aconteceu na Play Store</p>
                         </div>
-                    <!-- </a> -->
+                    </a>
 
 
                 </div>
@@ -248,49 +257,13 @@
 
                             </div>
 
-
-                        </div>
-
-                       
-
-                    </div>
-
-                    <div class="answer model">
-
-                        <div class="title-answer">
-
-                            <div class="cont-title-answer">
-                                <h4 class="nome-usuario"></h4>
-                                <span class="data-question-answer"></span>
-
-                            </div>
-                            <p class="tema-answer"></p>
-                            <p class="pergunta-answer"></p>
-                        </div>
-
-                        <hr>
-
-                        <div class="user-answer">
-                            <h2>RESPOSTAS</h2>
-
-                            <hr>
-
-
-
-
-                            
-                            <!-- CARD DE RESPOSTAS -->
-                           
-
-
-
-                        </div>
-
-                    </div>
-
-                 <div class="corpo">
+                            <!-- TESTE  -->
                             <div class="answer-card tela">
+                                    
                                 <div class="container-answer ">
+
+                                    
+
                                     <div class="header-user-answer">
                                         <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/160745e3-9f8c-46b9-a326-cc9efff1e5aa/d7kxdcf-094a44e7-d459-47b6-8bf8-689a3a84d106.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzE2MDc0NWUzLTlmOGMtNDZiOS1hMzI2LWNjOWVmZmYxZTVhYVwvZDdreGRjZi0wOTRhNDRlNy1kNDU5LTQ3YjYtOGJmOC02ODlhM2E4NGQxMDYucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.l8kabRud63qyIqTQtuZ-7PjI9yOxibEgYdsK2zaUHgc"
                                             alt="">
@@ -314,9 +287,25 @@
                                 </div>
     
                             </div>
-    
+
+
+                            <div class="corpo tela">
+
+                                <h2>Respostas</h2>
+                                <i class='bx bx-x btn-fechar' onclick="fechandoModal(this)"></i>
+
+                                <hr>
+
+                                
+                                
+        
+                            </div>
+
                         </div>
 
+                    </div>
+
+                 
 
                     <img class="img-noth" src="img/Designs/pngs/notch.png" alt="">
 
