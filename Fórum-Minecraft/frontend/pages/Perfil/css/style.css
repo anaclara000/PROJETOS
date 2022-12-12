@@ -873,3 +873,35 @@ footer {
 .cont-ul > li > a > i{
     color: white;
 }
+
+.cont-inf-user > div > p {
+    margin-right: 2%;
+}
+
+.inpNomeUser{
+    width: 8vw;
+}
+
+
+.teste{
+    background-color: rgb(97, 202, 28);
+    border-radius: 10%;
+    position: absolute;
+    top: 25%;
+    left: 35%;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    padding: 2%;
+}
+.teste > p{
+    margin-top: -5%;
+    font-size: 20px;
+    color: white;
+}
+.teste > img{
+    width: 20vw;
+}
+.m{
+    visibility: hidden;
+}

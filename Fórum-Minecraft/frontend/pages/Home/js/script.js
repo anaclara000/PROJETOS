@@ -62,8 +62,9 @@ function abrirInfos(e) {
         .then(response => response.json())
         .then(resp => {
             if(resp.erro === undefined) {
-                localStorage.setItem("data", JSON.stringify({"email":resp.email, "nick": resp.nickname, "id":resp.id_user, "status":resp.status_user}))
-                 window.location.href = '../Perfil/perfil.html'
+                localStorage.setItem("data", JSON.stringify({"nome": resp[0].nome_user, "email":resp[0].email, "nick": resp[0].nickname, "id":resp[0].id_user, "status":resp[0].status_user}))
+                window.location.reload();
+                window.location.href = '../Perfil/perfil.html'
                 console.log(resp)
             }
 
@@ -223,9 +224,16 @@ function cadastrarResposta(e) {
 
 
 //  ----------------- MODAL PERGUNTA E CAD DE PERGUNTAS -------------------------
-function cadastrarPergunta() {
+function cadastrarPergunta(e) {
     var txtPergunta = document.querySelector('#txtPerguntar').value
+    var idUser = document.querySelector(".id").innerHTML;
+    
+    var hoje = new Date()
+    var dia = String(hoje.getDate()).padStart(2, '0')
+    var mes = String(hoje.getMonth() + 1).padStart(2, '0')
+    var ano = hoje.getFullYear()
 
+    dataAtual = ano + '-' + mes + '-' + dia;
 
     if (txtPergunta.length > 0) {
         var select_status = document.querySelector(".select_status")
@@ -237,7 +245,7 @@ function cadastrarPergunta() {
 
         if (txtPergunta !== "") {
             let data = {
-                "id_user": 2,
+                "id_user": idUser,
                 "tema": tema,
                 "pergunta": txtPergunta,
                 "data": dataAtual
@@ -254,7 +262,8 @@ function cadastrarPergunta() {
             })
                 .then(res => {
                     if (res.status == 201) {
-                        console.log("aaaa")
+                        alert("Pergunta enviada")
+                        window.location.reload()
 
                     }
                 })

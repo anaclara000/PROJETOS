@@ -46,15 +46,63 @@ function carregar() {
 
 
     ativarFetchesPerguntas()
+    var perfilAcoes = document.querySelector(".perfil-acoes")
     var acoes = document.querySelector(".acoes")
     var st = document.querySelector(".status").innerHTML
+
+    const header = document.querySelector(".header-User")
+    const tela2 = document.querySelector(".tela2")
     console.log(st)
     if (st === "Moderador") {
+        header.classList.remove('tela2')
         var up = document.createElement('i')
         up.classList = ' bx bx-edit'
         up.setAttribute('onClick', 'abrirInfos(this)')
         acoes.appendChild(up)
+
+        var del = document.createElement('button')
+        del.classList = 'bx bxs-trash-alt'
+        del.setAttribute('onClick', 'deleteUser(this)')
+
+        perfilAcoes.appendChild(del)
+
     }
+
+}
+function deleteUser(e) {
+    var idDel = document.querySelector(".inpIdUser").innerHTML
+    let data = {
+        "id_user": idDel,
+    }
+
+    fetch('http://localhost:3000/delete', {
+        "method": "DELETE",
+        "headers": {
+            "Content-Type": "application/json"
+        },
+        "body": JSON.stringify(data)
+    })
+
+        .then(res => { return res.json() })
+        .then(resp => {
+
+            var header = document.querySelector(".header-User")
+           
+            header.classList.add('tela2')
+            ModalCreeper()
+            header.cloneNode(true)
+            setTimeout(() => {
+                ModalCreeper()
+                window.location.href = '../Home/index.html'
+            }, 3000)
+        })
+}
+
+function ModalCreeper() {
+    var teste = document.querySelector(".teste")
+
+    teste.classList.toggle('m')
+    console.log("aaa")
 
 }
 
@@ -64,8 +112,17 @@ function abrirInfos(e) {
 
     fetch('http://localhost:3000/nick/' + sta, options)
         .then(response => response.json())
-        .then(response => console.log(response))
-        .catch(err => console.error(err));
+        .then(resp => {
+            if(resp.erro === undefined) {
+                localStorage.setItem("data", JSON.stringify({"nome": resp[0].nome_user, "email":resp[0].email, "nick": resp[0].nickname, "id":resp[0].id_user, "status":resp[0].status_user}))
+                window.location.reload();
+                window.location.href = '../Perfil/perfil.html'
+                console.log(resp)
+            }
+
+           
+        })
+        
         console.log(sta)
 }
 
@@ -141,57 +198,57 @@ var qtdRep = 0
 //     cardsPerguntas(tema);
 // }
 const tema = document.querySelector('.nameTema')
-    tema.setAttribute('onclick', 'crafts()')
- 
+tema.setAttribute('onclick', 'crafts()')
+
 function cardsPerguntas(e) {
 
-    
+
     questions.reverse()
-     
+
     qtdRep += 1
     if (qtdRep == 1) {
 
-        
+
 
         questions.forEach((q, i) => {
-            
+
             if (q.tema == 'DICAS') {
-                    
-                        var novoCardQuestion = cardQuestion.cloneNode(true)
-        
-                        novoCardQuestion.classList.toggle('model')
-        
-                        var idUsuario = q.id_User
-        
-                        usuarios.forEach(u => {
-        
-                            if (idUsuario == u.id_user) {
-                                novoCardQuestion.querySelector('.nome-user-card').innerHTML = u.nome_user
-        
-                            }
-        
-                        })
-    
-                        var data = q.data
-        
-                        const [ano, mes, juncao] = data.split('-')
-        
-                        var dia = juncao[0] + juncao[1]
-        
-                        var dataCompleta = dia + '/' + mes + '/' + ano
-    
-                        novoCardQuestion.querySelector('.id_usuario').innerHTML = q.id_User
-                        novoCardQuestion.querySelector('.id_pergunta').innerHTML = q.id_pergunta
-                        novoCardQuestion.querySelector('.data-question').innerHTML = '- ' + dataCompleta
-                        novoCardQuestion.querySelector('.question-p').innerHTML = q.pergunta
-                        novoCardQuestion.querySelector('.tema-card-question').innerHTML = q.tema
-        
-                        document.querySelector('.container-cards').appendChild(novoCardQuestion)
+
+                var novoCardQuestion = cardQuestion.cloneNode(true)
+
+                novoCardQuestion.classList.toggle('model')
+
+                var idUsuario = q.id_User
+
+                usuarios.forEach(u => {
+
+                    if (idUsuario == u.id_user) {
+                        novoCardQuestion.querySelector('.nome-user-card').innerHTML = u.nome_user
+
                     }
 
-            })
+                })
+
+                var data = q.data
+
+                const [ano, mes, juncao] = data.split('-')
+
+                var dia = juncao[0] + juncao[1]
+
+                var dataCompleta = dia + '/' + mes + '/' + ano
+
+                novoCardQuestion.querySelector('.id_usuario').innerHTML = q.id_User
+                novoCardQuestion.querySelector('.id_pergunta').innerHTML = q.id_pergunta
+                novoCardQuestion.querySelector('.data-question').innerHTML = '- ' + dataCompleta
+                novoCardQuestion.querySelector('.question-p').innerHTML = q.pergunta
+                novoCardQuestion.querySelector('.tema-card-question').innerHTML = q.tema
+
+                document.querySelector('.container-cards').appendChild(novoCardQuestion)
+            }
+
+        })
     }
-   
+
 
 }
 
@@ -222,7 +279,7 @@ function ativarModalResposta(e) {
         )
         .catch(err => console.error(err));
 
-  
+
 
 
 }
@@ -232,13 +289,13 @@ function modalRespostas(e) {
 
     var id_perg = e.parentNode.parentNode.querySelector('.id_pergunta').innerHTML
     var mResposta = e.parentNode.parentNode.querySelector('.user-answer')
-    
-    mResposta.classList.remove('model')  
+
+    mResposta.classList.remove('model')
 
     respostas.forEach(r => {
-        
+
         if (id_perg == r.id_pergunta) {
-            
+
             var divAC = document.createElement('div')
             divAC.classList.add('answer-card')
 
@@ -248,7 +305,7 @@ function modalRespostas(e) {
 
             var imgResp = document.createElement('img')
             imgResp.src = 'https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/160745e3-9f8c-46b9-a326-cc9efff1e5aa/d7kxdcf-094a44e7-d459-47b6-8bf8-689a3a84d106.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzE2MDc0NWUzLTlmOGMtNDZiOS1hMzI2LWNjOWVmZmYxZTVhYVwvZDdreGRjZi0wOTRhNDRlNy1kNDU5LTQ3YjYtOGJmOC02ODlhM2E4NGQxMDYucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.l8kabRud63qyIqTQtuZ-7PjI9yOxibEgYdsK2zaUHgc'
-        
+
             var divUAT = document.createElement('div')
             divUAT.classList.add('user-answer-title')
 
@@ -264,9 +321,9 @@ function modalRespostas(e) {
             //*********** FIM DA FORMATAÇÃO DA DATA *********** 
 
             var hTitleResp = document.createElement('h5')
-            hTitleResp.classList.add('usuario-resp') 
-            hTitleResp.innerHTML = r.nickname 
-            
+            hTitleResp.classList.add('usuario-resp')
+            hTitleResp.innerHTML = r.nickname
+
             var spanDR = document.createElement('span')
             spanDR.classList.add('data-resp')
             spanDR.innerHTML = dataCompleta
@@ -289,27 +346,27 @@ function modalRespostas(e) {
             divAC.appendChild(divCAR)
 
             console.log(divAC)
-            
+
             mResposta.appendChild(divAC)
         }
 
     })
 
-    
+
 
 }
 
 function fechandoModal(e) {
-    
+
     var btnVerMais = e.parentNode.parentNode.parentNode.querySelector('.cont-ver-mais-resposta')
-    
-    btnVerMais.classList.remove('model') 
+
+    btnVerMais.classList.remove('model')
     console.log(btnVerMais)
-    
-    for(let i = 1; i > 0; i++) {
+
+    for (let i = 1; i > 0; i++) {
         var mResposta = e.parentNode.parentNode.querySelector('.user-answer')
         var secResp = document.querySelector('.answer-card')
-        
+
         mResposta.classList.add('model')
         mResposta.removeChild(secResp)
 
@@ -317,7 +374,7 @@ function fechandoModal(e) {
 
 
 
-        
+
 }
 
 function modalPergunta() {
@@ -419,8 +476,8 @@ function curtir(e) {
     curtirCheio.classList.toggle('model')
 }
 function favoritar(e) {
-    var favoritarVazio =  e.parentNode.querySelector('.favoritar-vazio')
-    var favoritarCheio =  e.parentNode.querySelector('.favoritar-cheio')
+    var favoritarVazio = e.parentNode.querySelector('.favoritar-vazio')
+    var favoritarCheio = e.parentNode.querySelector('.favoritar-cheio')
 
     favoritarVazio.classList.toggle('model')
     favoritarCheio.classList.toggle('model')
@@ -433,25 +490,25 @@ const PERGUNTAS = document.querySelector('.container-cards')
 
 search_btn.addEventListener('click', () => {
 
-  let expressao = INPUT_BUSCA.value
+    let expressao = INPUT_BUSCA.value
 
-  let linhas = PERGUNTAS.getElementsByClassName('questions')
+    let linhas = PERGUNTAS.getElementsByClassName('questions')
 
-  for (let posicao in linhas) {
-      if (true === isNaN(posicao)) {
-          continue
-      }
+    for (let posicao in linhas) {
+        if (true === isNaN(posicao)) {
+            continue
+        }
 
-      let conteudoDaLinha = linhas[posicao].innerHTML
+        let conteudoDaLinha = linhas[posicao].innerHTML
 
-      if (true === conteudoDaLinha.includes(expressao)) {
-          linhas[posicao].style.display = ''
-      } else {
-          linhas[posicao].style.display = 'none'
+        if (true === conteudoDaLinha.includes(expressao)) {
+            linhas[posicao].style.display = ''
+        } else {
+            linhas[posicao].style.display = 'none'
 
-      }
+        }
 
-  }
+    }
 
 })
 
@@ -490,3 +547,15 @@ if (status.innerHTML == "admin") {
 } else {
     status.innerHTML = "Usuário"
 }
+
+const nickname = document.querySelector(".inpNickUser");
+const email = document.querySelector(".inpEmailUser");
+const nomeUser = document.querySelector(".inpNomeUser");
+const idUsuario = document.querySelector(".inpIdUser");
+
+var userinfo2 = JSON.parse(localStorage.getItem("data"));
+
+nickname.innerHTML = userinfo2.nick;
+email.innerHTML = userinfo2.email;
+nomeUser.innerHTML = userinfo2.nome;
+idUsuario.innerHTML = userinfo2.id;

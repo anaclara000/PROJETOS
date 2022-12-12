@@ -21,7 +21,7 @@ create table perguntas(
     foreign key (id_User) references usuarios(id_user) on delete cascade
 );
 
---CRIANDO TABELA DE COMENTARIOS/RESPOSTAS
+-- CRIANDO TABELA DE COMENTARIOS/RESPOSTAS
 create table respostas(
     id_usuario integer not null,
     id_perg integer not null,
