@@ -24,7 +24,6 @@
                         <img class="img-menu" src="img/output-onlinepngtools.png" alt="">
                         <h1>RENASCRAFT</h1>
                         <li><a href="../Home/index.html"><i class='bx bxs-home'></i>HOME</a></li>
-                        <li><i class='bx bxs-user-account'></i>INTEGRANTES</li>
                         <li onclick="menuDow()">TÓPICOS<i class='bx bx-caret-down'></i>
                             <ul class="dropDown model">
                                 <li><a href="../Crafts/crafts.html"><i class='bx bxs-pin'></i>CRAFTS</a></li>
@@ -153,19 +152,18 @@
 
                 <div class="header-User tela2">
                     <div class="teste m">
-                        <img src="../Perfil/img/crepper.gif" class="gif">
-                        <p>Usuario deletado com sucesso</p>
+                        <img src="../Perfil/img/crepper3.gif" class="gif">
                         
                     </div>
-                    <div class="perfil-acoes">
+
                         <img class="imagem-user" src="https://cdn-icons-png.flaticon.com/512/149/149071.png" alt="">
                         
-                    </div>
+              
 
                     <p class="nicknameUser"></p>
 
                     <div class="cont-inf-user">
-                        <div>
+                        <div id="id">
                             <p>Id:</p>
                             <span class="inpIdUser"></span>
                         </div>
@@ -186,11 +184,34 @@
                         </div>
                         <div>
                             <p>Cargo</p>
-                            <select>
-                             <option>Usuário</option>
-                             <option>Admin</option>
+                            <select  id="select_status">
+                             <option>usuario</option>
+                             <option>admin</option>
                             </select>
                         </div>
+
+                       
+
+                        <div class="perfil-acoes">
+                            <i class='bx bxs-save' onClick="abrirModalUpdate()"></i>
+                        </div>
+                    </div>
+                    <div class="confirm tela4">
+                        <div class="container-confirm">
+                            <p>Tem certeza que você deseja tornar esse usuário um <b>MODERADOR?</b></p>
+                            <div class="btns">
+                                <button class="sim" onClick="update()">Sim</button>
+                                <button class="nao" onClick="abrirModalUpdate()">Cancelar</button>
+                            </div>
+                            
+                        </div>
+                        
+                    </div>
+
+                    <div class="modal-certo model">
+
+                        <img src="../Perfil/img/certo.gif" alt="">
+
                     </div>
 
                     <hr>
@@ -251,18 +272,7 @@
     
                             </div>
 
-                            <div class="topicos5" onclick="cardsPerguntas(this)">
-    
-                                <img src="img/5.png" alt="">
-    
-                                <div class="caption-topics">
-                                    <h5>CURTIDOS</h5>
-                                    <!-- <a href="../Bugs/bugs.html">
-                                        <p class="conferir-topico-button">CONFERIR</p>
-                                    </a> -->
-                                </div>
-    
-                            </div>
+                           
     
     
                         </div>

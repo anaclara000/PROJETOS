@@ -94,8 +94,60 @@ function deleteUser(e) {
             setTimeout(() => {
                 ModalCreeper()
                 window.location.href = '../Home/index.html'
-            }, 3000)
+            }, 4300)
         })
+}
+function esconderModalCheck() {
+    var modalCerto = document.querySelector('.modal-certo')
+
+    modalCerto.classList.add('model')
+}
+
+function abrirModalUpdate(){
+    var confirmar = document.querySelector(".confirm")
+    confirmar.classList.toggle('tela4')
+}
+function update(){
+    var idUp = document.querySelector(".inpIdUser").innerHTML
+    var nomeUp = document.querySelector(".inpNomeUser").innerHTML
+    var emailUp = document.querySelector(".inpEmailUser").innerHTML
+    var nickUp = document.querySelector(".inpNickUser").innerHTML
+    var select_status = document.querySelector("#select_status")
+
+    let seleStatus = select_status.options[select_status.selectedIndex].value;
+    if (seleStatus == 'admin') { var status = 'admin' }
+    if (seleStatus == 'usuario') { var status = 'usuario' }
+
+    let options = JSON.stringify({
+        "id_user": idUp,
+        "nome_user": nomeUp,
+        "nickname": nickUp,
+        "email": emailUp,
+        "status_user": status
+    })
+    console.log(options)
+
+    fetch("http://localhost:3000/Usuarios", {
+        "method": "PUT",
+        "headers": {
+            "Content-Type": "application/json"
+        },
+        "body": options
+    })
+        .then(resp => { return resp })
+        .then(resp => {
+            var modalCerto = document.querySelector('.modal-certo')
+                modalCerto.classList.remove('model')
+                abrirModalUpdate()
+            setTimeout(() => {
+                esconderModalCheck()
+                window.location.reload()
+            }, 4350)
+            
+            
+           
+        })
+
 }
 
 function ModalCreeper() {
