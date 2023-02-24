@@ -8,7 +8,8 @@
 }
 
 .container{
-    background-color: #ebd7bf;
+background: rgb(227,206,173);
+background: linear-gradient(90deg, rgba(227,206,173,1) 0%, rgba(231,184,119,1) 100%);
     width: 100%;
     height: 100vh;
     justify-content: center;
@@ -36,22 +37,23 @@
 
 a{
     text-decoration: none;
-    color: #ad792a;
+    color: white;
 }
 .items > button{
     width: 80%;
     padding: 5px;
-    background-color: #ece2c7;
+    background-color: #c29f76;
     border: none;
     padding: 10px 5px;
-    color: #ad792a;
+    color: white;
     border-radius: 5px;
 }
 .items > input{
     width: 80%;
     margin: 5px;
-    padding: 5px;
+    padding: 8px;
     outline: none;
+    border: 1px solid #ad792a;
 }
 
 .items > button:hover{
@@ -73,5 +75,6 @@ a{
 }
 
 .logo{
-    width: 20vw;
+    margin-bottom: 15%;
+    width: 18vw;
 }

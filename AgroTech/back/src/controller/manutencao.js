@@ -9,6 +9,34 @@ const create = async (req, res) => {
 
     res.status(200).json(manutencao).end();
 }
+const createItems = async (req, res) => {
+    let manutencao = await prisma.manutencao.createMany({
+        data: [
+            {
+
+                descricao: "Quebrou a porta",
+                valor: 1200.90,
+                id_Veiculo: 1
+            },
+            {
+                data_fim: "2023-02-25T09:00:00.000Z",
+                descricao: "Trincou o vidro",
+                valor: 890.80,
+                id_Veiculo: 2
+            },
+            {
+                descricao: "Queimou o farol",
+                valor: 500.67,
+                id_Veiculo: 3
+            },
+
+        ],
+        skipDuplicates: true, // Skip 'Bobo'
+
+    });
+    res.status(200).json(manutencao).end();
+
+}
 
 const readOne = async (req, res) => {
     let manutencao = await prisma.manutencao.findUnique({
@@ -20,7 +48,7 @@ const readOne = async (req, res) => {
             data_fim: true,
             descricao: true,
             valor: true,
-            idVeiculo: true
+            id_Veiculo: true
         }
     });
 
@@ -64,6 +92,7 @@ module.exports = {
     read,
     readOne,
     update,
-    remove
-    
+    remove,
+    createItems
+
 }

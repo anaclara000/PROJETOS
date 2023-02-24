@@ -10,6 +10,42 @@ const create = async (req, res) => {
     res.status(200).json(veiculos).end();
 }
 
+const createItems = async (req, res) => {
+    let veiculos = await prisma.veiculos.createMany({
+        data: [
+            {
+                placa: "IPR-2270",
+                modelo: "Truck",
+                marca: "Hyundai",
+                tipo: "Venda",
+            },
+            {
+                placa: "IBY-9612",
+                modelo: "Truck",
+                marca: "Iveco",
+                tipo: "Carga",
+            },
+            {
+                placa: "AJV-3745",
+                modelo: "Truck",
+                marca: "Iveco",
+                tipo: "Carga",
+            },
+            {
+                placa: "AJV-3745",
+                modelo: "Carro",
+                marca: "Honda",
+                tipo: "Visita",
+            },
+
+        ],
+        skipDuplicates: true, // Skip 'Bobo'
+
+    });
+    res.status(200).json(veiculos).end();
+
+}
+
 const readOne = async (req, res) => {
     let veiculos = await prisma.veiculos.findUnique({
         where: {
@@ -20,7 +56,6 @@ const readOne = async (req, res) => {
             modelo: true,
             marca: true,
             tipo: true,
-            idMotorista: true,
             operacao: true,
             manutencao: true
         }
@@ -66,6 +101,7 @@ module.exports = {
     read,
     readOne,
     update,
-    remove
-    
+    remove,
+    createItems
+
 }

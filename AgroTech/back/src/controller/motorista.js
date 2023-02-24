@@ -10,6 +10,33 @@ const create = async (req, res) => {
     res.status(200).json(motorista).end();
 }
 
+const createItems = async (req, res) => {
+    let motorista = await prisma.motorista.createMany({
+        data: [
+            {
+                nome: "Fiuk Carlos",
+                CNH: 17663523146,
+                disponivel: "Indisponível",    
+            },
+            {
+                nome: "Selena Gomes",
+                CNH: 46293543404,
+                disponivel: "Indisponível",
+            },
+            {
+                nome: "Luciano Hulk",
+                CNH: 08279424413,
+                disponivel: "Disponível",
+            },
+
+        ],
+        skipDuplicates: true, // Skip 'Bobo'
+
+    });
+    res.status(200).json(motorista).end();
+
+}
+
 const readOne = async (req, res) => {
     let motorista = await prisma.motorista.findUnique({
         where: {
@@ -19,8 +46,7 @@ const readOne = async (req, res) => {
             nome: true,
             CNH: true,
             disponivel: true,
-            veiculos: true,
-            operacao: true
+            operacao: true,
         }
     });
 
@@ -64,6 +90,7 @@ module.exports = {
     read,
     readOne,
     update,
-    remove
+    remove,
+    createItems
     
 }
