@@ -107,8 +107,8 @@ function finalizarVaga(e) {
         "body": options
     })
         .then(response => response.json())
-        .then(response => { 
-            if(response.hora_saida !== "00:00:00"){
+        .then(response => {
+            if (response.hora_saida !== "00:00:00") {
                 window.location.reload();
 
             }
