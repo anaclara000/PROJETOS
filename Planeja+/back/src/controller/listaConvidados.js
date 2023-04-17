@@ -47,10 +47,27 @@ const read = async (req, res) => {
 const readOne = async (req, res) => {
     let convidados = await prisma.listaConvidados.findUnique({
         where: {
-            id: Number(req.params.id)
+            id_convidado: Number(req.params.id_convidado)
         },
         select: {
             nome: true,
+            telefone: true,
+            idEvento: true,
+        }
+    });
+
+    res.status(200).json(convidados).end();
+}
+
+const readEvent = async (req, res) => {
+    let convidados = await prisma.listaConvidados.findUnique({
+        where: {
+            idEvento: Number(req.params.idEvento)
+        },
+        select: {
+            id_convidado: true,
+            nome: true,
+            telefone: true,
         }
     });
 
@@ -60,7 +77,7 @@ const readOne = async (req, res) => {
 const update = async (req, res) => {
     const convidados = await prisma.listaConvidados.update({
         where: {
-            id: Number(req.params.id)
+            id_convidado: Number(req.params.id_convidado)
         },
         data: req.body
     })
@@ -71,7 +88,7 @@ const update = async (req, res) => {
 const remove = async (req, res) => {
     const convidados = await prisma.listaConvidados.delete({
         where: {
-            id: Number(req.params.id)
+            id_convidado: Number(req.params.id_convidado)
         }
     })
 
@@ -81,6 +98,7 @@ const remove = async (req, res) => {
 module.exports = {
     read,
     readOne,
+    readEvent,
     update,
     remove,
     createItems,

@@ -42,10 +42,17 @@ const read = async (req, res) => {
 const readOne = async (req, res) => {
     let locacao = await prisma.locacoes.findUnique({
         where: {
-            id: Number(req.params.id)
+            id_locacoes: Number(req.params.id_locacoes)
         },
         select: {
+            tipo: true,
             nome: true,
+            endereco: true,
+            descricao: true,
+            telefone: true,
+            email: true,
+            valor: true,
+            idEvento: true,
         }
     });
 
@@ -55,7 +62,7 @@ const readOne = async (req, res) => {
 const update = async (req, res) => {
     const locacao = await prisma.locacoes.update({
         where: {
-            id: Number(req.params.id)
+            id_locacoes: Number(req.params.id_locacoes)
         },
         data: req.body
     })
@@ -66,7 +73,7 @@ const update = async (req, res) => {
 const remove = async (req, res) => {
     const locacao = await prisma.locacoes.delete({
         where: {
-            id: Number(req.params.id)
+            id_locacoes: Number(req.params.id_locacoes)
         }
     })
 

@@ -40,7 +40,7 @@ const read = async (req, res) => {
 const readOne = async (req, res) => {
     let servico = await prisma.servicos.findUnique({
         where: {
-            id: Number(req.params.id)
+            id_servicos: Number(req.params.id_servicos)
         },
         select: {
             nome: true,
@@ -53,7 +53,7 @@ const readOne = async (req, res) => {
 const update = async (req, res) => {
     const servico = await prisma.servicos.update({
         where: {
-            id: Number(req.params.id)
+            id_servicos: Number(req.params.id_servicos)
         },
         data: req.body
     })
@@ -64,7 +64,7 @@ const update = async (req, res) => {
 const remove = async (req, res) => {
     const servico = await prisma.servicos.delete({
         where: {
-            id: Number(req.params.id)
+            id_servicos: Number(req.params.id_servicos)
         }
     })
 

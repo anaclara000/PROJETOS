@@ -134,7 +134,7 @@ const readOne = async (req, res) => {
 const update = async (req, res) => {
   const usuario = await prisma.usuario.update({
     where: {
-      id: Number(req.params.id)
+      id_usuario: Number(req.params.id_usuario)
     },
     data: req.body
   })
@@ -145,7 +145,7 @@ const update = async (req, res) => {
 const remove = async (req, res) => {
   const usuario = await prisma.usuario.delete({
     where: {
-      id: Number(req.params.id)
+      id_usuario: Number(req.params.id_usuario)
     }
   })
 

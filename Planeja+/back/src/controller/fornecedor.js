@@ -15,11 +15,11 @@ const createItems = async (req, res) => {
     let fronecedores = await prisma.fornecedor.createMany({
         data: [
             {
-                nome: "teste",
-                descricao: "teste",
-                tipo: "teste",
-                telefone: "teste",
-                valor: 2,
+                nome: "Carol Coxinhas",
+                descricao: "200u de coxinha e 100u bolinha de queijo",
+                tipo: "Salgado",
+                telefone: "(19) 34532-4454",
+                valor: 200.00,
                 idEvento: 1,
             },
 
@@ -41,10 +41,15 @@ const read = async (req, res) => {
 const readOne = async (req, res) => {
     let fronecedores = await prisma.fornecedor.findUnique({
         where: {
-            id: Number(req.params.id)
+            id_fornecedor: Number(req.params.id_fornecedor)
         },
         select: {
             nome: true,
+            descricao: true,
+            tipo: true,
+            telefone: true,
+            valor: true,
+            idEvento: true,
         }
     });
 
@@ -54,7 +59,7 @@ const readOne = async (req, res) => {
 const update = async (req, res) => {
     const fronecedores = await prisma.fornecedor.update({
         where: {
-            id: Number(req.params.id)
+            id_fornecedor: Number(req.params.id_fornecedor)
         },
         data: req.body
     })
@@ -65,7 +70,7 @@ const update = async (req, res) => {
 const remove = async (req, res) => {
     const fronecedores = await prisma.fornecedor.delete({
         where: {
-            id: Number(req.params.id)
+            id_fornecedor: Number(req.params.id_fornecedor)
         }
     })
 

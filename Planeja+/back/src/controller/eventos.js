@@ -15,7 +15,8 @@ const createItems = async (req, res) => {
     let evento = await prisma.eventos.createMany({
         data: [
             {
-                idProdutor: 1
+                idProdutor: 1,
+                tipo_evento: "Aniversário",
             },
         ],
         skipDuplicates: true, // Skip 'Bobo'
@@ -47,7 +48,18 @@ const readOne = async (req, res) => {
                     nome: true,
                 }
             },
-            locacao: true,
+            locacao: {
+                select:
+                {
+                    tipo: true,
+                    nome: true,
+                    descricao: true,
+                    telefone: true,
+                    email: true,
+                    valor: true,
+                }
+            },
+
             fornecedor: true,
         }
     });
@@ -58,7 +70,7 @@ const readOne = async (req, res) => {
 const update = async (req, res) => {
     const evento = await prisma.eventos.update({
         where: {
-            id: Number(req.params.id)
+            id_eventos: Number(req.params.id_eventos)
         },
         data: req.body
     })
@@ -69,7 +81,7 @@ const update = async (req, res) => {
 const remove = async (req, res) => {
     const evento = await prisma.eventos.delete({
         where: {
-            id: Number(req.params.id)
+            id_eventos: Number(req.params.id_eventos)
         }
     })
 

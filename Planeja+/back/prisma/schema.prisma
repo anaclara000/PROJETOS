@@ -18,7 +18,7 @@ model Usuario {
   raz               String?
   nomeFantasia      String
   cnpj              String?        @unique
-  cpf               String?        @unique
+  cpf               String?
   tipo              String
   telefone          String
   tiposEventos      tiposEventos[]
@@ -30,27 +30,25 @@ model tiposEventos {
   id_tiposEvento Int     @id @default(autoincrement())
   nome           String
   id_usuario     Int
-  Usuario        Usuario @relation(fields: [id_usuario], references: [id_usuario])
-  // tipoEvento     Eventos @relation(fields: [id_tiposEvento], references: [id_eventos])
+  Usuario        Usuario @relation(fields: [id_usuario], references: [id_usuario], onDelete: Cascade)
 }
 
 model servicos {
   id_servicos Int     @id @default(autoincrement())
   nome        String
   id_usuario  Int
-  Usuario     Usuario @relation(fields: [id_usuario], references: [id_usuario])
-  // servico     Eventos @relation(fields: [id_servicos], references: [id_eventos])
+  Usuario     Usuario @relation(fields: [id_usuario], references: [id_usuario], onDelete: Cascade)
 }
 
 model Eventos {
-  id_eventos Int               @id @default(autoincrement())
-  idProdutor Int
-  // tipo       tiposEventos[]
-  // servico    servicos[]
-  produtor   Usuario           @relation(fields: [idProdutor], references: [id_usuario])
-  lista      listaConvidados[]
-  locacao    Locacoes[]
-  fornecedor Fornecedor[]
+  id_eventos  Int               @id @default(autoincrement())
+  idProdutor  Int
+  tipo_evento String
+  descricao   String?
+  produtor    Usuario           @relation(fields: [idProdutor], references: [id_usuario])
+  lista       listaConvidados[]
+  locacao     Locacoes[]
+  fornecedor  Fornecedor[]
 }
 
 model listaConvidados {
@@ -77,7 +75,7 @@ model Locacoes {
 model Fornecedor {
   id_fornecedor Int     @id @default(autoincrement())
   nome          String
-  descricao     String
+  descricao     String?
   tipo          String
   telefone      String
   valor         Float

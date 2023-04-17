@@ -13,7 +13,7 @@
     <title>Home</title>
 </head>
 
-<body>
+<body onload="carregar()">
     <header>
         <div class="header">
             <div class="header_one">
@@ -21,12 +21,18 @@
                 <div class="topics">
                     <span class="inicio">Inicio</span>
                     <span>Eventos</span>
-                    <span>Meu eventos</span>
+
                     <!-- <select name="Eventos" id="select_eventos">
                         <option value="">Eventos</option>
-                        <option value="">Aniversario</option>
-                        <option value="">Formatura</option>
+                        <option value="aniversario">Aniversario</option>
+                        <option value="formatura">Formatura</option>
+
                     </select> -->
+                    <i class='bx bx-chevron-down'></i>
+
+
+                    <span>Meu eventos</span>
+
 
 
                 </div>
@@ -56,13 +62,13 @@
         </div>
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img src="assets/temp.png" class="d-block w-10" alt="..." style="height: 40vh">
+                <img src="assets/8.png" class="d-block w-10" alt="..." style="height: 50vh ; width: 100vw">
             </div>
             <div class="carousel-item">
-                <img src="assets/temp.png" class="d-block w-10" alt="..." style="height: 40vh">
+                <img src="assets/9.png" class="d-block w-10" alt="..." style="height: 50vh ; width: 100vw">
             </div>
             <div class="carousel-item">
-                <img src="assets/temp.png" class="d-block w-10" alt="..." style="height: 40vh">
+                <img src="assets/10.png" class="d-block w-10" alt="..." style="height: 50vh ; width: 100vw">
             </div>
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
@@ -76,54 +82,32 @@
             <span class="visually-hidden">Next</span>
         </button>
     </div>
-
+    <!-- <span class="titulo_produtores">Produtores</span> -->
     <main>
+
         <div class="main">
-            <div class="container">
+
+
+
+            <div class="contato" style="display:none">
                 <div>
                     <img src="assets/festa.png" alt="" class="imgProdutor">
                 </div>
-                <div class="contato">
+                <div class="infos">
                     <span class="titulo">Faça festa</span>
-                    <span><i class='bx bxs-phone'></i> (19) 99435-7645</span>
-                    <span><i class='bx bxs-envelope'></i> analinda@gmail.com</span>
+                    <span class="telefone"><i class='bx bxs-phone'></i> </span>
+                    <span class="email"><i class='bx bxs-envelope'></i> </span>
                 </div>
 
             </div>
-            <div class="container">
-                <div>
-                    <img src="assets/festa.png" alt="" class="imgProdutor">
-                </div>
-                <div class="contato">
-                    <span class="titulo">Faça festa</span>
-                    <span><i class='bx bxs-phone'></i> (19) 99435-7645</span>
-                    <span><i class='bx bxs-envelope'></i> analinda@gmail.com</span>
-                </div>
 
-            </div>
-            <div class="container">
-                <div>
-                    <img src="assets/festa.png" alt="" class="imgProdutor">
-                </div>
-                <div class="contato">
-                    <span class="titulo">Faça festa</span>
-                    <span><i class='bx bxs-phone'></i> (19) 99435-7645</span>
-                    <span><i class='bx bxs-envelope'></i> analinda@gmail.com</span>
-                </div>
-
-            </div>
-            <div class="container">
-                <div>
-                    <img src="assets/festa.png" alt="" class="imgProdutor">
-                </div>
-                <div class="contato">
-                    <span class="titulo">Faça festa</span>
-                    <span><i class='bx bxs-phone'></i> (19) 99435-7645</span>
-                    <span><i class='bx bxs-envelope'></i> analinda@gmail.com</span>
-                </div>
-
-            </div>
         </div>
+
+
+
+
+
+
 
     </main>
 
@@ -132,5 +116,6 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
     crossorigin="anonymous"></script>
+<script src="script.js"></script>
 
 </html>

@@ -48,10 +48,11 @@ const read = async (req, res) => {
 const readOne = async (req, res) => {
     let tipo = await prisma.tiposEventos.findUnique({
         where: {
-            id: Number(req.params.id)
+            id_tiposEvento: Number(req.params.id_tiposEvento)
         },
         select: {
             nome: true,
+            id_usuario: true,
         }
     });
 
@@ -61,7 +62,7 @@ const readOne = async (req, res) => {
 const update = async (req, res) => {
     const tipo = await prisma.tiposEventos.update({
         where: {
-            id: Number(req.params.id)
+            id_tiposEvento: Number(req.params.id_tiposEvento)
         },
         data: req.body
     })
@@ -72,7 +73,7 @@ const update = async (req, res) => {
 const remove = async (req, res) => {
     const tipo = await prisma.tiposEventos.delete({
         where: {
-            id: Number(req.params.id)
+            id_tiposEvento: Number(req.params.id_tiposEvento)
         }
     })
 
