@@ -31,3 +31,13 @@ function listarUsuario() {
 
     })
 }
+
+function verProdutor() {
+    alert('a')
+}
+
+var modelVerProduto = document.querySelector('.paginaProdutor')
+
+function ModalVerProdutor() {
+    modelVerProduto.classList.toggle('model')
+}

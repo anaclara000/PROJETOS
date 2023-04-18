@@ -51,7 +51,7 @@
         </div>
     </header>
 
-    <div id="carouselExampleIndicators" class="carousel slide">
+    <!-- <div id="carouselExampleIndicators" class="carousel slide">
         <div class="carousel-indicators">
             <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
                 aria-current="true" aria-label="Slide 1"></button>
@@ -81,7 +81,7 @@
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Next</span>
         </button>
-    </div>
+    </div> -->
     <!-- <span class="titulo_produtores">Produtores</span> -->
     <main>
 
@@ -89,14 +89,19 @@
 
 
 
-            <div class="contato" style="display:none">
+            <div class="contato" style="display:none" onclick="ModalVerProdutor()">
                 <div>
                     <img src="assets/festa.png" alt="" class="imgProdutor">
                 </div>
                 <div class="infos">
                     <span class="titulo">Faça festa</span>
-                    <span class="telefone"><i class='bx bxs-phone'></i> </span>
-                    <span class="email"><i class='bx bxs-envelope'></i> </span>
+                    <div class="tel_email">
+                        <i class='bx bxs-phone'></i> <span class="telefone"></span>
+                    </div>
+                    <div class="tel_email">
+                        <i class='bx bxs-envelope'></i> <span class="email"></span>
+                    </div>
+
                 </div>
 
             </div>
@@ -104,7 +109,165 @@
         </div>
 
 
+        <div class="paginaProdutor">
+            <div class="fakePagina">
+                <header>
+                    <div class="header">
+                        <div class="header_one">
+                            <img src="assets/logoB.png" alt="">
+                            <div class="topics">
+                                <span class="inicio">Inicio</span>
+                                <span>Eventos</span>
+                                <i class='bx bx-chevron-down'></i>
 
+
+                                <span>Meu eventos</span>
+
+
+
+                            </div>
+                        </div>
+
+
+                        <div class="header_two">
+                            <input type="text" placeholder="Busque aqui...">
+                            <i class='bx bx-search'></i>
+                        </div>
+
+                        <div class="header_three">
+                            <img src="assets/emanuel.jpg" alt="">
+                            <span>Bem vindo, Ana!</span>
+                        </div>
+                    </div>
+                </header>
+
+                <div class="mainPaginaFake">
+                    <div onClick="ModalVerProdutor()" class="voltar">
+                        <i class='bx bx-chevron-left'></i>
+                        <span>Voltar</span>
+                    </div>
+
+                    <div class="divBanner">
+                        <img src="assets/banner.jpg" alt="" srcset="" class="bannerProdutor">
+                    </div>
+
+                    <div class="divMestreCentro">
+                        <div class="infos_produtor">
+                            <div>
+                                <img class="logo_produtor" src="assets/flor.png" alt="">
+                                <span class="nome_produtor">Organize </span>
+                                <i class='bx bxs-certification'></i>
+
+                            </div>
+                            <div class="verMais">
+                                <span>Ver mais</span>
+                                <div class="parceria">
+                                    <span>Fechar Parceria</span><i class='bx bxs-check-circle'></i>
+                                </div>
+
+                            </div>
+
+
+                        </div>
+                    </div>
+
+
+                    <hr>
+                    <!-- <div class="servicos">
+                        <div>
+                            <img src="assets/temp.jpg" alt="" srcset="" style="width: 5vw">
+                            <span>Bufê</span>
+                            <span></span>
+                        </div>
+                        <div>
+                            <img src="assets/temp.jpg" alt="" srcset="" style="width: 5vw">
+                            <span>Bufê</span>
+                        </div>
+                    </div> -->
+
+                    <div class="eventosFeitos">
+                        <div class="cont_titulo_eventos">
+                            <span class="tituloGaleria">Galeria de fotos</span>
+                            <!-- <i class='bx bxs-camera'></i> -->
+                        </div>
+                        <div class="fotosEventos">
+                            <div class="fotosContainer">
+                                <img src="assets/casamento.jpg" alt="" srcset="">
+                                <div>
+                                    <span style="font-weight: bold ; font-size: 22px">Casamento</span>
+                                    <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet diam
+                                        dapibus, varius nisi id, gravida arcu. Maecenas id nisi eu nibh consectetur
+                                        euismod.
+                                    </span>
+                                </div>
+
+                            </div>
+                            <div class="fotosContainer">
+                                <img src="assets/aniversario.jpg" alt="" srcset="">
+                                <div>
+                                    <span style="font-weight: bold ; font-size: 22px">Aniversario</span>
+                                    <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet diam
+                                        dapibus, varius nisi id, gravida arcu. Maecenas id nisi eu nibh consectetur
+                                        euismod.
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="fotosContainer">
+                                <img src="assets/casamento.jpg" alt="" srcset="">
+                                <div>
+                                    <span style="font-weight: bold ; font-size: 22px">Casamento</span>
+                                    <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet diam
+                                        dapibus, varius nisi id, gravida arcu. Maecenas id nisi eu nibh consectetur
+                                        euismod.
+                                    </span>
+                                </div>
+
+                            </div>
+                            <div class="fotosContainer">
+                                <img src="assets/casamento.jpg" alt="" srcset="">
+                                <div>
+                                    <span style="font-weight: bold ; font-size: 22px">Casamento</span>
+                                    <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet diam
+                                        dapibus, varius nisi id, gravida arcu. Maecenas id nisi eu nibh consectetur
+                                        euismod.
+                                    </span>
+                                </div>
+
+                            </div>
+                        </div>
+
+
+                    </div>
+
+
+
+
+
+
+                </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            </div>
+
+        </div>
 
 
 
