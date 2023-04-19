@@ -317,3 +317,90 @@ header {
 .parceria>span {
     margin-right: 3px;
 }
+
+/* CONTAINER VER MAIS */
+
+.cont_info,
+.cont_servicos,
+.cont_horario {
+    position: absolute;
+    top: 10%;
+    background-color: rgb(255, 255, 255);
+    right: 0%;
+    width: 25%;
+    height: 82%;
+    padding: 1%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: -2px 0px 10px 1px rgba(0, 0, 0, 0.075);
+}
+
+
+.cont_endereco,
+.cont_contatos,
+.cont_outras_infos {
+    display: flex;
+    flex-direction: column;
+    margin-top: 1%;
+
+}
+
+.cont_informacoes {
+    margin-top: 5%;
+}
+
+.cont_informacoes>span {
+    font-weight: 600;
+    font-size: 17px;
+
+}
+
+.cont_informacoes>div>span {
+    font-size: 13px;
+    padding: 2px;
+}
+
+
+
+
+
+.cont_categoria_infos>span:hover {
+    cursor: pointer;
+    color: var(--VCor)
+}
+
+.cont_categoria_infos {
+    display: flex;
+    justify-content: space-around;
+    height: 20%;
+    align-items: center;
+}
+
+.cont_geral_infos {
+    height: 90%;
+}
+
+.cont_parceria {
+    height: 5%;
+    display: flex;
+    align-items: center;
+}
+
+.icon_close {
+    height: 5%;
+}
+
+.titulo_infos,
+.insta {
+    align-items: center;
+    display: flex;
+}
+
+.insta>span {
+    font-size: 13px;
+}
+
+.bxs-check-shield {
+    color: rgb(59, 187, 230);
+}

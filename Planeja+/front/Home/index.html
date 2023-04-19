@@ -87,13 +87,12 @@
 
         <div class="main">
 
-
-
-            <div class="contato" style="display:none" onclick="ModalVerProdutor()">
+            <div class="contato" style="display:none" onclick="ModalVerProdutor(this)">
                 <div>
                     <img src="assets/festa.png" alt="" class="imgProdutor">
                 </div>
                 <div class="infos">
+                    <span class="id" style="display:none; visibility:hidden"></span>
                     <span class="titulo">Faça festa</span>
                     <div class="tel_email">
                         <i class='bx bxs-phone'></i> <span class="telefone"></span>
@@ -101,7 +100,6 @@
                     <div class="tel_email">
                         <i class='bx bxs-envelope'></i> <span class="email"></span>
                     </div>
-
                 </div>
 
             </div>
@@ -142,7 +140,7 @@
                 </header>
 
                 <div class="mainPaginaFake">
-                    <div onClick="ModalVerProdutor()" class="voltar">
+                    <div onClick="ModalFecharProdutor()" class="voltar">
                         <i class='bx bx-chevron-left'></i>
                         <span>Voltar</span>
                     </div>
@@ -155,12 +153,13 @@
                         <div class="infos_produtor">
                             <div>
                                 <img class="logo_produtor" src="assets/flor.png" alt="">
-                                <span class="nome_produtor">Organize </span>
+                                <span class="nome_produtor"> </span>
+                                <span id="id" style="display: none; visibility: hidden"> </span>
                                 <i class='bx bxs-certification'></i>
 
                             </div>
                             <div class="verMais">
-                                <span>Ver mais</span>
+                                <span onClick="modelInfo(this)">Ver mais</span>
                                 <div class="parceria">
                                     <span>Fechar Parceria</span><i class='bx bxs-check-circle'></i>
                                 </div>
@@ -245,33 +244,154 @@
 
 
                 </div>
+            </div>
+
+            <div class="informacoes_contato model">
+                <div class="cont_info">
+                    <div class="icon_close">
+                        <i class='bx bx-x' style="font-size: 30px; color: #FF003C; cursor: pointer"
+                            onclick="fecharmodais()"></i>
+                    </div>
+                    <div class="cont_categoria_infos">
+                        <span onClick="fecharModalContato()">Sobre</span>
+                        <span onClick="fecharModalServico()">Serviços</span>
+                        <span onclick="fecharModalHorario()">Horario</span>
+                    </div>
+                    <div class="cont_geral_infos">
+                        <div class="cont_informacoes">
+                            <span>Endereço </span>
+                            <div class="cont_endereco">
+                                <span>Rua Julia Bueno, 329 - Centro</span>
+                                <span>Jaguariuna - SP</span>
+                                <span>CEP: 13910-007</span>
+                            </div>
+                        </div>
+                        <div class="cont_informacoes">
+                            <span>Contato </span>
+                            <div class="cont_contatos">
+                                <span>(19) 99999-9999</span>
+                                <span>eventos@eventos.com</span>
+                            </div>
+                        </div>
+                        <div class="cont_informacoes">
+                            <span>Outras informações:</span>
+                            <div class="cont_outras_infos">
+
+                                <span>CPNJ 45.678.433-0001/3</span>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cont_parceria">
+                        <div class="parceria parceria_info">
+                            <span>Fechar Parceria</span><i class='bx bxs-check-circle'></i>
+                        </div>
+                    </div>
 
 
 
+                </div>
+            </div>
+
+            <div class="servicos_prestados model">
+                <div class="cont_servicos">
+                    <div class="icon_close">
+                        <i class='bx bx-x' style="font-size: 30px; color: #FF003C; cursor: pointer;"
+                            onclick="fecharmodais()"></i>
+                    </div>
+                    <div class="cont_categoria_infos">
+                        <span onClick="fecharModalContato()">Sobre</span>
+                        <span onClick="fecharModalServico()">Serviços</span>
+                        <span onclick="fecharModalHorario()">Horario</span>
+                    </div>
+                    <div class="cont_geral_infos">
+                        <div class="cont_informacoes">
+                            <div class="titulo_infos">
+                                <i class='bx bxs-check-shield'></i> <span style="font-size: 16px">Fotografia</span>
+                            </div>
+                            <div class="cont_contatos">
+                                <span>Acompanhamento do evento com captura de fotos, filmagem de videos e edição das
+                                    fotos</span>
+                                <div class="insta">
+                                    <i class='bx bxl-instagram-alt'></i><span>@photografia</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="cont_informacoes">
+                            <div class="titulo_infos">
+                                <i class='bx bxs-check-shield'></i> <span style="font-size: 16px">Bufê</span>
+                            </div>
+                            <div class="cont_contatos">
+                                <span>Oferecimento de um cardapio com grande variedas de entradas, prato principal,
+                                    sobremesa e bebidas</span>
+                                <div class="insta">
+                                    <i class='bx bxl-instagram-alt'></i><span>@comida.boa</span>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="cont_informacoes">
+                            <div class="titulo_infos">
+                                <i class='bx bxs-check-shield'></i> <span style="font-size: 16px">Decoração</span>
+                            </div>
+                            <div class="cont_contatos">
+                                <span>Decorações personalizadas para todos os tipos de eventos e clientes</span>
+                                <div class="insta">
+                                    <i class='bx bxl-instagram-alt'></i><span>@decoracoes</span>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="cont_parceria">
+                        <div class="parceria parceria_info">
+                            <span>Fechar Parceria</span><i class='bx bxs-check-circle'></i>
+                        </div>
+                    </div>
 
 
 
+                </div>
+
+            </div>
+
+            <div class="horario model">
+                <div class="cont_horario">
+                    <div class="icon_close">
+                        <i class='bx bx-x' style="font-size: 30px; color: #FF003C; cursor: pointer;"
+                            onclick="fecharmodais()"></i>
+                    </div>
+                    <div class="cont_categoria_infos">
+                        <span onClick="fecharModalContato()">Sobre</span>
+                        <span onClick="fecharModalServico()">Serviços</span>
+                        <span onclick="fecharModalHorario()">Horario</span>
+                    </div>
+                    <div class="cont_geral_infos">
+
+                        <div class="cont_informacoes">
+                            <span>Horario </span>
+                            <div class="cont_contatos">
+                                <span>Atendimento das 08:00 ás 17:00</span>
+
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="cont_parceria">
+                        <div class="parceria parceria_info">
+                            <span>Fechar Parceria</span><i class='bx bxs-check-circle'></i>
+                        </div>
+                    </div>
 
 
 
-
-
-
-
-
-
-
-
-
-
+                </div>
 
             </div>
 
         </div>
-
-
-
-
     </main>
 
 

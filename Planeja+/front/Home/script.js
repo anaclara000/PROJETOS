@@ -23,6 +23,7 @@ function listarUsuario() {
 
             lista.style.display = "flex";
             lista.querySelector('.imgProdutor').src = 'assets/temp.jpg'
+            lista.querySelector(".id").innerHTML = info.id_usuario;
             lista.querySelector(".titulo").innerHTML = info.raz;
             lista.querySelector(".telefone").innerHTML += info.telefone;
             lista.querySelector(".email").innerHTML += info.email;
@@ -38,6 +39,52 @@ function verProdutor() {
 
 var modelVerProduto = document.querySelector('.paginaProdutor')
 
-function ModalVerProdutor() {
-    modelVerProduto.classList.toggle('model')
+function ModalVerProdutor(e) {
+    modelVerProduto.classList.remove('model')
+
+    var id = e.querySelector('.id').innerHTML
+    var nome = e.querySelector('.titulo').innerHTML
+
+    document.querySelector('.nome_produtor').innerHTML = nome
+    document.querySelector('#id').innerHTML = id
+    console.log(nome);
+}
+
+function ModalFecharProdutor() {
+    modelVerProduto.classList.add('model')
+
+}
+
+var modelInfos = document.querySelector('.informacoes_contato')
+
+function modelInfo(e) {
+    modelInfos.classList.remove('model')
+    var id = e.parentNode.parentNode.parentNode.querySelector('#id').innerHTML
+    console.log(id)
+}
+
+var modelInfosServicos = document.querySelector('.servicos_prestados')
+var informacoesContato = document.querySelector('.informacoes_contato')
+var horario = document.querySelector('.horario')
+
+function fecharModalServico() {
+    informacoesContato.classList.add('model')
+    modelInfosServicos.classList.remove('model')
+    horario.classList.add('model')
+}
+function fecharModalContato() {
+    informacoesContato.classList.remove('model')
+    modelInfosServicos.classList.add('model')
+    horario.classList.add('model')
+}
+function fecharModalHorario() {
+    informacoesContato.classList.add('model')
+    modelInfosServicos.classList.add('model')
+    horario.classList.remove('model')
+}
+
+function fecharmodais() {
+    informacoesContato.classList.add('model')
+    modelInfosServicos.classList.add('model')
+    horario.classList.add('model')
 }
