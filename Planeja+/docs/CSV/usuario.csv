@@ -1,6 +1,0 @@
-id_usuario;nome;email;senha;raz;cnpf;cpf;tipo;nomeFantasia;telefone
-1;João;joao@gmail.com;123456;Jonas Eventos;59546515000134;;Produtor;João Eventos;(99) 99999-9999
-2;Maria;maria@gmail.com;123456;Faça festas Maria;45997418000153;;Produtor;Maria Festas;(99) 88888-8888
-3;Lucas;lucas@gmail.com;123456;Lucas Ltda;61189288000189;;Produtor;Lucas Conde;(99) 77777-7777
-4;Pedro;pedro@gmail.com;123456;Cerimonias Lacerda;47960950000121;;Produtor;Pedro Cerimonial;(99) 66666-6666
-5;Ana;ana@gmail.com;123456;Ana Buffet;;50568819888;Cliente;;(99) 55555-5555
