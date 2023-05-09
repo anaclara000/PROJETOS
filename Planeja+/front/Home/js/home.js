@@ -14,13 +14,13 @@ function carregar() {
             listarUsuario();
         });
 
-        fetch('http://localhost:3000/servicos', options)
+    fetch('http://localhost:3000/servicos', options)
         .then(response => response.json())
         .then(resp => {
             servicos = resp;
 
         });
-        
+
 
 }
 
@@ -56,7 +56,7 @@ function listarUsuario() {
 
                 novoProdutor.style.display = "block";
                 novoProdutor.querySelector('.img_icon_produtor').src = 'assets/icon/coca_cola_icon.png'
-                novoProdutor.querySelector(".id").innerHTML = info.id_usuario;
+                // novoProdutor.querySelector(".id").innerHTML = info.id_usuario;
                 novoProdutor.querySelector(".nome_productor").innerHTML = info.nomeFantasia;
 
                 document.querySelector('.cards_productors').appendChild(novoProdutor)
@@ -74,37 +74,62 @@ function ModalProdutor(e) {
 
     usuario.forEach(u => {
 
-        if(id == u.id_usuario) {
-            
+        if (id == u.id_usuario) {
+
             document.querySelector('.nome_produtor').innerHTML = u.nomeFantasia
             document.querySelector('.contato').innerHTML = u.telefone
             document.querySelector('.email').innerHTML = u.email
             document.querySelector('.cnpj').innerHTML = u.cnpj
-            
-            servicos.forEach((s ,i)=> {
 
-                
-                if(s.id_servicos == id) {
-                    
-                var novo_card_servicos = card_servicos.cloneNode(true)
-                
-                novo_card_servicos.classList.remove('model')
+            servicos.forEach((s, i) => {
 
-                novo_card_servicos.innerHTML = s.nome
 
-                console.log(novo_card_servicos);
-                document.querySelector('.cont_servicos').appendChild(novo_card_servicos)
+                if (s.id_servicos == id) {
 
-            }
-        })
+                    var novo_card_servicos = card_servicos.cloneNode(true)
+
+                    novo_card_servicos.classList.remove('model')
+
+                    novo_card_servicos.innerHTML = s.nome
+
+                    console.log(novo_card_servicos);
+                    document.querySelector('.cont_servicos').appendChild(novo_card_servicos)
+
+                }
+            })
 
         }
-        
+
     })
 }
 
-function FecharProdutor( ) {
+function FecharProdutor() {
 
     document.querySelector('.modal_produtor').classList.toggle('model')
 
 }
+
+
+function enviarArquivo() {
+    const input = document.querySelector('#img');
+    console.log(idUsuario)
+    // const formData = new FormData();
+    // formData.append('img', input.files[0]);
+
+    // fetch(`http://localhost:3000/enviar/${idUsuario}`, {
+    //     method: 'POST',
+    //     body: formData,
+    // })
+    //     .then(response => response.json())
+    //     .then(data => {
+    //         console.log(data);
+    //     })
+    //     .catch(error => {
+    //         console.error(error);
+    //     });
+}
+const idUsuario = document.querySelector(".idLogin");
+var userinfo = JSON.parse(localStorage.getItem("info"));
+
+idUsuario.innerHTML = userinfo.id_user;
+

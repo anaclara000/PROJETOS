@@ -8,7 +8,7 @@ const Usuario = require('../controller/usuario')
 router.get('/usuarios', Usuario.read)
 router.get('/usuarios/id/:id_usuario', Usuario.readOne)
 router.post('/usuarios', Usuario.create)
-// router.post('/usuarios/enviar/:id_usuario', Usuario.enviarArquivo)
+router.post('/enviar/:id_usuario', Usuario.enviarArquivo)
 // router.post('/pasta', Usuario.upload)
 router.post('/usuarios/criar', Usuario.createItems)
 router.post('/usuarios/login', Usuario.login)
@@ -23,6 +23,7 @@ router.post('/eventos/criar', Eventos.createItems)
 router.post('/eventos', Eventos.create)
 router.put('/eventos/id/:id_eventos', Eventos.update)
 router.delete('/eventos/id/:id_eventos', Eventos.remove)
+router.post('/enviarEventos/:id_eventos', Eventos.enviarArquivo)
 
 const TipoEvento = require('../controller/tiposEvento')
 router.get('/tipos', TipoEvento.read)
@@ -66,30 +67,5 @@ router.post('/servicos/criar', Servicos.createItems)
 router.post('/servicos', Servicos.create)
 router.put('/servicos/id/:id_servicos', Servicos.update)
 router.delete('/servicos/id/:id_servicos', Servicos.remove)
-
-
-const multer = require('multer');
-const fs = require('fs');
-
-const storage = multer.diskStorage({
-    destination: function (req, file, cb) {
-        const userId = req.query.id;
-        console.log('userId:', userId);
-        const dir = `./uploads/${userId}`;
-        if (!fs.existsSync(dir)) {
-            fs.mkdirSync(dir);
-        }
-        cb(null, dir);
-    },
-    filename: function (req, file, cb) {
-        cb(null, file.originalname);
-    }
-});
-
-const upload = multer({ storage });
-
-router.post('/upload', upload.array('file', 10), (req, res) => {
-    res.send('Arquivo enviado com sucesso!');
-});
 
 module.exports = router;

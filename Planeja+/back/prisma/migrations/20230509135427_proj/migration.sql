@@ -17,6 +17,17 @@ CREATE TABLE `Usuario` (
 ) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 -- CreateTable
+CREATE TABLE `Parcerias` (
+    `id_parceria` INTEGER NOT NULL AUTO_INCREMENT,
+    `idProdutor` VARCHAR(191) NOT NULL,
+    `idCliente` INTEGER NOT NULL,
+    `tipoEvento` VARCHAR(191) NOT NULL,
+    `data_evento` VARCHAR(191) NOT NULL,
+
+    PRIMARY KEY (`id_parceria`)
+) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+
+-- CreateTable
 CREATE TABLE `tiposEventos` (
     `id_tiposEvento` INTEGER NOT NULL AUTO_INCREMENT,
     `nome` VARCHAR(191) NOT NULL,
@@ -37,9 +48,15 @@ CREATE TABLE `servicos` (
 -- CreateTable
 CREATE TABLE `Eventos` (
     `id_eventos` INTEGER NOT NULL AUTO_INCREMENT,
-    `idProdutor` INTEGER NOT NULL,
-    `tipo_evento` VARCHAR(191) NOT NULL,
+    `idUsuario` INTEGER NOT NULL,
+    `cnpjProdutor` VARCHAR(191) NULL,
+    `tipo_evento` VARCHAR(191) NULL,
     `descricao` VARCHAR(191) NULL,
+    `nome_evento` VARCHAR(191) NULL,
+    `endereco_evento` VARCHAR(191) NULL,
+    `data_hora_inicio` VARCHAR(191) NULL,
+    `data_hora_fim` VARCHAR(191) NULL,
+    `status` VARCHAR(191) NULL,
 
     PRIMARY KEY (`id_eventos`)
 ) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
@@ -83,13 +100,16 @@ CREATE TABLE `Fornecedor` (
 ) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 -- AddForeignKey
+ALTER TABLE `Parcerias` ADD CONSTRAINT `Parcerias_idCliente_fkey` FOREIGN KEY (`idCliente`) REFERENCES `Usuario`(`id_usuario`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+-- AddForeignKey
 ALTER TABLE `tiposEventos` ADD CONSTRAINT `tiposEventos_id_usuario_fkey` FOREIGN KEY (`id_usuario`) REFERENCES `Usuario`(`id_usuario`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 -- AddForeignKey
 ALTER TABLE `servicos` ADD CONSTRAINT `servicos_id_usuario_fkey` FOREIGN KEY (`id_usuario`) REFERENCES `Usuario`(`id_usuario`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 -- AddForeignKey
-ALTER TABLE `Eventos` ADD CONSTRAINT `Eventos_idProdutor_fkey` FOREIGN KEY (`idProdutor`) REFERENCES `Usuario`(`id_usuario`) ON DELETE RESTRICT ON UPDATE CASCADE;
+ALTER TABLE `Eventos` ADD CONSTRAINT `Eventos_idUsuario_fkey` FOREIGN KEY (`idUsuario`) REFERENCES `Usuario`(`id_usuario`) ON DELETE RESTRICT ON UPDATE CASCADE;
 
 -- AddForeignKey
 ALTER TABLE `listaConvidados` ADD CONSTRAINT `listaConvidados_idEvento_fkey` FOREIGN KEY (`idEvento`) REFERENCES `Eventos`(`id_eventos`) ON DELETE RESTRICT ON UPDATE CASCADE;

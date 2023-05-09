@@ -80,7 +80,9 @@ function logar() {
                         console.log(data)
                         localStorage.setItem("info", JSON.stringify({ "id_user": data.uid, "nome": data.uname, "token": data.token }));
 
-                        window.location.href = "../Home/index.html"
+
+                        console.log('entrou aq');
+                        // window.location.href = "../Home/home.html"
 
                     }
                 })

@@ -1,7 +1,7 @@
 const bcrypt = require('bcrypt')
 const { PrismaClient } = require('@prisma/client')
 const jwt = require("jsonwebtoken")
-
+const fs = require('fs')
 
 
 const prisma = new PrismaClient()
@@ -29,33 +29,6 @@ const createItems = async (req, res) => {
 
 }
 
-// const create = async (req, res) => {
-//   bcrypt.genSalt(10, function (err, salt) {
-//     if (err == null) {
-
-//       console.log("asadadadada" + req.body.senha);
-
-//       bcrypt.hash(req.body.senha, salt, async function (errCrypto, hash) {
-//         if (errCrypto == null) {
-//           req.body.senha = hash
-
-//           const usuario = await prisma.usuario.create({
-//             data: req.body
-//           })
-
-//           res.status(200).json(usuario).end()
-//         } else {
-//           res.status(500).json(errCrypto).end()
-
-//           console.log(res.status(500).json(errCrypto).end());
-//         }
-//       });
-//     } else {
-//       res.status(500).json(err).end()
-//     }
-//   })
-// }
-
 
 const login = async (req, res) => {
   const usuario = await prisma.usuario.findFirstOrThrow({
@@ -72,7 +45,7 @@ const login = async (req, res) => {
         jwt.sign(data, process.env.KEY, { expiresIn: '1m' }, function (err2, token) {
           console.log(err2)
           if (err2 == null) {
-            res.status(200).json({ "token": token, "uid": usuario.id, "uname": usuario.nome, "validation": true }).end()
+            res.status(200).json({ "token": token, "uid": usuario.id_usuario, "uname": usuario.nome, "validation": true }).end()
           } else {
             res.status(500).json(err2).end()
           }
@@ -172,50 +145,107 @@ const verificarCNPJ = async (req, res) => {
       console.error(error);
     });
 }
-
-
 const create = async (req, res) => {
-  try {
-    const usuario = await prisma.usuario.create({
-      data: {
-        nome: req.body.nome,
-        email: req.body.email,
-        senha: req.body.senha,
-        raz: req.body.raz,
-        nomeFantasia: req.body.nomeFantasia,
-        cnpj: req.body.cnpj,
-        cpf: req.body.cpf,
-        tipo: req.body.tipo,
-        telefone: req.body.telefone,
-      },
+  bcrypt.genSalt(10, function (err, salt) {
+    if (err == null) {
+
+      console.log("asadadadada" + req.body.senha);
+
+      bcrypt.hash(req.body.senha, salt, async function (errCrypto, hash) {
+        if (errCrypto == null) {
+          req.body.senha = hash
+
+          try {
+            const usuario = await prisma.usuario.create({
+              data: {
+                nome: req.body.nome,
+                email: req.body.email,
+                senha: req.body.senha,
+                raz: req.body.raz,
+                nomeFantasia: req.body.nomeFantasia,
+                cnpj: req.body.cnpj,
+                cpf: req.body.cpf,
+                tipo: req.body.tipo,
+                telefone: req.body.telefone,
+              },
 
 
-    });
-    const path = require('path');
-    const userId = usuario.id_usuario;
-    const uploadPath = path.join(__dirname, 'uploads', userId.toString());
-    console.log(userId)
-    console.log(uploadPath)
-    if (!fs.existsSync(uploadPath)) {
-      try {
-        fs.mkdirSync(uploadPath);
-        console.log("aaaa")
-      } catch (erro) {
-        console.error(erro);
-        res.status(500).json({ error: 'Erro aq' });
-        return;
-      }
+            });
+            const path = require('path');
+            const userId = "user " + usuario.id_usuario;
+            const uploadPath = path.join(__dirname, '../uploads/Usuarios', userId.toString());
+            console.log(userId)
+            console.log(uploadPath)
+            if (!fs.existsSync(uploadPath)) {
+              try {
+                fs.mkdirSync(uploadPath);
+                res.status(200).json(usuario).end();
+              } catch (erro) {
+                console.error(erro);
+                res.status(500).json({ error: 'Erro aq' });
+                return;
+              }
 
+            } else {
+              res.status(200).json(usuario).end();
+            }
+
+          } catch (err) {
+            console.error('Erro ao criar pasta de upload:', err);
+            res.status(500).json({ error: 'Erro ao criar pasta de upload' });
+            return;
+          }
+
+
+          // res.status(200).json(usuario).end()
+        } else {
+          res.status(500).json(errCrypto).end()
+
+          console.log(res.status(500).json(errCrypto).end());
+        }
+      });
+    } else {
+      res.status(500).json(err).end()
     }
-    res.status(200).json(usuario).end();
-  } catch (err) {
-    // console.error('Erro ao criar pasta de upload:', err);
-    res.status(500).json({ error: 'Erro ao criar pasta de upload' });
-    return;
-  }
+  })
+
+
+
+
 };
 
+const multer = require('multer');
+const path = require('path');
+// Configuração de armazenamento
+const storage = multer.diskStorage({
 
+
+  //Diretório de destino
+  destination: function (req, file, cb) {
+    const usuarioId = req.params.id_usuario; // obtém o ID do usuário da URL da requisição
+    const uploadPath = path.join(__dirname, `../uploads/Usuarios/${"user " + usuarioId}`);
+    cb(null, uploadPath);
+    console.log(uploadPath)
+  },
+  //Nome do arquivo
+  filename: function (req, file, cb) {
+    cb(null, `${file.originalname}`)
+  }
+});
+// Passa as configurações para gravar o arquivo
+const parser = multer({ storage });
+// Grava o arquivo no diretório de destino assincronamente ao receber a requisição
+const enviarArquivo = async (req, res) => {
+  parser.single('img')(req, res, err => {
+    if (err) {
+      res.status(500).json({ error: 1, payload: err }).end();
+    } else if (!req.file) {
+      res.status(400).json({ error: 1, payload: 'Arquivo não enviado.' }).end();
+    } else {
+      res.status(200).json(req.file.filename).end();
+    }
+  });
+}
 
 
 module.exports = {
@@ -227,5 +257,6 @@ module.exports = {
   update,
   remove,
   createItems,
+  enviarArquivo
 
 }

@@ -8,7 +8,7 @@
     <title>Página Inicial - Planeja +</title>
 
     <link rel="stylesheet" href="css/home.css">
-    <link rel="stylesheet" href="css/slide.css">
+
 
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
@@ -45,6 +45,7 @@
                 </ul>
 
                 <div class="cont_user">
+                    <p class="idLogin" style="color: white"></p>
                     <i class='bx bxs-user-circle'></i>
                 </div>
 
@@ -73,9 +74,10 @@
 
     <main>
         <div>
-            <form action="/upload" enctype="multipart/form-data" method="post">
-                <input type="file" name="file" id="file" multiple />
-                <input type="submit" value="Enviar">
+            <form enctype="multipart/form-data">
+                <label for="arquivo">Selecione um arquivo:</label>
+                <input type="file" id="img" name="img">
+                <button onclick="enviarArquivo()" type="submit">Enviar</button>
             </form>
         </div>
         <div class="cont_cards">
@@ -293,7 +295,7 @@
 
             <span>Tipo: <span class="tipo">Bebidas</span></span>
 
-            <p class="id model"></p>
+
         </div>
 
         <button onclick="ModalProdutor(this)">Conferir</button>

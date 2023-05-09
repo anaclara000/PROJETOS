@@ -21,10 +21,19 @@ model Usuario {
   cpf               String?
   tipo              String
   telefone          String
-  imagem            String?
   tiposEventos      tiposEventos[]
   servicosPrestados servicos[]
   eventos           Eventos[]
+  Parcerias         Parcerias[]
+}
+
+model Parcerias {
+  id_parceria Int     @id @default(autoincrement())
+  idProdutor  String
+  idCliente   Int
+  tipoEvento String
+  data_evento String
+  Usuario     Usuario @relation(fields: [idCliente], references: [id_usuario], onDelete: Cascade)
 }
 
 model tiposEventos {
@@ -42,14 +51,20 @@ model servicos {
 }
 
 model Eventos {
-  id_eventos  Int               @id @default(autoincrement())
-  idProdutor  Int
-  tipo_evento String
-  descricao   String?
-  produtor    Usuario           @relation(fields: [idProdutor], references: [id_usuario])
-  lista       listaConvidados[]
-  locacao     Locacoes[]
-  fornecedor  Fornecedor[]
+  id_eventos       Int               @id @default(autoincrement())
+  idUsuario        Int
+  cnpjProdutor     String?
+  tipo_evento      String?
+  descricao        String?
+  nome_evento      String?
+  endereco_evento  String?
+  data_hora_inicio String?
+  data_hora_fim    String?
+  status           String?
+  produtor         Usuario           @relation(fields: [idUsuario], references: [id_usuario])
+  lista            listaConvidados[]
+  locacao          Locacoes[]
+  fornecedor       Fornecedor[]
 }
 
 model listaConvidados {
