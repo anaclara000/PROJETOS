@@ -45,7 +45,7 @@
                 </ul>
 
                 <div class="cont_user">
-                    <p class="idLogin" style="color: white"></p>
+                    <span class="idLogin" style="color: white"></span>
                     <i class='bx bxs-user-circle'></i>
                 </div>
 
@@ -74,11 +74,14 @@
 
     <main>
         <div>
+
             <form enctype="multipart/form-data">
                 <label for="arquivo">Selecione um arquivo:</label>
-                <input type="file" id="img" name="img">
-                <button onclick="enviarArquivo()" type="submit">Enviar</button>
+                <input type="file" id="img" name="img" multiple>
+                <!-- <img id="preview" src="" alt="Preview da imagem" style="width: 50vw;"> -->
+                <button type="button" onclick="enviarArquivos(event)">Enviar</button>
             </form>
+            <div id="preview-container"></div>
         </div>
         <div class="cont_cards">
 

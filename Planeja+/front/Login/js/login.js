@@ -82,7 +82,7 @@ function logar() {
 
 
                         console.log('entrou aq');
-                        // window.location.href = "../Home/home.html"
+                        window.location.href = "../Home/home.html"
 
                     }
                 })

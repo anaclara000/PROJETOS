@@ -11,6 +11,7 @@
     box-sizing: border-box;
     font-family: 'Poppins';
 }
+
 nav {
     background-color: black;
 
@@ -26,7 +27,7 @@ nav h1 {
     display: none;
 }
 
-.cont_nav{
+.cont_nav {
     padding: 25px;
     display: flex;
     width: 60%;
@@ -41,7 +42,7 @@ ul {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    
+
 }
 
 ul li {
@@ -64,7 +65,7 @@ ul li a {
 
 .cont_banner_inf {
     margin-top: -10%;
-    background-image: url('../assets/bg/bg_1.jpg') ;
+    background-image: url('../assets/bg/bg_1.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     height: 100vh;
@@ -120,7 +121,7 @@ ul li a {
     border-radius: 50px;
     font-size: 11pt;
     border: none;
-    
+
 }
 
 
@@ -165,7 +166,8 @@ ul li a {
 .social_acount img {
     width: 50%;
 }
-.cont_info  {
+
+.cont_info {
     width: 100%;
 }
 
@@ -258,7 +260,7 @@ ul li a {
     overflow-y: scroll;
 }
 
-.modal_produtor i{
+.modal_produtor i {
     font-size: 28pt;
     margin-left: 25px;
     margin-top: 14pt;
@@ -270,12 +272,14 @@ ul li a {
     margin: 0 auto;
     margin-top: -20px;
 }
+
 .cont_icon_user {
     margin-top: -8%;
     margin-left: 6%;
     display: flex;
     align-items: center;
 }
+
 .icon_user {
     width: 8%;
 }
@@ -283,7 +287,7 @@ ul li a {
 .inf_user {
     margin-left: 10px;
     color: white;
-    
+
 }
 
 .cont_geral_infos {
@@ -300,7 +304,7 @@ ul li a {
     text-align: center;
 }
 
-.informacoes  {
+.informacoes {
     display: flex;
     justify-content: space-evenly;
     border: 1px solid rgba(0, 0, 0, 0.395);
@@ -391,9 +395,11 @@ ul li a {
     font-weight: 500;
 
 }
+
 .redes_sociais_icons {
     margin-left: 5%;
 }
+
 .redes_sociais_icons img {
     width: 2%;
     margin-left: 10px;
@@ -406,4 +412,10 @@ ul li a {
     margin-bottom: 10px;
     font-size: 15pt;
     color: white;
+}
+
+#preview>img,
+.preview-image {
+    width: 10vw;
+    height: 10vh;
 }

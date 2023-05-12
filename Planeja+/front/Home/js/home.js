@@ -21,7 +21,6 @@ function carregar() {
 
         });
 
-
 }
 
 function listarUsuario() {
@@ -109,25 +108,67 @@ function FecharProdutor() {
 
 }
 
+const form = document.querySelector('form');
 
-function enviarArquivo() {
+form.addEventListener('submit', function (event) {
+    event.preventDefault();
+});
+
+function enviarArquivos(event) {
+    event.preventDefault();
     const input = document.querySelector('#img');
-    console.log(idUsuario)
-    // const formData = new FormData();
-    // formData.append('img', input.files[0]);
+    const formData = new FormData();
 
-    // fetch(`http://localhost:3000/enviar/${idUsuario}`, {
-    //     method: 'POST',
-    //     body: formData,
-    // })
-    //     .then(response => response.json())
-    //     .then(data => {
-    //         console.log(data);
-    //     })
-    //     .catch(error => {
-    //         console.error(error);
-    //     });
+    for (let i = 0; i < input.files.length; i++) {
+        formData.append('img', input.files[i]);
+        console.log("for")
+    }
+
+    fetch(`http://localhost:3000/enviar/${idUsuario.innerHTML}`, {
+        method: 'POST',
+        body: formData,
+    })
+        .then(response => response.json())
+        .then(data => {
+            console.log(data);
+        })
+        .catch(error => {
+            console.error(error);
+        });
 }
+
+const input = document.querySelector('#img');
+const previewContainer = document.querySelector('#preview-container');
+
+input.addEventListener('change', () => {
+    mostrarPreview(input);
+});
+
+function mostrarPreview() {
+    previewContainer.innerHTML = ''; // Limpa o conteúdo da div
+
+    const files = input.files;
+
+    for (let i = 0; i < files.length; i++) {
+        const file = files[i];
+
+        if (!file.type.startsWith('image/')) { // Verifica se o arquivo é uma imagem
+            continue;
+        }
+
+        const img = document.createElement('img');
+        img.classList.add('preview');
+        previewContainer.appendChild(img);
+
+        const reader = new FileReader();
+        reader.onload = (event) => {
+            img.src = event.target.result;
+        };
+        reader.readAsDataURL(file);
+    }
+}
+
+
 const idUsuario = document.querySelector(".idLogin");
 var userinfo = JSON.parse(localStorage.getItem("info"));
 
